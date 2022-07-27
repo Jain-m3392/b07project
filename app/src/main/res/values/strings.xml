@@ -9,4 +9,7 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_event_detail_host">EventDetailHostActivity</string>
+    <string name="title_event_list">Events</string>
+    <string name="title_event_detail">Event Detail</string>
 </resources>
