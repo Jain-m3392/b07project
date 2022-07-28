@@ -11,10 +11,11 @@ public class Event {
     ArrayList<User> customers;
     String startTime;
     String venueID;
+    int capacity;
 
 
     //TODO: Check what type we want each field to be and initialize an Event
-    public Event(String creator, String startTime, String endTime, String eventID, String venueID){
+    public Event(String creator, String startTime, String endTime, String eventID, String venueID, int capacity){
 
     }
 
