@@ -9,7 +9,7 @@ public class Event {
     public String creator;
     public String endTime;
     public String eventID;
-    private ArrayList<User> userCustomers;
+    //private ArrayList<User> userCustomers;
     public ArrayList<String> customers;
     public String startTime;
     public String venueID;
@@ -25,18 +25,36 @@ public class Event {
         this.venueID = venueID;
         this.capacity = capacity;
         this.customers = customers;
-        //TODO: find customers with given usernames, and add them to this.userCustomers
+
     }
 
     public void addCustomer(User player){
 
         customers.add(player.username);
-        userCustomers.add(player);
+        //TODO: sync changes to database
     }
 
+    //fetch all customers signed up for this event
     public ArrayList<User> fetchCustomers(){
-        return userCustomers;
+        ArrayList<User> res = new ArrayList<User>();
+        for (User u : User.fetchAllCustomers()){
+            if (this.customers.contains(u.username)){
+                res.add(u);
+            }
+        }
+        return res;
     }
 
+    @Override
+    public boolean equals(Object o){
+        if (o == null){
+            return false;
+        }
+        if (!(o instanceof Event)){
+            return false;
+        }
+        Event e = (Event)o;
+        return e.eventID == this.eventID;
+    }
 
 }

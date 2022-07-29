@@ -1,5 +1,7 @@
 package com.example.b07project;
 
+import android.util.Log;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -14,38 +16,94 @@ import androidx.annotation.NonNull;
 
 //Base class to communicate with database that can be inherited by both Admin and Customer
 public abstract class User {
-    String username;
-    static ArrayList<Event> allEvents = new ArrayList<Event>();
-    static ArrayList<Venue> allVenues = new ArrayList<Venue>();
+    public String username;
+    public String password; //Hashed password
 
-    static ArrayList<Event> fetchAllEvents(){
+    private static ArrayList<Event> allEvents = new ArrayList<Event>();
+    private static ArrayList<Venue> allVenues = new ArrayList<Venue>();
+    private static ArrayList<User> allCustomers = new ArrayList<User>();
+    private static ArrayList<User> allAdmins = new ArrayList<User>();
+
+
+    public static ArrayList<Event> fetchAllEvents(){
         return allEvents;
     }
 
-    static ArrayList<Venue> fetchAllVenues(){
+    public static ArrayList<Venue> fetchAllVenues(){
         return allVenues;
     }
 
-    //Initialize data connection
-    static void initialize(){
+    public static ArrayList<User> fetchAllCustomers(){
+        return allCustomers;
+    }
 
-        //Initialise synchronization between allEvents and Firebase
-        DatabaseReference ref = FirebaseDatabase.getInstance("https://b07project-696e9-default-rtdb.firebaseio.com/").getReference("events");
-        ArrayList<Event> events = new ArrayList<Event>();
+    public static ArrayList<User> fetchAllAdmins(){
+        return allAdmins;
+    }
+
+    //Initialize data connection
+    public static void initialize(){
+
+        //Initialise synchronization between allCustomers and Firebase
+        FirebaseDatabase fire = FirebaseDatabase.getInstance("https://b07project-696e9-default-rtdb.firebaseio.com/");
+        DatabaseReference ref;
+
+        //Create test values
+        Log.d("test", "initializing database");
+        Customer testCustomer = new Customer("test", "test", "Test 1");
+        ArrayList<String> tempList = new ArrayList<String>();
+        tempList.add(testCustomer.username);
+        Event testEvent = new Event("test", "test", "test", "0", "0", 42, tempList);
+
+        ref = fire.getReference();
+        ref.child("customers").child(testCustomer.username).setValue(testCustomer);
+        ref.child("events").child(testEvent.eventID).setValue(testEvent);
+
+
+        ref = fire.getReference("customers");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot child: snapshot.getChildren()){
-                    Event event = child.getValue(Event.class);
-                    System.out.println(event);
+                    Customer customer = child.getValue(Customer.class);
+                    if (!allCustomers.contains(customer)){
+                        allCustomers.add(customer);
+                    }
+                    Log.d("test", customer.username);
+                    Log.d("test", customer.fullName);
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
+                Log.d("test", error.toString());
             }
         });
+
+        //TODO: Initialize sync between allAdmins and Database
+
+
+        //Initialise synchronization between allEvents and Firebase
+        ref = fire.getReference("events");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child: snapshot.getChildren()){
+                    Event event = child.getValue(Event.class);
+                    if (!allEvents.contains(event)){
+                        allEvents.add(event);
+                    }
+                    Log.d("test", event.eventID);
+                    Log.d("test",event.customers.toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("test",error.toString());
+            }
+        });
+
     }
 
 
