@@ -44,22 +44,22 @@ public abstract class User {
     //Initialize data connection
     public static void initialize(){
 
-        //Initialise synchronization between allCustomers and Firebase
+        //Initialise Firebase connection
         FirebaseDatabase fire = FirebaseDatabase.getInstance("https://b07project-696e9-default-rtdb.firebaseio.com/");
         DatabaseReference ref;
 
         //Create test values
         Log.d("test", "initializing database");
-        Customer testCustomer = new Customer("test", "test", "Test 1");
-        ArrayList<String> tempList = new ArrayList<String>();
-        tempList.add(testCustomer.username);
-        Event testEvent = new Event("test", "test", "test", "0", "0", 42, tempList);
+//        Customer testCustomer = new Customer("test", "test", "Test 1");
+//        ArrayList<String> tempList = new ArrayList<String>();
+//        tempList.add(testCustomer.username);
+//        Event testEvent = new Event("test", "test", "test", "0", "0", 42, tempList);
+//
+//        ref = fire.getReference();
+//        ref.child("customers").child(testCustomer.username).setValue(testCustomer);
+//        ref.child("events").child(testEvent.eventID).setValue(testEvent);
 
-        ref = fire.getReference();
-        ref.child("customers").child(testCustomer.username).setValue(testCustomer);
-        ref.child("events").child(testEvent.eventID).setValue(testEvent);
-
-
+        //Initialise synchronization between allCustomers and Firebase
         ref = fire.getReference("customers");
         ref.addValueEventListener(new ValueEventListener() {
             @Override
@@ -80,7 +80,25 @@ public abstract class User {
             }
         });
 
-        //TODO: Initialize sync between allAdmins and Database
+        //Initialise synchronization between allAdmins and Firebase
+        ref = fire.getReference("admins");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child: snapshot.getChildren()){
+                    Admin admin = child.getValue(Admin.class);
+                    if (!allAdmins.contains(admin)){
+                        allAdmins.add(admin);
+                    }
+                    Log.d("test", admin.username);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("test", error.toString());
+            }
+        });
 
 
         //Initialise synchronization between allEvents and Firebase
@@ -104,6 +122,26 @@ public abstract class User {
             }
         });
 
+        //Initialise synchronization between allVenues and Firebase
+        ref = fire.getReference("venues");
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for(DataSnapshot child: snapshot.getChildren()){
+                    Venue venue = child.getValue(Venue.class);
+                    if (!allVenues.contains(venue)){
+                        allVenues.add(venue);
+                    }
+                    Log.d("test", venue.venueID);
+                    Log.d("test",venue.events.toString());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.d("test",error.toString());
+            }
+        });
     }
 
 

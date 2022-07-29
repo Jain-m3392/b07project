@@ -15,6 +15,7 @@ public class Event {
     public String venueID;
     public int capacity;
 
+    public Event(){} //No argument constructor for Firebase to work
 
     //TODO: Check what type we want each field to be and initialize an Event
     public Event(String creator, String startTime, String endTime, String eventID, String venueID, int capacity, ArrayList<String> customers){

@@ -4,12 +4,12 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Customer extends User{
-    public String fullName;
+    public String fullName; //Nice display name shown to other users (e.g. John Doe). Maybe optional?
     public ArrayList<String> joinedEvents; //for communicating with Firebase
     public ArrayList<String> scheduledEvents; //for communicating with Firebase
-    //private ArrayList<Event> joinedEventsEvent;
-    //private ArrayList<Event> scheduledEventsEvent;
 
+    //Firebase requires a no-argument constructor or crashes
+    public Customer(){}
 
     //New customer customer with no joined or scheduled events
     public Customer(String username, String password, String fullName){
@@ -57,4 +57,17 @@ public class Customer extends User{
     public void setName(String newFullName){
         this.fullName = newFullName;
     }
+
+    @Override
+    public boolean equals(Object o){
+        if (o == null){
+            return false;
+        }
+        if (!(o instanceof User)){
+            return false;
+        }
+        User c = (User)o;
+        return c.username == this.username;
+    }
+
 }
