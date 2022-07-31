@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/uni/S2022/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_event_detail.xml" value="0.39660797119140623" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/content_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_event_detail.xml" value="0.37032318115234375" />
       </map>
     </option>
