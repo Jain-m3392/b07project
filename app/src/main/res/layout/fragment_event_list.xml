@@ -18,4 +18,5 @@
         app:layoutManager="LinearLayoutManager"
         tools:context="com.example.b07project.EventDetailHostActivity"
         tools:listitem="@layout/event_list_content" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
