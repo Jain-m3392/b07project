@@ -38,7 +38,12 @@ public class customerScheduleEvent extends AppCompatActivity {
                 Customer customer = intent.getParcelableExtra("Customer");
                 Venue venue = intent.getParcelableExtra("Venue");
                 ArrayList<String> customerArray = new ArrayList<String>();
-                Event event = new Event(customer.fullName,startTime, endTime, "EventID", venue.venueID, capacity, customerArray, name);
+                int eventID = -1;
+                for(Event e: User.fetchAllEvents()){
+                    if(eventID<e.eventID)
+                        eventID = e.eventID;
+                }
+                Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, capacity, customerArray, name);
                 venue.addEvent(event);
                 textView.setText("You successfully created an event!");
             }

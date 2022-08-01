@@ -23,11 +23,7 @@ public class CustomerVenuesView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_venues_view);
-        //get customer's info when logging in
-        Intent intent = getIntent();
-        User user = intent.getParcelableExtra("Customer");
-        ArrayList<Venue> venues = user.fetchAllVenues();
-
+        ArrayList<Venue> venues = User.fetchAllVenues();
         listview = (ListView) findViewById(R.id.venueList);
         //display venues
         ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, venues);
@@ -36,8 +32,9 @@ public class CustomerVenuesView extends AppCompatActivity {
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String venueName = (String) listview.getAdapter().getItem(i);
                 Intent intent = new Intent(CustomerVenuesView.this, customerCreateEvents.class);
-                intent.putExtra("Venue", venues.get(i));
+                intent.putExtra("Venue", venueName);
                 startActivity(intent);
             }
         });
