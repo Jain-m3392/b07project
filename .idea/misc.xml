@@ -3,13 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1615" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/event_icon_background.xml" value="0.238" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/event_icon_foreground.xml" value="0.238" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/home_icon_foreground.xml" value="0.238" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_account.xml" value="0.264" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_customer_events_view.xml" value="0.18885869565217392" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_logout.xml" value="0.2" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_register_new_user.xml" value="0.12360688956433637" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/bottom_navbar.xml" value="0.536" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/content_main.xml" value="0.2" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/fragment_first.xml" value="0.4" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/fragment_second.xml" value="0.264" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bootom_navbar_menu.xml" value="0.23981481481481481" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bottom_navbar_menu.xml" value="0.1796875" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/menu_main.xml" value="0.176" />
         <entry key="..\:/uni/S2022/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.17945625931744413" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2661575317382812" />
-        <entry key="app/src/main/res/layout/activity_register_new_user.xml" value="0.31996917724609386" />
-        <entry key="app/src/main/res/layout/content_main.xml" value="0.37996826171875" />
-        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.2391006469726562" />
-        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.23449554443359377" />
       </map>
     </option>
   </component>

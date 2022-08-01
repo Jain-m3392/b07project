@@ -14,6 +14,10 @@
         android:theme="@style/Theme.B07project"
         tools:targetApi="31">
         <activity
+            android:name=".AccountActivity"
+            android:exported="false" />
+
+        <activity
             android:name=".RegisterNewUser"
             android:exported="false" />
         <activity
