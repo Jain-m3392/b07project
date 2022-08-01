@@ -10,6 +10,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
+//for displaying the events happening at a particular venue
+//has a "create an event" button which takes you to the customerScheduleEvent activity
 public class customerCreateEvents extends AppCompatActivity {
     ListView listview;
     private Button button;
@@ -23,7 +25,6 @@ public class customerCreateEvents extends AppCompatActivity {
         listview = (ListView) findViewById(R.id.eventList);
         EventAdapter EventAdapter = new EventAdapter(this, R.layout.eventlist, eventList);
         listview.setAdapter(EventAdapter);
-
         button = findViewById(R.id.scheduleEvent);
         button.setOnClickListener(new View.OnClickListener() {
             @Override

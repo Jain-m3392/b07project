@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+//for creating an event as a customer
 public class customerScheduleEvent extends AppCompatActivity {
     EditText nameInput, capacityInput, startTimeInput, endTimeInput;
     String name, capacity, startTime, endTime;

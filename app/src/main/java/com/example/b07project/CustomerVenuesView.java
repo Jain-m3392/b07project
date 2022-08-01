@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+//displays all the venues from the database
+//you can click on each venue to see the events happening at that venue
 public class CustomerVenuesView extends AppCompatActivity {
 
     ListView listview;
