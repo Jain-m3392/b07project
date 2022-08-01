@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/eventName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.AppCompat.Title"
+        android:text="eventName"/>
+
+    <TextView
+        android:id="@+id/eventCapacity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventName"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        android:text="eventCapacity"/>
+
+    <TextView
+        android:id="@+id/eventStartTime"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventCapacity"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:text="eventStartTime" />
+
+    <TextView
+        android:id="@+id/eventEndTime"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventStartTime"
+        style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
+        android:text="eventEndTime"/>
+
+
+
+
+</RelativeLayout>
