@@ -22,4 +22,8 @@
     <string name="password_confirmation_signup">Confirm Password</string>
     <string name="scheduled_events">Scheduled Events</string>
     <string name="joined_events">Joined Events</string>
+
+    <string name="change_full_name_text">Edit Full Name:</string>
+    <string name="update">Update</string>
+    <string name="logout">Logout</string>
 </resources>

@@ -23,6 +23,9 @@ public abstract class User {
     private static ArrayList<User> allCustomers = new ArrayList<User>();
     private static ArrayList<User> allAdmins = new ArrayList<User>();
 
+    //Keeps connection to instance of firebase
+    private static FirebaseDatabase fire;
+
 
     public static ArrayList<Event> fetchAllEvents(){
         return allEvents;
@@ -40,11 +43,13 @@ public abstract class User {
         return allAdmins;
     }
 
+    public static FirebaseDatabase fetchFirebase() { return fire; }
+
     //Initialize data connection
     public static void initialize(){
 
         //Initialise Firebase connection
-        FirebaseDatabase fire = FirebaseDatabase.getInstance("https://b07project-696e9-default-rtdb.firebaseio.com/");
+        fire = FirebaseDatabase.getInstance("https://b07project-696e9-default-rtdb.firebaseio.com/");
         DatabaseReference ref;
 
         //Create test values
@@ -73,6 +78,7 @@ public abstract class User {
         //Initialise synchronization between allCustomers and Firebase
         ref = fire.getReference("customers");
         ref.addChildEventListener(new ChildEventListener() {
+
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey){
                 Customer customer = dataSnapshot.getValue(Customer.class);
