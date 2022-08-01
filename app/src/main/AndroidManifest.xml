@@ -16,7 +16,18 @@
         <activity
             android:name=".AccountActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".adminCreateVenue"
+            android:exported="false" />
+        <activity
+            android:name=".customerScheduleEvent"
+            android:exported="false" />
+        <activity
+            android:name=".customerCreateEvents"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerVenuesView"
+            android:exported="false" />
         <activity
             android:name=".RegisterNewUser"
             android:exported="false" />

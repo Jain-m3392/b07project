@@ -67,6 +67,7 @@ public class Customer extends User implements Parcelable {
         }
     };
 
+
     //get all events that a customer is signed up for
     public ArrayList<Event> fetchJoinedEvents(){
         ArrayList<Event> res = new ArrayList<Event>();
