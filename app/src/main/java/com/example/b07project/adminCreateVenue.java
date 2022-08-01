@@ -36,7 +36,12 @@ public class adminCreateVenue extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ArrayList<Event> events = new ArrayList<Event>();
-                Venue newVenue = new Venue("venueId", name, location, events);
+                int venueID = -1;
+                for(Venue v: User.fetchAllVenues()){
+                    if(venueID<v.venueID)
+                        venueID = v.venueID;
+                }
+                Venue newVenue = new Venue(venueID+1, name, location, events);
                 newVenuedbRef.push().setValue(newVenue);
                 textView.setText("You successfully created a venue!");
 //                Toast.makeText(adminCreateVenue.this, "You successfully created a venue!", Toast.LENGTH_SHORT).show();

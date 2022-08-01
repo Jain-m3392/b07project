@@ -8,11 +8,11 @@ public class Event {
 
     public String creator;
     public String endTime;
-    public String eventID;
+    public int eventID;
     //private ArrayList<User> userCustomers;
     public ArrayList<String> customers;
     public String startTime;
-    public String venueID;
+    public int venueID;
     public String capacity;
     public String name;
 
@@ -21,7 +21,7 @@ public class Event {
 
     //TODO: Check what type we want each field to be and initialize an Event
 
-    public Event(String creator, String startTime, String endTime, String eventID, String venueID, String capacity, ArrayList<String> customers, String name){
+    public Event(String creator, String startTime, String endTime, int eventID, int venueID, String capacity, ArrayList<String> customers, String name){
         this.creator = creator;
         this.startTime = startTime;
         this.endTime = endTime;
