@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.google.firebase.database.DatabaseReference;
@@ -17,6 +18,30 @@ import java.util.ArrayList;
 public class AccountActivity extends AppCompatActivity {
 
     Customer customer;
+
+    //listener for updating customer full name
+    private View.OnClickListener updateNameListener = new View.OnClickListener(){
+        @Override
+        public void onClick(View view) {
+            //called when update button is pressed
+
+            EditText textBox = findViewById(R.id.editTextTextPersonName);
+
+            customer.fullName = textBox.getText().toString();
+            FirebaseDatabase fire = User.fetchFirebase();
+
+            DatabaseReference ref = fire.getReference("customers");
+            ref.child(customer.username).setValue(customer);
+        }
+    };
+
+    //listener for logging out button press
+    private View.OnClickListener logoutListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Intent intent = new Intent(view.getContext(), MainActivity.class);
+            startActivity(intent);
+        }};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,29 +65,11 @@ public class AccountActivity extends AppCompatActivity {
         EditText textBox = findViewById(R.id.editTextTextPersonName);
         textBox.setText(prevName);
 
-    }
+        Button updateButton = findViewById(R.id.update_name_button);
+        updateButton.setOnClickListener(updateNameListener);
 
-    //called when update button is pressed
-    public void updateName(View view){
-        EditText textBox = findViewById(R.id.editTextTextPersonName);
-
-        this.customer.fullName = textBox.getText().toString();
-        FirebaseDatabase fire = User.fetchFirebase();
-
-        DatabaseReference ref = fire.getReference("customers");
-        ref.child(this.customer.username).setValue(customer);
-    }
-
-    //called when logout button is pressed
-    public void logOut(View view){
-
-        //NO NEED TO CLOSE CONNECTION SINCE WILL RECONNECT TO SAME DATABASE WHEN LOG IN ACTIVITY IS LOADED
-        //close firebase connection
-//        FirebaseDatabase fire = User.fetchFirebase();
-//        fire.goOffline();
-
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Button logoutButton = findViewById(R.id.logout_button);
+        logoutButton.setOnClickListener(logoutListener);
     }
 
 }
