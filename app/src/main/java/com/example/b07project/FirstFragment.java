@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -12,9 +13,10 @@ import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.b07project.databinding.FragmentFirstBinding;
 
-public class FirstFragment extends Fragment {
+public class FirstFragment extends Fragment implements View.OnClickListener{
 
     private FragmentFirstBinding binding;
+    private TextView signup;
 
     @Override
     public View onCreateView(
@@ -38,7 +40,10 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        binding.signUp.setOnClickListener(new View.OnClickListener() {
+        signup = (TextView) view.findViewById(R.id.sign_up);
+        signup.setOnClickListener(this);
+
+        /*binding.signUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), RegisterNewUser.class);
@@ -46,7 +51,17 @@ public class FirstFragment extends Fragment {
                 //NavHostFragment.findNavController(FirstFragment.this)
                 //        .navigate(R.id.action_SecondFragment_to_FirstFragment);
             }
-        });
+        });*/
+    }
+
+    @Override
+    public void onClick(View v){
+        switch (v.getId()){
+            case R.id.sign_up:
+                Intent intent = new Intent(getActivity(), RegisterNewUser.class);
+                startActivity(intent);
+                break;
+        }
     }
 
     @Override
