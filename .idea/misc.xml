@@ -4,11 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/uni/S2022/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout-land/activity_customer_venues_list.xml" value="0.3927083333333333" />
+        <entry key="app/src/main/res/layout/activity_admin_create_venue.xml" value="0.3271541871886322" />
+        <entry key="app/src/main/res/layout/activity_create_an_event.xml" value="0.17844202898550723" />
+        <entry key="app/src/main/res/layout/activity_customer_create_events.xml" value="0.17844202898550723" />
+        <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.17844202898550723" />
+        <entry key="app/src/main/res/layout/activity_customer_schedule_event.xml" value="0.321356201171875" />
+        <entry key="app/src/main/res/layout/activity_customer_venue_list.xml" value="0.17844202898550723" />
+        <entry key="app/src/main/res/layout/activity_customer_venues_list.xml" value="0.28131408691406246" />
+        <entry key="app/src/main/res/layout/activity_customer_venues_view.xml" value="0.17844202898550723" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2671417236328125" />
         <entry key="app/src/main/res/layout/activity_register_new_user.xml" value="0.30529937744140623" />
+        <entry key="app/src/main/res/layout/activity_venue_to_events.xml" value="0.1" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.25675811767578116" />
-        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.45021820068359375" />
+        <entry key="app/src/main/res/layout/eventlist.xml" value="0.2841278076171875" />
+        <entry key="app/src/main/res/layout/fragment_first.xml" value="0.33359832763671876" />
         <entry key="app/src/main/res/layout/fragment_second.xml" value="0.29418792724609366" />
+        <entry key="app/src/main/res/layout/venuelist.xml" value="0.3898712158203125" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.3098958333333333" />
       </map>
     </option>
   </component>

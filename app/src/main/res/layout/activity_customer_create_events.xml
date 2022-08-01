@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customerCreateEvents">
+
+    <ListView
+        android:id="@+id/eventList"
+        android:layout_width="match_parent"
+        android:layout_height="700dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="100dp" />
+
+    <Button
+        android:id="@+id/scheduleEvent"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/eventList"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="20dp"
+        android:text="Schedule a new event"
+        android:textAlignment="center" />
+
+
+</RelativeLayout>
