@@ -26,6 +26,9 @@
             android:name=".customerCreateEvents"
             android:exported="false" />
         <activity
+            android:name=".CustomerEventsViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".CustomerVenuesView"
             android:exported="false" />
         <activity
