@@ -31,7 +31,7 @@ public class adminCreateVenue extends AppCompatActivity {
         venueLocation = (EditText) findViewById(R.id.adminVenueLocation);
         name = venueName.getText().toString();
         location = venueLocation.getText().toString();
-        newVenuedbRef = FirebaseDatabase.getInstance().getReference().child("venues");
+        newVenuedbRef = User.fetchFirebase().getInstance().getReference().child("venues");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
