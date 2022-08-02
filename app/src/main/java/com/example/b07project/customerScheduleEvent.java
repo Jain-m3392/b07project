@@ -9,6 +9,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
 //for creating an event as a customer
@@ -17,6 +20,7 @@ public class customerScheduleEvent extends AppCompatActivity {
     String name, capacity, startTime, endTime;
     Button submit;
     TextView textView;
+    DatabaseReference newEventdbRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +35,7 @@ public class customerScheduleEvent extends AppCompatActivity {
         capacity = capacityInput.getText().toString();
         startTime = startTimeInput.getText().toString();
         endTime = endTimeInput.getText().toString();
+        newEventdbRef = FirebaseDatabase.getInstance().getReference().child("venues");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -44,7 +49,8 @@ public class customerScheduleEvent extends AppCompatActivity {
                         eventID = e.eventID;
                 }
                 Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, capacity, customerArray, name);
-                venue.addEvent(event);
+                newEventdbRef.push().setValue(event);
+                venue.events.add(eventID);
                 textView.setText("You successfully created an event!");
             }
         });
