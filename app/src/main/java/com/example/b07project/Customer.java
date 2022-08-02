@@ -19,7 +19,7 @@ public class Customer extends User implements Parcelable {
     //deleted same signature contructor here
 
     //New customer should be declared after signup/signin
-    public Customer(String username, String fullName, String email, String password){
+    public Customer(String username, String fullName, String email, String password) {
         this.username = username;
         this.fullName = fullName;
         this.email = email;
@@ -27,6 +27,7 @@ public class Customer extends User implements Parcelable {
         //TODO: Load customer-specific event data
         this.joinedEvents = new ArrayList<String>();
         this.scheduledEvents = new ArrayList<String>();
+    }
 
     //Create a customer from Firebase
     public Customer(String username, String password, String fullName, ArrayList<String> joinedEvents, ArrayList<String> scheduledEvents){
@@ -116,32 +117,32 @@ public class Customer extends User implements Parcelable {
 
 }
 
-    protected Customer(Parcel in) {
-        fullName = in.readString();
-        joinedEvents = in.createStringArrayList();
-        scheduledEvents = in.createStringArrayList();
-    }
+//    protected Customer(Parcel in) {
+//        fullName = in.readString();
+//        joinedEvents = in.createStringArrayList();
+//        scheduledEvents = in.createStringArrayList();
+//    }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(fullName);
-        dest.writeStringList(joinedEvents);
-        dest.writeStringList(scheduledEvents);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<Customer> CREATOR = new Creator<Customer>() {
-        @Override
-        public Customer createFromParcel(Parcel in) {
-            return new Customer(in);
-        }
-
-        @Override
-        public Customer[] newArray(int size) {
-            return new Customer[size];
-        }
-    };
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeString(fullName);
+//        dest.writeStringList(joinedEvents);
+//        dest.writeStringList(scheduledEvents);
+//    }
+//
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    public static final Creator<Customer> CREATOR = new Creator<Customer>() {
+//        @Override
+//        public Customer createFromParcel(Parcel in) {
+//            return new Customer(in);
+//        }
+//
+//        @Override
+//        public Customer[] newArray(int size) {
+//            return new Customer[size];
+//        }
+//    };
