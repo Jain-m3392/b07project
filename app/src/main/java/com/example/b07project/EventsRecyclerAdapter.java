@@ -15,8 +15,9 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
     private ArrayList<Event> eventList;
     private ArrayList<Venue> venueList;
 
-    public EventsRecyclerAdapter(ArrayList<Event> eventList) {
+    public EventsRecyclerAdapter(ArrayList<Event> eventList, ArrayList<Venue> venueList) {
         this.eventList = eventList;
+        this.venueList = venueList;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
