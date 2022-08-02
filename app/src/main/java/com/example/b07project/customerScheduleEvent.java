@@ -48,7 +48,7 @@ public class customerScheduleEvent extends AppCompatActivity {
                     if(eventID<e.eventID)
                         eventID = e.eventID;
                 }
-                Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, capacity, customerArray, name);
+                Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name);
                 newEventdbRef.push().setValue(event);
                 venue.events.add(eventID);
                 textView.setText("You successfully created an event!");

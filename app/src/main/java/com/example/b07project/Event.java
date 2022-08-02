@@ -13,7 +13,7 @@ public class Event {
     public ArrayList<String> customers;
     public String startTime;
     public int venueID;
-    public String capacity;
+    public int capacity;
     public String name;
 
 
@@ -21,7 +21,7 @@ public class Event {
 
     //TODO: Check what type we want each field to be and initialize an Event
 
-    public Event(String creator, String startTime, String endTime, int eventID, int venueID, String capacity, ArrayList<String> customers, String name){
+    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name){
         this.creator = creator;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -77,11 +77,11 @@ public class Event {
         this.endTime = endTime;
     }
 
-    public String getCapacity() {
+    public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(String capacity) {
+    public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
 
