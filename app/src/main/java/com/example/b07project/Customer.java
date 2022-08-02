@@ -9,9 +9,11 @@ public class Customer extends User{
     ArrayList<Event> scheduledEvents;
 
     //New customer should be declared after signup/signin
-    public Customer(String username, String fullName){
+    public Customer(String username, String fullName, String email, String password){
         this.username = username;
         this.fullName = fullName;
+        this.email = email;
+        this.password = password;
         //TODO: Load customer-specific event data
     }
 

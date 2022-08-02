@@ -14,7 +14,7 @@
     <string name="username_edit_text">Username</string>
     <string name="password_edit_text">Password</string>
     <string name="username_signup">Username</string>
-    <string name="email_signup">Email</string>
     <string name="password_signup">Password</string>
-    <string name="password_confirmation_signup">Confirm Password</string>
+    <string name="email_signup">Email</string>
+    <string name="full_name">Full Name</string>
 </resources>

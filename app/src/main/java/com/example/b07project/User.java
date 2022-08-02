@@ -6,6 +6,8 @@ import java.util.LinkedHashSet;
 //Base class that can be inherited by both Admin and Customer
 public abstract class User {
     String username;
+    String email;
+    String password;
 
 
     //TODO
