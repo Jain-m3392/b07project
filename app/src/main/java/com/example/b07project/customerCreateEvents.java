@@ -20,6 +20,8 @@ public class customerCreateEvents extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_create_events);
         Intent intent = getIntent();
+        //from the previous page (login page)
+        Customer customer = intent.getParcelableExtra("Customer");
         String venueName = intent.getExtras().getString("Venue");
         Venue venue = null;
         for(Venue v: User.fetchAllVenues()){
@@ -31,10 +33,13 @@ public class customerCreateEvents extends AppCompatActivity {
         EventAdapter EventAdapter = new EventAdapter(this, R.layout.eventlist, eventList);
         listview.setAdapter(EventAdapter);
         button = findViewById(R.id.scheduleEvent);
+        Venue finalVenue = venue;
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(customerCreateEvents.this, customerScheduleEvent.class);
+                intent.putExtra("Venue", finalVenue);
+                intent.putExtra("Customer", customer);
                 startActivity(intent);
             }
         });

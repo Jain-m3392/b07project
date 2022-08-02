@@ -21,6 +21,10 @@
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bottom_navbar_menu.xml" value="0.1796875" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/menu_main.xml" value="0.176" />
         <entry key="..\:/uni/S2022/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_admin_create_venue.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_customer_create_events.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/activity_customer_schedule_event.xml" value="0.3098958333333333" />
       </map>
     </option>
   </component>

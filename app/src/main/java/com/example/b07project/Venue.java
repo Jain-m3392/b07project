@@ -7,14 +7,14 @@ import java.util.ArrayList;
 
 public class Venue implements Parcelable {
 
-    public ArrayList<Event> events;
+    public ArrayList<Integer> events;
     public int venueID;
     public String venueLocation;
     public String venueName;
 
     public Venue(){} //Empty constructor for Firebase to work
 
-    public Venue(int venueID, String venueName, String venueLocation, ArrayList<Event> events){
+    public Venue(int venueID, String venueName, String venueLocation, ArrayList<Integer> events){
         this.events = events;
         this.venueID = venueID;
         this.venueLocation = venueLocation;
@@ -90,10 +90,6 @@ public class Venue implements Parcelable {
         parcel.writeInt(venueID);
         parcel.writeString(venueLocation);
         parcel.writeString(venueName);
-    }
-
-    public void addEvent(Event event){
-        events.add(event);
     }
 
 }
