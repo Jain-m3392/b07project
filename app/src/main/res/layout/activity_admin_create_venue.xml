@@ -52,10 +52,11 @@ tools:context=".adminCreateVenue">
     android:backgroundTint="@color/design_default_color_secondary"
     android:layout_margin="15dp"/>
 
-
-
-
-
+    <include
+        layout="@layout/bottom_admin_navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
 
 
 </RelativeLayout>

@@ -14,6 +14,7 @@
     <string name="menuitem_events">Events</string>
     <string name="menuitem_venues">Venues</string>
     <string name="menuitem_account">Account</string>
+    <string name="menuitem_newvenue">Create Venue</string>
     <string name="username_edit_text">Username</string>
     <string name="password_edit_text">Password</string>
     <string name="username_signup">Username</string>
