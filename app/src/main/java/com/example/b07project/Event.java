@@ -14,6 +14,7 @@ public class Event {
     public String startTime;
     public String venueID;
     public int capacity;
+    public String name;
 
 
     public Event(){} //No argument constructor for Firebase to work
