@@ -1,21 +1,25 @@
 package com.example.b07project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class AccountActivity extends AppCompatActivity {
+public class AccountActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     Customer customer;
 
@@ -52,6 +56,10 @@ public class AccountActivity extends AppCompatActivity {
         Intent intent = getIntent();
         this.customer = intent.getParcelableExtra("Customer");
 
+        NavigationBarView nav = findViewById(R.id.navigation_bar);
+        nav.setSelectedItemId(R.id.menuitem_account);
+        nav.setOnItemSelectedListener(this);
+
         //TEMPORARY
 //        User.initialize();
         //ArrayList<User> customers = User.fetchAllCustomers();
@@ -72,4 +80,37 @@ public class AccountActivity extends AppCompatActivity {
         logoutButton.setOnClickListener(logoutListener);
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//        Intent intent;
+//        switch (item.getItemId()){
+//            case R.id.menuitem_account:
+//                return true;
+//            case R.id.menuitem_home:
+//                intent = new Intent(this, TestActivity.class);
+//                intent.putExtra("Customer", customer);
+//                startActivity(intent);
+//                return true;
+//            case R.id.menuitem_venues:
+//                intent = new Intent(this, CustomerVenuesView.class);
+//                startActivity(intent);
+//                return true;
+//            case R.id.menuitem_events:
+//                //TODO
+//                return true;
+//        }
+//        return false;
+
+        //return NavBar.navigate(item, this, customer);
+
+
+//        Intent intent = new Intent(this, CustomerEventsViewActivity.class);
+//        intent.putExtra("Customer", customer);
+//        startActivity(intent);
+//        Log.d("test", "Navbar clicked!");
+
+        NavBar bar = new NavBar();
+        return bar.navigate(item, this, customer);
+       // return true;
+    }
 }

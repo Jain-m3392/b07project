@@ -1,18 +1,23 @@
 package com.example.b07project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
-public class CustomerEventsViewActivity extends AppCompatActivity {
+public class CustomerEventsViewActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
+
+    Customer customer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +30,11 @@ public class CustomerEventsViewActivity extends AppCompatActivity {
         Customer customer = intent.getParcelableExtra("Customer");
         ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
         ArrayList<Event> scheduledEvents = customer.fetchScheduledEvents();
+
+        //set up navbar
+        NavigationBarView nav = findViewById(R.id.navigation_bar);
+        nav.setSelectedItemId(R.id.menuitem_home);
+        nav.setOnItemSelectedListener(this);
 
         LinearLayout llEventsView = findViewById(R.id.llEventsView);
 
@@ -75,4 +85,10 @@ public class CustomerEventsViewActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        NavBar bar = new NavBar();
+        return bar.navigate(item, this, customer);
+    }
 }

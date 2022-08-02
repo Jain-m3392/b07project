@@ -1,30 +1,44 @@
 package com.example.b07project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 //for creating an event as a customer
-public class customerScheduleEvent extends AppCompatActivity {
+public class customerScheduleEvent extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
     EditText nameInput, capacityInput, startTimeInput, endTimeInput;
     String name, capacity, startTime, endTime;
     Button submit;
     TextView textView;
     DatabaseReference newEventdbRef;
+    Customer customer;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_schedule_event);
+
+        Intent intent = getIntent();
+        customer = intent.getParcelableExtra("Customer");
+
+        //set up navbar
+        NavigationBarView nav = findViewById(R.id.navigation_bar);
+        nav.setSelectedItemId(R.id.menuitem_venues);
+        nav.setOnItemSelectedListener(this);
+
         textView = findViewById(R.id.scheduleEventText);
         submit = (Button) findViewById(R.id.submitButton);
         nameInput = (EditText) findViewById(R.id.eventNameUpdate);
@@ -39,8 +53,6 @@ public class customerScheduleEvent extends AppCompatActivity {
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                Customer customer = intent.getParcelableExtra("Customer");
                 Venue venue = intent.getParcelableExtra("Venue");
                 ArrayList<String> customerArray = new ArrayList<String>();
                 int eventID = -1;
@@ -58,5 +70,9 @@ public class customerScheduleEvent extends AppCompatActivity {
     }
 
 
-
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        NavBar bar = new NavBar();
+        return bar.navigate(item, this, customer);
+    }
 }

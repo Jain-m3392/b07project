@@ -34,7 +34,7 @@ public class EventAdapter extends ArrayAdapter<Event> {
         EventName.setText(getItem(position).getName());
         EventStartTime.setText(getItem(position).getStartTime());
         EventEndTime.setText(getItem(position).getEndTime());
-        EventCapacity.setText(getItem(position).getCapacity());
+        EventCapacity.setText(getItem(position).getStringCapacity());
 
         return convertView;
     }

@@ -81,6 +81,8 @@ public class Event {
         return capacity;
     }
 
+    public String getStringCapacity() { return String.valueOf(capacity); }
+
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
