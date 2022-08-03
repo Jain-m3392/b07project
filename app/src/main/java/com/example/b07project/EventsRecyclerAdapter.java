@@ -51,7 +51,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
     @Override
     public void onBindViewHolder(@NonNull EventsRecyclerAdapter.ViewHolder holder, int position) {
         Event event = eventList.get(position);
-        Venue venue = venueList.get(Integer.parseInt(event.venueID));
+        Venue venue = venueList.get(event.venueID);
         //initialize basic values
         holder.eventName.setText(event.name);
         holder.venueName.setText(venue.venueName);
