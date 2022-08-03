@@ -1,10 +1,14 @@
 package com.example.b07project;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Customer extends User{
+public class Customer extends User implements Parcelable {
     public String fullName; //Nice display name shown to other users (e.g. John Doe). Maybe optional?
+    public String email;
     public ArrayList<String> joinedEvents; //for communicating with Firebase
     public ArrayList<String> scheduledEvents; //for communicating with Firebase
 
@@ -12,10 +16,15 @@ public class Customer extends User{
     public Customer(){}
 
     //New customer customer with no joined or scheduled events
-    public Customer(String username, String password, String fullName){
+    //deleted same signature contructor here
+
+    //New customer should be declared after signup/signin
+    public Customer(String username, String fullName, String email, String password) {
         this.username = username;
         this.fullName = fullName;
+        this.email = email;
         this.password = password;
+        //TODO: Load customer-specific event data
         this.joinedEvents = new ArrayList<String>();
         this.scheduledEvents = new ArrayList<String>();
     }
@@ -28,6 +37,42 @@ public class Customer extends User{
         this.joinedEvents = joinedEvents;
         this.scheduledEvents = scheduledEvents;
     }
+
+    //Allow Parcelable
+    public Customer(Parcel in){
+        this.username = in.readString();
+        this.password = in.readString();
+        this.fullName = in.readString();
+        this.joinedEvents = in.readArrayList(null);
+        this.scheduledEvents = in.readArrayList(null);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags){
+        dest.writeString(username);
+        dest.writeString(password);
+        dest.writeString(fullName);
+        dest.writeList(joinedEvents);
+        dest.writeList(scheduledEvents);
+    }
+
+    public static Creator<Customer> CREATOR = new Creator<Customer>() {
+        @Override
+        public Customer createFromParcel(Parcel parcel) {
+            return new Customer(parcel);
+        }
+
+        @Override
+        public Customer[] newArray(int i) {
+            return new Customer[i];
+        }
+    };
+
 
     //get all events that a customer is signed up for
     public ArrayList<Event> fetchJoinedEvents(){
@@ -71,3 +116,33 @@ public class Customer extends User{
     }
 
 }
+
+//    protected Customer(Parcel in) {
+//        fullName = in.readString();
+//        joinedEvents = in.createStringArrayList();
+//        scheduledEvents = in.createStringArrayList();
+//    }
+
+//    @Override
+//    public void writeToParcel(Parcel dest, int flags) {
+//        dest.writeString(fullName);
+//        dest.writeStringList(joinedEvents);
+//        dest.writeStringList(scheduledEvents);
+//    }
+//
+//    @Override
+//    public int describeContents() {
+//        return 0;
+//    }
+//
+//    public static final Creator<Customer> CREATOR = new Creator<Customer>() {
+//        @Override
+//        public Customer createFromParcel(Parcel in) {
+//            return new Customer(in);
+//        }
+//
+//        @Override
+//        public Customer[] newArray(int size) {
+//            return new Customer[size];
+//        }
+//    };
