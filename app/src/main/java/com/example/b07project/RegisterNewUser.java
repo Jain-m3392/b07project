@@ -59,7 +59,7 @@ public class RegisterNewUser extends AppCompatActivity implements View.OnClickLi
     }
     /** Called when the user taps the Back button */
     public void backToHome(View view) {
-        Intent intent = new Intent(this, FirstFragment.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
@@ -143,10 +143,8 @@ public class RegisterNewUser extends AppCompatActivity implements View.OnClickLi
 
                                             if(task.isSuccessful()){
                                                 Toast.makeText(RegisterNewUser.this, "successfully registered user",Toast.LENGTH_LONG).show();
-                                                FirebaseDatabase.getInstance().getReference("customers").child("access existing?").setValue("reached final dest");
                                             }
                                             else{
-                                                FirebaseDatabase.getInstance().getReference("customers").child("access existing?").setValue("reached failure loop");
                                                 Toast.makeText(RegisterNewUser.this, "failed to register user try again", Toast.LENGTH_LONG).show();
                                             }
                                         }
