@@ -57,7 +57,7 @@ public class CustomerEventsViewActivity extends AppCompatActivity {
         joined.setText(R.string.joined_events);
         joined.setLayoutParams(params);
         llEventsView.addView(joined);
-        for (Event e: scheduledEvents){
+        for (Event e: joinedEvents){
             TextView id = new TextView(this);
             id.setText(e.eventID);
             id.setLayoutParams(params);
