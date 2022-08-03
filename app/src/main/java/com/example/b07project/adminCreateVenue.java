@@ -1,20 +1,23 @@
 package com.example.b07project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 //for creating a venue as an admin
-public class adminCreateVenue extends AppCompatActivity {
+public class adminCreateVenue extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
     TextView textView;
     EditText venueName, venueLocation;
     String name, location;
@@ -31,6 +34,12 @@ public class adminCreateVenue extends AppCompatActivity {
         name = venueName.getText().toString();
         location = venueLocation.getText().toString();
         newVenuedbRef = User.fetchFirebase().getInstance().getReference().child("venues");
+
+        //Initiate navbar
+        NavigationBarView nav = findViewById(R.id.navigation_bar);
+        nav.setSelectedItemId(R.id.menuitem_new_venue);
+        nav.setOnItemSelectedListener(this);
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -50,4 +59,9 @@ public class adminCreateVenue extends AppCompatActivity {
 
     }
 
+    //TODO
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        return false;
+    }
 }
