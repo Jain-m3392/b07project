@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".customerScheduleEvent">
 
+    <include
+        layout="@layout/bottom_navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="10dp" />
+
     <TextView
         android:id="@+id/scheduleEventText"
         android:layout_width="match_parent"

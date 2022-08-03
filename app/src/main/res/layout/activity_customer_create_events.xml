@@ -6,23 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".customerCreateEvents">
 
+    <include
+        android:id="@+id/nav"
+        layout="@layout/bottom_navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:elevation="10dp" />
+
     <ListView
         android:id="@+id/eventList"
         android:layout_width="match_parent"
-        android:layout_height="700dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="100dp" />
+        android:layout_height="match_parent"
+        android:layout_above="@id/scheduleEvent"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
 
     <Button
         android:id="@+id/scheduleEvent"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_below="@id/eventList"
+        android:layout_above="@id/nav"
         android:layout_centerInParent="true"
+        android:layout_centerVertical="false"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp"
-        android:text="Schedule a new event"
+        android:layout_marginBottom="20dp"
+        android:text="@string/schedule_event_button"
         android:textAlignment="center" />
 
 

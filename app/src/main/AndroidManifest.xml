@@ -14,6 +14,15 @@
         android:theme="@style/Theme.B07project"
         tools:targetApi="31">
         <activity
+            android:name=".EventListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EventDetailHostActivity"
+            android:exported="false"
+            android:label="@string/title_activity_event_detail_host"
+            android:resizeableActivity="true"
+            tools:targetApi="24" />
+        <activity
             android:name=".AccountActivity"
             android:exported="false" />
         <activity
@@ -24,6 +33,9 @@
             android:exported="false" />
         <activity
             android:name=".customerCreateEvents"
+            android:exported="false" />
+        <activity
+            android:name=".CustomerEventsViewActivity"
             android:exported="false" />
         <activity
             android:name=".CustomerVenuesView"

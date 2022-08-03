@@ -7,18 +7,29 @@
     <string name="login">Login</string>
     <string name="previous">Previous</string>
 
-
+    <string name="schedule_event_button">Schedule a new event</string>
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="title_activity_event_detail_host">EventDetailHostActivity</string>
+    <string name="title_event_list">Events</string>
+    <string name="title_event_detail">Event Detail</string>
+
     <string name="menuitem_home">Home</string>
     <string name="menuitem_events">Events</string>
     <string name="menuitem_venues">Venues</string>
     <string name="menuitem_account">Account</string>
-    <string name="username_edit_text">Username</string>
+    <string name="email_edit_text">Email</string>
+
+    <string name="menuitem_newvenue">Create Venue</string>
+    
     <string name="password_edit_text">Password</string>
     <string name="username_signup">Username</string>
-    <string name="email_signup">Email</string>
     <string name="password_signup">Password</string>
+
+    <string name="email_signup">Email</string>
+    <string name="full_name">Full Name</string>
+
     <string name="password_confirmation_signup">Confirm Password</string>
     <string name="scheduled_events">Scheduled Events</string>
     <string name="joined_events">Joined Events</string>
@@ -26,4 +37,5 @@
     <string name="change_full_name_text">Edit Full Name:</string>
     <string name="update">Update</string>
     <string name="logout">Logout</string>
+
 </resources>
