@@ -1,18 +1,18 @@
 package com.example.b07project;
 
+import androidx.annotation.NonNull;
+
 import java.util.ArrayList;
-import java.util.LinkedHashSet;
-import java.util.List;
 
 public class Event {
 
     public String creator;
     public String endTime;
-    public String eventID;
+    public int eventID;
     //private ArrayList<User> userCustomers;
     public ArrayList<String> customers;
     public String startTime;
-    public String venueID;
+    public int venueID;
     public int capacity;
     public String name;
 
@@ -21,7 +21,7 @@ public class Event {
 
     //TODO: Check what type we want each field to be and initialize an Event
 
-    public Event(String creator, String startTime, String endTime, String eventID, String venueID, int capacity, ArrayList<String> customers){
+    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name){
         this.creator = creator;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -29,23 +29,22 @@ public class Event {
         this.venueID = venueID;
         this.capacity = capacity;
         this.customers = customers;
-
-
+        this.name = name;
     }
 
-    public void addCustomer(User player){
+    public void addCustomer(@NonNull User player){
 
         customers.add(player.username);
         //TODO: sync changes to database
     }
 
+
     //fetch all customers signed up for this event
     public ArrayList<User> fetchCustomers(){
         ArrayList<User> res = new ArrayList<User>();
         for (User u : User.fetchAllCustomers()){
-            if (this.customers.contains(u.username)){
+            if (this.customers.contains(u.username))
                 res.add(u);
-            }
         }
         return res;
     }
@@ -62,4 +61,37 @@ public class Event {
         return e.eventID == this.eventID;
     }
 
+    public String getStartTime() {
+        return startTime;
+    }
+
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
+    }
+
+    public String getEndTime() {
+        return endTime;
+    }
+
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public String getStringCapacity() { return String.valueOf(capacity); }
+
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }

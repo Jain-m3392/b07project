@@ -5,10 +5,10 @@ import java.util.ArrayList;
 
 public class Admin extends User{
 
-    public ArrayList<String> venues;
+    public ArrayList<Integer> venues;
 
     public Admin(){} //Empty constructor for Firebase loading
-    public Admin(String username, ArrayList<String> venues){
+    public Admin(String username, ArrayList<Integer> venues){
         this.username = username;
         this.venues = venues;
     }
