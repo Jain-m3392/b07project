@@ -14,6 +14,7 @@ import android.widget.EditText;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -35,7 +36,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationBarV
             FirebaseDatabase fire = User.fetchFirebase();
 
             DatabaseReference ref = fire.getReference("customers");
-            ref.child(customer.username).setValue(customer);
+            ref.child(FirebaseAuth.getInstance().getUid()).setValue(customer);
         }
     };
 
