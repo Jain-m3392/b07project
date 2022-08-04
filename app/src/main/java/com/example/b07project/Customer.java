@@ -31,6 +31,7 @@ public class Customer extends User implements Parcelable {
         Log.d("User", "ME!");
     }
 
+    //needs to reflect email(?)
     //Create a customer from Firebase
     public Customer(String username, String password, String fullName, ArrayList<String> joinedEvents, ArrayList<String> scheduledEvents){
         this.username = username;
@@ -45,6 +46,7 @@ public class Customer extends User implements Parcelable {
     public Customer(Parcel in){
         this.username = in.readString();
         this.password = in.readString();
+        this.email = in.readString();
         this.fullName = in.readString();
         this.joinedEvents = in.readArrayList(null);
         this.scheduledEvents = in.readArrayList(null);
@@ -59,6 +61,7 @@ public class Customer extends User implements Parcelable {
     public void writeToParcel(Parcel dest, int flags){
         dest.writeString(username);
         dest.writeString(password);
+        dest.writeString(email);
         dest.writeString(fullName);
         dest.writeList(joinedEvents);
         dest.writeList(scheduledEvents);

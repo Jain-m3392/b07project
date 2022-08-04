@@ -22,7 +22,7 @@
     <string name="email_edit_text">Email</string>
 
     <string name="menuitem_newvenue">Create Venue</string>
-    
+
     <string name="password_edit_text">Password</string>
     <string name="username_signup">Username</string>
     <string name="password_signup">Password</string>
@@ -34,6 +34,8 @@
     <string name="scheduled_events">Scheduled Events</string>
     <string name="joined_events">Joined Events</string>
     <string name="display_time">%1$s - %2$s</string>
+    <string name="no_events_to_show">No events to display!</string>
+    <string name="event_creator">Created by: %1$s</string>
 
     <string name="change_full_name_text">Edit Full Name:</string>
     <string name="update">Update</string>
