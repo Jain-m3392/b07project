@@ -2,13 +2,14 @@ package com.example.b07project;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Customer extends User implements Parcelable {
     public String fullName; //Nice display name shown to other users (e.g. John Doe). Maybe optional?
-    public String email;
+//    public String email;
     public ArrayList<String> joinedEvents; //for communicating with Firebase
     public ArrayList<String> scheduledEvents; //for communicating with Firebase
 
@@ -27,6 +28,7 @@ public class Customer extends User implements Parcelable {
         //TODO: Load customer-specific event data
         this.joinedEvents = new ArrayList<String>();
         this.scheduledEvents = new ArrayList<String>();
+        Log.d("User", "ME!");
     }
 
     //Create a customer from Firebase
@@ -36,6 +38,7 @@ public class Customer extends User implements Parcelable {
         this.password = password;
         this.joinedEvents = joinedEvents;
         this.scheduledEvents = scheduledEvents;
+
     }
 
     //Allow Parcelable

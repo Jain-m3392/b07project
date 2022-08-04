@@ -2,6 +2,7 @@ package com.example.b07project;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +21,14 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.lang.ref.Reference;
+import java.util.concurrent.CountDownLatch;
 
 public class FirstFragment extends Fragment implements View.OnClickListener{
 
@@ -115,12 +124,9 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
 
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                //&& FirebaseAuth.getInstance().getCurrentUser().getClass() instanceof Customer
                 if(task.isSuccessful()){
-                    //go to customereventsviewactivity
-
-                    Intent intent = new Intent(getActivity(), CustomerVenuesView.class);
-                    startActivity(intent);
+                    MainActivity activity = (MainActivity)getActivity();
+                    activity.findUserandLogIn(FirebaseAuth.getInstance().getCurrentUser().getUid());
                 }
                 else{
                     Toast.makeText(getActivity(), "Login failed, username or password incorrect", Toast.LENGTH_LONG).show();
@@ -128,7 +134,6 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
             }
         });
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();
