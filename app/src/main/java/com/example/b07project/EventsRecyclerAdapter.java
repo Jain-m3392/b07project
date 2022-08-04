@@ -44,11 +44,13 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
             this.startTime = view.findViewById(R.id.startTime);
             this.endTime = view.findViewById(R.id.endTime);
             this.join = view.findViewById(R.id.joinEvent);
-            newEventRef = customer.fetchFirebase().getInstance().getReference().child("venues");
+            newEventRef = customer.fetchFirebase().getInstance().getReference().child("events");
 
             join.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    join.setEnabled(false);
+                    join.setText("Joined!");
                 }
             });
         }
