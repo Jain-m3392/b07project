@@ -27,7 +27,7 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
 //      TODO - set login class to send data to this activity
         //get data from previous activity (login?)
         Intent intent = getIntent();
-        Customer customer = intent.getParcelableExtra("Customer");
+        customer = intent.getParcelableExtra("Customer");
         ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
         ArrayList<Event> scheduledEvents = customer.fetchScheduledEvents();
 
