@@ -10,8 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
@@ -21,13 +19,15 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //get data from previous activity (login?)
+        Intent intent = getIntent();
+        Customer customer = intent.getParcelableExtra("Customer");
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_events_view);
 
 //      TODO - set login class to send data to this activity
-        //get data from previous activity (login?)
-        Intent intent = getIntent();
-        Customer customer = intent.getParcelableExtra("Customer");
+
         ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
         ArrayList<Event> scheduledEvents = customer.fetchScheduledEvents();
 
@@ -53,7 +53,7 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
             id.setLayoutParams(params);
             llEventsView.addView(id);
             TextView time = new TextView(this);
-            time.setText(e.startTime + "-" + e.endTime);
+            time.setText(getString(R.string.display_time, e.startTime, e.endTime));
             time.setLayoutParams(params);
             llEventsView.addView(time);
             TextView creator = new TextView(this);
@@ -73,7 +73,7 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
             id.setLayoutParams(params);
             llEventsView.addView(id);
             TextView time = new TextView(this);
-            time.setText(e.startTime + "-" + e.endTime);
+            time.setText(getString(R.string.display_time, e.startTime, e.endTime));
             time.setLayoutParams(params);
             llEventsView.addView(time);
             TextView creator = new TextView(this);
