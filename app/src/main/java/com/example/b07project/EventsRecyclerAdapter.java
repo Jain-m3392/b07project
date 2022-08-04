@@ -9,18 +9,23 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.database.DatabaseReference;
+
 import java.util.ArrayList;
 
 public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAdapter.ViewHolder> {
     private ArrayList<Event> eventList;
     private ArrayList<Venue> venueList;
+    private Customer customer;
 
-    public EventsRecyclerAdapter(ArrayList<Event> eventList, ArrayList<Venue> venueList) {
+    public EventsRecyclerAdapter(ArrayList<Event> eventList, ArrayList<Venue> venueList, Customer customer) {
         this.eventList = eventList;
         this.venueList = venueList;
+        this.customer = customer;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        private Event event;
         private TextView eventName;
         private TextView venueName;
         private TextView venueAddress;
@@ -28,6 +33,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         private TextView startTime;
         private TextView endTime;
         private Button join;
+        private DatabaseReference newEventRef;
 
         public ViewHolder(final View view){
             super(view);
@@ -38,7 +44,15 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
             this.startTime = view.findViewById(R.id.startTime);
             this.endTime = view.findViewById(R.id.endTime);
             this.join = view.findViewById(R.id.joinEvent);
+            newEventRef = customer.fetchFirebase().getInstance().getReference().child("venues");
+
+            join.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                }
+            });
         }
+
     }
 
     @NonNull
@@ -59,6 +73,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         holder.capacity.setText(String.valueOf(event.capacity));
         holder.startTime.setText(event.startTime);
         holder.endTime.setText(event.endTime);
+        holder.event = event;
 
         //logic for allowing to join events
         holder.join.setText(event.customers.size() < event.capacity ? "Join" : "Event full");

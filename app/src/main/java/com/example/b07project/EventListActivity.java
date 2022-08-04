@@ -30,7 +30,7 @@ public class EventListActivity extends AppCompatActivity {
         allEvents = customer.fetchAllEvents();
         allVenues = customer.fetchAllVenues();
 
-        EventsRecyclerAdapter adapter = new EventsRecyclerAdapter(allEvents, allVenues);
+        EventsRecyclerAdapter adapter = new EventsRecyclerAdapter(allEvents, allVenues, customer);
         eventsRecyclerView.setAdapter(adapter);
         eventsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
