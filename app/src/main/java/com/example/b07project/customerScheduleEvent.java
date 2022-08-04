@@ -46,15 +46,10 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         capacityInput = (EditText) findViewById(R.id.eventCapacityUpdate);
         startTimeInput = (EditText) findViewById(R.id.eventStartTimeUpdate);
         endTimeInput = (EditText) findViewById(R.id.eventEndTimeUpdate);
-        name = nameInput.getText().toString();
-        capacity = capacityInput.getText().toString();
-        startTime = startTimeInput.getText().toString();
-        endTime = endTimeInput.getText().toString();
-        newEventdbRef = FirebaseDatabase.getInstance().getReference().child("venues");
+        newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("Schedlue", "Button Pressed");
                 Venue venue = intent.getParcelableExtra("Venue");
                 ArrayList<String> customerArray = new ArrayList<String>();
                 int eventID = -1;
@@ -62,9 +57,13 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                     if(eventID<e.eventID)
                         eventID = e.eventID;
                 }
+                name = nameInput.getText().toString();
+                capacity = capacityInput.getText().toString();
+                startTime = startTimeInput.getText().toString();
+                endTime = endTimeInput.getText().toString();
                 Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name);
                 newEventdbRef.push().setValue(event);
-                venue.events.add(eventID);
+                venue.events.add(eventID + 1);
                 textView.setText("You successfully created an event!");
             }
         });
