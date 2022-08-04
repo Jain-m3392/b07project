@@ -34,14 +34,17 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
         Event test2 = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball");
 
 //      TODO - set login class to send data to this activity
-//        ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
+
 
         //for testing purposes
         ArrayList<Event> joinedEvents = new ArrayList<>();
         joinedEvents.add(test);
         joinedEvents.add(test2);
 
+//        ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
         ArrayList<Event> scheduledEvents = customer.fetchScheduledEvents();
+
+        //testing
         Log.i("general", "array size: " + joinedEvents.size());
 
         //set up navbar
@@ -62,6 +65,7 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
         scheduled.setTypeface(null, Typeface.BOLD);
         scheduled.setTextSize(20);
         llEventsView.addView(scheduled);
+        //testing
         Log.i("gen", "size is " + scheduledEvents.size());
 
         if (scheduledEvents.size() == 0){

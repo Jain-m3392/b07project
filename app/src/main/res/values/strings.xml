@@ -41,4 +41,7 @@
     <string name="update">Update</string>
     <string name="logout">Logout</string>
 
+    <string name="admin_venues">Your venues</string>
+    <string name="no_venues">No venues to display!</string>
+
 </resources>

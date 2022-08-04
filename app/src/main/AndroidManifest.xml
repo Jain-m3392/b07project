@@ -14,7 +14,7 @@
         android:theme="@style/Theme.B07project"
         tools:targetApi="31">
         <activity
-            android:name=".AdminEventsView"
+            android:name=".AdminVenuesView"
             android:exported="false" />
         <activity
             android:name=".EventListActivity"
