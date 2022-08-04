@@ -2,10 +2,13 @@ package com.example.b07project;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Event {
+public class Event implements Pushable {
 
     public String creator;
     public String endTime;
@@ -98,5 +101,13 @@ public class Event {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+
+    //
+    @Override
+    public void push() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("events");
+        ref.child(String.valueOf(this.eventID)).setValue(this);
     }
 }
