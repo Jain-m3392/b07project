@@ -3,6 +3,7 @@ package com.example.b07project;
 import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Event {
 
@@ -15,13 +16,15 @@ public class Event {
     public int venueID;
     public int capacity;
     public String name;
+    public String sportsType;
+    public Date date;
 
 
     public Event(){} //No argument constructor for Firebase to work
 
     //TODO: Check what type we want each field to be and initialize an Event
 
-    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name){
+    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name, String sportsType, Date date){
         this.creator = creator;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -30,6 +33,8 @@ public class Event {
         this.capacity = capacity;
         this.customers = customers;
         this.name = name;
+        this.sportsType = sportsType;
+        this.date = date;
     }
 
     public void addCustomer(@NonNull User player){
