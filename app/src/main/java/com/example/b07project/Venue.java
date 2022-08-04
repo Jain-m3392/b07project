@@ -3,9 +3,12 @@ package com.example.b07project;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
-public class Venue implements Parcelable {
+public class Venue implements Parcelable, Pushable {
 
     public ArrayList<Integer> events;
     public int venueID;
@@ -92,4 +95,10 @@ public class Venue implements Parcelable {
         parcel.writeString(venueName);
     }
 
+    @Override
+    public void push() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("venues");
+        ref.child(String.valueOf(this.venueID)).setValue(this);
+
+    }
 }
