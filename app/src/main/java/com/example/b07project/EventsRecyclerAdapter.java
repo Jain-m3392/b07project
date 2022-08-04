@@ -56,7 +56,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         holder.eventName.setText(event.name);
         holder.venueName.setText(venue.venueName);
         holder.venueAddress.setText(venue.venueLocation);
-        holder.capacity.setText(event.capacity);
+        holder.capacity.setText(String.valueOf(event.capacity));
         holder.startTime.setText(event.startTime);
         holder.startTime.setText(event.endTime);
 
