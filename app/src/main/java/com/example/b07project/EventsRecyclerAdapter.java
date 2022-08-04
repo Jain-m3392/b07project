@@ -33,7 +33,8 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         private TextView startTime;
         private TextView endTime;
         private Button join;
-        private DatabaseReference newEventRef;
+        private DatabaseReference newEventParticipantRef;
+        private DatabaseReference newJoinedEventRef;
 
         public ViewHolder(final View view){
             super(view);
@@ -44,7 +45,6 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
             this.startTime = view.findViewById(R.id.startTime);
             this.endTime = view.findViewById(R.id.endTime);
             this.join = view.findViewById(R.id.joinEvent);
-            newEventRef = customer.fetchFirebase().getInstance().getReference().child("events");
 
             join.setOnClickListener(new View.OnClickListener() {
                 @Override
