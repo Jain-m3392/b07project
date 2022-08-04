@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class AdminVenuesView extends AppCompatActivity {
+public class AdminEventsView extends AppCompatActivity {
 
     Admin admin;
 
@@ -21,7 +21,7 @@ public class AdminVenuesView extends AppCompatActivity {
         admin = intent.getParcelableExtra("Admin");
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_venues_view);
+        setContentView(R.layout.activity_admin_events_view);
 
         ArrayList<Venue> venues = admin.fetchCreatedVenues();
 
