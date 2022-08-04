@@ -58,7 +58,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         holder.venueAddress.setText(venue.venueLocation);
         holder.capacity.setText(String.valueOf(event.capacity));
         holder.startTime.setText(event.startTime);
-        holder.startTime.setText(event.endTime);
+        holder.endTime.setText(event.endTime);
 
         //logic for allowing to join events
         holder.join.setText(event.customers.size() < event.capacity ? "Join" : "Event full");
