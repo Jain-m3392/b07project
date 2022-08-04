@@ -26,7 +26,9 @@ public class NavBar {
                 context.startActivity(intent);
                 return true;
             case R.id.menuitem_events:
-                //TODO
+                intent = new Intent(context, EventListActivity.class);
+                intent.putExtra("Customer", customer);
+                context.startActivity(intent);
                 return true;
         }
         return false;

@@ -27,7 +27,6 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
         setContentView(R.layout.activity_customer_events_view);
 
 //      TODO - set login class to send data to this activity
-
         ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
         ArrayList<Event> scheduledEvents = customer.fetchScheduledEvents();
 

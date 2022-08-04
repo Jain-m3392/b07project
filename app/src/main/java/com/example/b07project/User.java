@@ -10,8 +10,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.concurrent.CountDownLatch;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 //Base class to communicate with database that can be inherited by both Admin and Customer
 public abstract class User {
@@ -259,6 +261,7 @@ public abstract class User {
             }
         });
     }
+
 
 
 }
