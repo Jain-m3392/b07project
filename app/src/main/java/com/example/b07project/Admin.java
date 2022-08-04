@@ -3,9 +3,12 @@ package com.example.b07project;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
 
-public class Admin extends User implements Parcelable {
+public class Admin extends User implements Parcelable, Pushable {
 
     public ArrayList<Integer> venues;
 
@@ -73,4 +76,9 @@ public class Admin extends User implements Parcelable {
         return a.username.equals(this.username);
     }
 
+    @Override
+    public void push() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("admins");
+        ref.child(String.valueOf(this.email.hashCode())).setValue(this);
+    }
 }

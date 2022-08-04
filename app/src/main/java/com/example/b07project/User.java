@@ -22,6 +22,8 @@ public abstract class User {
     public String email;
     public String password; //Hashed password
 
+    private static boolean initialized = false;
+
     private static ArrayList<Event> allEvents = new ArrayList<Event>();
     private static ArrayList<Venue> allVenues = new ArrayList<Venue>();
     private static ArrayList<User> allCustomers = new ArrayList<User>();
@@ -52,6 +54,10 @@ public abstract class User {
 
     //Initialize data connection
     public static void initialize(){
+        if (initialized){
+            return;
+        }
+        initialized = true;
 
         //Initialise Firebase connection
         fire = FirebaseDatabase.getInstance("https://b07project-696e9-default-rtdb.firebaseio.com/");

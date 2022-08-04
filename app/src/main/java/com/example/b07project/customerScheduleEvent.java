@@ -62,9 +62,11 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 startTime = startTimeInput.getText().toString();
                 endTime = endTimeInput.getText().toString();
                 Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name);
-                newEventdbRef.push().setValue(event);
+//                newEventdbRef.push().setValue(event);
+                event.push();
                 Log.d("Event", venue.events.toString());
                 venue.events.add(eventID + 1);
+                venue.push();
 
                 textView.setText("You successfully created an event!");
             }

@@ -4,10 +4,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class Customer extends User implements Parcelable {
+public class Customer extends User implements Parcelable, Pushable {
     public String fullName; //Nice display name shown to other users (e.g. John Doe). Maybe optional?
 //    public String email;
     public ArrayList<String> joinedEvents; //for communicating with Firebase
@@ -118,10 +121,18 @@ public class Customer extends User implements Parcelable {
             return false;
         }
         User c = (User)o;
-        return c.username == this.username;
+        return c.username.equals(this.username);
     }
 
+    @Override
+    public void push() {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("customers");
+        ref.child(username).setValue(this);
+    }
 }
+
+
+
 
 //    protected Customer(Parcel in) {
 //        fullName = in.readString();
