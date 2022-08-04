@@ -88,6 +88,10 @@ public abstract class User {
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey){
                 Customer customer = dataSnapshot.getValue(Customer.class);
                 if (!allCustomers.contains(customer)){
+                    if (customer.joinedEvents == null)
+                        customer.joinedEvents = new ArrayList<String>();
+                    if (customer.scheduledEvents == null)
+                        customer.scheduledEvents = new ArrayList<String>();
                     allCustomers.add(customer);
                 }
                 Log.d("test", "Found customer: " + customer.username);
@@ -96,6 +100,11 @@ public abstract class User {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
                 Customer customer = dataSnapshot.getValue(Customer.class);
+                if (customer.joinedEvents == null)
+                    customer.joinedEvents = new ArrayList<String>();
+                if (customer.scheduledEvents == null)
+                    customer.scheduledEvents = new ArrayList<String>();
+
                 for (User c : User.fetchAllCustomers()) {
                     if (c.username == customer.username) {
                         Customer cu = (Customer)c;
@@ -128,6 +137,9 @@ public abstract class User {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey){
                 Admin admin = dataSnapshot.getValue(Admin.class);
+                if (admin.venues == null)
+                    admin.venues  = new ArrayList<Integer>();
+
                 if (!allAdmins.contains(admin)){
                     allAdmins.add(admin);
                 }
@@ -137,6 +149,9 @@ public abstract class User {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
                 Admin admin = dataSnapshot.getValue(Admin.class);
+                if (admin.venues == null)
+                    admin.venues  = new ArrayList<Integer>();
+
                 for (User a : User.fetchAllAdmins()) {
                     if (a.username == admin.username) {
                         Admin ac = (Admin)a;
@@ -168,6 +183,9 @@ public abstract class User {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey){
                 Event event = dataSnapshot.getValue(Event.class);
+                if (event.customers == null)
+                    event.customers = new ArrayList<String>();
+
                 if (!allEvents.contains(event)){
                     allEvents.add(event);
                 }
@@ -177,6 +195,8 @@ public abstract class User {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
                 Event event = dataSnapshot.getValue(Event.class);
+                if (event.customers == null)
+                    event.customers = new ArrayList<String>();
                 for (Event e : User.fetchAllEvents()) {
                     if (e.eventID == event.eventID) {
                         e.startTime = event.startTime;
@@ -228,6 +248,8 @@ public abstract class User {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String prevChildKey){
                 Venue venue = dataSnapshot.getValue(Venue.class);
+                if (venue.events == null)
+                    venue.events = new ArrayList<Integer>();
                 if (!allVenues.contains(venue)){
                     allVenues.add(venue);
                 }
@@ -237,6 +259,8 @@ public abstract class User {
             @Override
             public void onChildChanged(DataSnapshot dataSnapshot, String prevChildKey) {
                 Venue venue = dataSnapshot.getValue(Venue.class);
+                if (venue.events == null)
+                    venue.events = new ArrayList<Integer>();
                 for (Venue v : User.fetchAllVenues()) {
                     if (v.venueID == venue.venueID) {
                         v.venueName = venue.venueName;

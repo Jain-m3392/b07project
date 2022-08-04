@@ -23,7 +23,7 @@ public class Venue implements Parcelable {
 
     protected Venue(Parcel in) {
 
-//        events = in.createEventArrayList();
+        events = in.readArrayList(null);
         venueID = in.readInt();
         venueLocation = in.readString();
         venueName = in.readString();
@@ -50,7 +50,7 @@ public class Venue implements Parcelable {
         }
         return res;
     }
-
+    
     @Override
     public boolean equals(Object o){
         if (o == null){
@@ -86,7 +86,7 @@ public class Venue implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-//        parcel.writeStringList(events);
+        parcel.writeList(events);
         parcel.writeInt(venueID);
         parcel.writeString(venueLocation);
         parcel.writeString(venueName);
