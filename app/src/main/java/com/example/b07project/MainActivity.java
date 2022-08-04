@@ -3,6 +3,8 @@ package com.example.b07project;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,10 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.example.b07project.databinding.ActivityMainBinding;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,6 +45,29 @@ public class MainActivity extends AppCompatActivity {
 
 
         User.initialize();
+
+//        ArrayList<String[]> users = new ArrayList<String[]>();
+//        users.add(new String[]{"user@gmail.com", "user123", "testUser"});
+//        users.add(new String[]{"peach@gmail.com", "coconut", "apple"});
+//        users.add(new String[]{"test@gmail.com", "test123", "test"});
+//        users.add(new String[]{"s@gmail.com", "signup", "s"});
+//        for (String[] U: users){
+//            FirebaseAuth.getInstance().signInWithEmailAndPassword(U[0], U[1]).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//                @Override
+//                public void onComplete(@NonNull Task<AuthResult> task) {
+//                    if (task.isSuccessful()){
+//                        Log.d("User", "Fixing: " + U[0].toString());
+//                        FirebaseUser fu = FirebaseAuth.getInstance().getCurrentUser();
+//                        Log.d("User", "email: " + fu.getEmail());
+//                        UserProfileChangeRequest req = new UserProfileChangeRequest.Builder().setDisplayName(U[2]).build();
+//                        fu.updateProfile(req);
+//                        FirebaseAuth.getInstance().signOut();
+//                    }
+//                }
+//            });
+//        }
+
+
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -147,9 +176,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Admin admin = snapshot.getValue(Admin.class);
-                if (admin != null && admin.email != null){
-                    activity.completeLogin(admin);
+                if (admin != null){
+                    if (admin != null && admin.email != null){
+                        admin.venues = new ArrayList<Integer>();
+                        activity.completeLogin(admin);
+                    }
                 }
+
             }
 
             @Override

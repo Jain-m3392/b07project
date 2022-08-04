@@ -126,7 +126,8 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     MainActivity activity = (MainActivity)getActivity();
-                    activity.findUserandLogIn(FirebaseAuth.getInstance().getCurrentUser().getUid());
+//                    activity.findUserandLogIn(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    activity.findUserandLogIn(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
                 }
                 else{
                     Toast.makeText(getActivity(), "Login failed, username or password incorrect", Toast.LENGTH_LONG).show();

@@ -35,8 +35,9 @@ public class AccountActivity extends AppCompatActivity implements NavigationBarV
             customer.fullName = textBox.getText().toString();
             FirebaseDatabase fire = User.fetchFirebase();
 
-            DatabaseReference ref = fire.getReference("customers");
-            ref.child(FirebaseAuth.getInstance().getUid()).setValue(customer);
+            customer.push();
+//            DatabaseReference ref = fire.getReference("customers");
+//            ref.child(FirebaseAuth.getInstance().getUid()).setValue(customer);
         }
     };
 
@@ -44,6 +45,8 @@ public class AccountActivity extends AppCompatActivity implements NavigationBarV
     private View.OnClickListener logoutListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
+            FirebaseAuth mAuth = FirebaseAuth.getInstance();
+            mAuth.signOut();
             Intent intent = new Intent(view.getContext(), MainActivity.class);
             startActivity(intent);
         }};
