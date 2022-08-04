@@ -21,7 +21,7 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
     protected void onCreate(Bundle savedInstanceState) {
         //get data from previous activity (login?)
         Intent intent = getIntent();
-        Customer customer = intent.getParcelableExtra("Customer");
+        customer = intent.getParcelableExtra("Customer");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_events_view);
