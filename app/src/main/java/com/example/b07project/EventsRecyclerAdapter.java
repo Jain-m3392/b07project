@@ -88,7 +88,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
 
         //logic for allowing to join events
         if (event.customers.size() >= event.capacity){
-            holder.join.setText("Event full");
+            holder.join.setText("Full");
             holder.join.setEnabled(false);
         } else if (event.customers.contains(customer.username)) {
             holder.join.setText("Joined");
