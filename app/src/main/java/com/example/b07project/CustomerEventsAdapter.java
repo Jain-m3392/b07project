@@ -1,5 +1,6 @@
 package com.example.b07project;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,14 +47,14 @@ public class CustomerEventsAdapter extends RecyclerView.Adapter<CustomerEventsAd
     @Override
     public void onBindViewHolder(@NonNull CustomerEventsAdapter.MyViewHolder holder, int position) {
         Event e = events.get(position);
-//        Venue v = venues.get(e.venueID);
+        Venue v = venues.get(e.venueID);
         String name = e.getName();
         holder.eventName.setText(name);
         String time = e.getStartTime() + " - " + e.getEndTime();
         holder.eventTime.setText(time);
         String date = e.getDate();
         holder.eventDate.setText(date);
-        holder.eventVenue.setText(String.valueOf(e.getVenueID()));
+        holder.eventVenue.setText(v.venueName);
     }
 
     @Override
