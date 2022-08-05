@@ -3,8 +3,7 @@ package com.example.b07project;
 import android.content.Intent;
 import android.os.Bundle;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.example.b07project.databinding.ActivityMainBinding;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
@@ -18,11 +17,6 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.b07project.databinding.ActivityMainBinding;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -121,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
         if (user instanceof Customer){
             Customer customer = (Customer)user;
             //go to customereventsviewactivity
-            Intent intent = new Intent(this, CustomerEventsViewActivity.class);
+            Intent intent = new Intent(this, CustomerEventsViewActivityOld.class);
             intent.putExtra("Customer", customer);
             startActivity(intent);
         }

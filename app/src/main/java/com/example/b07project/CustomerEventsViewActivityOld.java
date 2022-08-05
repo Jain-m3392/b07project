@@ -15,7 +15,7 @@ import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class CustomerEventsViewActivity extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
+public class CustomerEventsViewActivityOld extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
 
     Customer customer;
 
@@ -26,20 +26,20 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
         customer = intent.getParcelableExtra("Customer");
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customer_events_view);
+        setContentView(R.layout.activity_customer_events_view_old);
 
         //testing
-        ArrayList<String> tests = new ArrayList<>();
-        Event test = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball tournament", "Volleyball", "08/11/2022");
-        Event test2 = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball residence cup", "Volleyball", "08/15/2022");
+//        ArrayList<String> tests = new ArrayList<>();
+//        Event test = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball tournament", "Volleyball", "08/11/2022");
+//        Event test2 = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball residence cup", "Volleyball", "08/15/2022");
 
 //      TODO - set login class to send data to this activity
 
 
         //for testing purposes
-        ArrayList<Event> joinedEvents = new ArrayList<>();
-        joinedEvents.add(test);
-        joinedEvents.add(test2);
+        ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
+//        joinedEvents.add(test);
+//        joinedEvents.add(test2);
 
 //        ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
         ArrayList<Event> scheduledEvents = customer.fetchScheduledEvents();

@@ -44,4 +44,9 @@
     <string name="admin_venues">Your venues</string>
     <string name="no_venues">No venues to display!</string>
 
+    <string name="time">Time:</string>
+    <string name="date">Date:</string>
+    <string name="venue">Venue:</string>
+
+
 </resources>
