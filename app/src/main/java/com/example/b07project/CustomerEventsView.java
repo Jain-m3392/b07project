@@ -31,17 +31,17 @@ public class CustomerEventsView extends AppCompatActivity {
         recyclerView = findViewById(R.id.CustomerEventsRecycler);
 
         //TODO only display upcoming!
-        ArrayList<String> tests = new ArrayList<>();
-        Event test = new Event("user1", "10am", "11am", 5, 0, 100, tests, "Volleyball tournament", "Volleyball", "08/11/2022");
-        Event test2 = new Event("user1", "10am", "11am", 5, 0, 100, tests, "Volleyball residence cup", "Volleyball", "08/15/2022");
-        Event test3 = new Event("user2", "10am", "11am", 6, 0, 100, tests, "Volleyball residence cupie", "Volleyball", "08/15/2022");
-        ArrayList<Event> joinedEvents = new ArrayList<>();
-        joinedEvents.add(test);
-        joinedEvents.add(test2);
+//        ArrayList<String> tests = new ArrayList<>();
+//        Event test = new Event("user1", "10am", "11am", 5, 0, 100, tests, "Volleyball tournament", "Volleyball", "08/11/2022");
+//        Event test2 = new Event("user1", "10am", "11am", 5, 0, 100, tests, "Volleyball residence cup", "Volleyball", "08/15/2022");
+//        Event test3 = new Event("user2", "10am", "11am", 6, 0, 100, tests, "Volleyball residence cupie", "Volleyball", "08/15/2022");
+        ArrayList<Event> joinedEvents = customer.fetchJoinedEvents();
+//        joinedEvents.add(test);
+//        joinedEvents.add(test2);
 
-        ArrayList<Event> scheduledEvents = new ArrayList<>();
-        scheduledEvents.add(test);
-        scheduledEvents.add(test3);
+        ArrayList<Event> scheduledEvents = customer.fetchScheduledEvents();
+//        scheduledEvents.add(test);
+//        scheduledEvents.add(test3);
 
         setAdapter(joinedEvents, scheduledEvents, venues);
 

@@ -28,6 +28,7 @@ public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.HeaderView
             super(view);
             title = view.findViewById(R.id.eventViewType);
             title.setTypeface(null, Typeface.BOLD);
+            title.setTextSize(20);
         }
 
     }
