@@ -79,10 +79,11 @@
         android:minHeight="48dp"
         android:textColor="@color/black"
         style="?android:spinnerStyle"
-        android:onClick="openDatePicker"
-        android:padding="10dp" />
 
-    <EditText
+        android:padding="10dp" />
+<!--    android:onClick="openDatePicker"-->
+
+    <Button
         android:id="@+id/eventStartTimeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -91,12 +92,16 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:hint="Event start time"
+        android:text="Event start time"
         android:inputType="time"
         android:minHeight="48dp"
+        android:onClick="popTimePicker"
+        android:backgroundTint="@color/design_default_color_surface"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
         android:padding="10dp" />
 
-    <EditText
+    <Button
         android:id="@+id/eventEndTimeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -105,10 +110,14 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:hint="Event end time"
+        android:backgroundTint="@color/design_default_color_surface"
         android:inputType="time"
         android:minHeight="48dp"
-        android:padding="10dp" />
+        android:onClick="popTimePicker2"
+        android:padding="10dp"
+        android:text="Event end time"
+        android:textAlignment="textStart"
+        android:textColor="@color/black" />
 
     <Button
         android:id="@+id/submitButton"
