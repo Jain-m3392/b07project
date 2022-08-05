@@ -75,6 +75,9 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name, sportsType, date);
 //                newEventdbRef.push().setValue(event);
                 event.push();
+                customer.addEvent(String.valueOf(eventID + 1));
+                customer.push();
+
                 Log.d("Event", venue.events.toString());
                 venue.events.add(eventID + 1);
                 venue.push();

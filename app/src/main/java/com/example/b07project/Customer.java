@@ -129,6 +129,11 @@ public class Customer extends User implements Parcelable, Pushable {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("customers");
         ref.child(username).setValue(this);
     }
+
+    public void addEvent(String s){
+        this.scheduledEvents.add(s);
+    }
+
 }
 
 
