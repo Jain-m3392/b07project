@@ -1,19 +1,21 @@
 package com.example.b07project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
 public class CustomerEventsView extends AppCompatActivity {
 
     Customer customer;
-    private ArrayList<Event> joinedEvents;
     private RecyclerView recyclerView;
 
     @Override
@@ -21,6 +23,7 @@ public class CustomerEventsView extends AppCompatActivity {
 
         Intent intent = getIntent();
         customer = intent.getParcelableExtra("Customer");
+        ArrayList<Venue> venues = customer.fetchAllVenues();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_events_view);
@@ -30,20 +33,38 @@ public class CustomerEventsView extends AppCompatActivity {
         ArrayList<String> tests = new ArrayList<>();
         Event test = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball tournament", "Volleyball", "08/11/2022");
         Event test2 = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball residence cup", "Volleyball", "08/15/2022");
-        joinedEvents = new ArrayList<>();
+        Event test3 = new Event("user2", "10am", "11am", 6, 2, 100, tests, "Volleyball residence cupie", "Volleyball", "08/15/2022");
+        ArrayList<Event> joinedEvents = new ArrayList<>();
         joinedEvents.add(test);
         joinedEvents.add(test2);
 
-        setAdapter();
+        ArrayList<Event> scheduledEvents = new ArrayList<>();
+        scheduledEvents.add(test);
+        scheduledEvents.add(test3);
+        Log.i("hey", "i hereee");
+
+//        for (Event e: scheduledEvents){
+//            if (!events.contains(e)){
+//                Log.i("hey", "i here");
+//                events.add(e);
+//            }
+//        }
+
+        setAdapter(joinedEvents, scheduledEvents, venues);
 
     }
 
-    private void setAdapter() {
-        CustomerEventsAdapter adapter = new CustomerEventsAdapter(joinedEvents);
+    private void setAdapter(ArrayList<Event> joinedEvents, ArrayList<Event> scheduledEvents, ArrayList<Venue> venues) {
+        HeaderAdapter headerJoined = new HeaderAdapter("Joined Events");
+        CustomerEventsAdapter adapterJoined = new CustomerEventsAdapter(joinedEvents, venues);
+        HeaderAdapter headerScheduled = new HeaderAdapter("Scheduled Events");
+        CustomerEventsAdapter adapterScheduled = new CustomerEventsAdapter(scheduledEvents, venues);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(adapter);
+        ConcatAdapter cat = new ConcatAdapter(headerJoined, adapterJoined, headerScheduled, adapterScheduled);
+        recyclerView.setAdapter(cat);
     }
 
 

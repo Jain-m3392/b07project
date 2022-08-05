@@ -13,9 +13,11 @@ import java.util.ArrayList;
 public class CustomerEventsAdapter extends RecyclerView.Adapter<CustomerEventsAdapter.MyViewHolder> {
 
     private ArrayList<Event> events;
+    private ArrayList<Venue> venues;
 
-    public CustomerEventsAdapter(ArrayList<Event> events){
+    public CustomerEventsAdapter(ArrayList<Event> events, ArrayList<Venue> venues){
          this.events = events;
+         this.venues = venues;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -43,14 +45,15 @@ public class CustomerEventsAdapter extends RecyclerView.Adapter<CustomerEventsAd
 
     @Override
     public void onBindViewHolder(@NonNull CustomerEventsAdapter.MyViewHolder holder, int position) {
-        String name = events.get(position).getName();
+        Event e = events.get(position);
+//        Venue v = venues.get(e.venueID);
+        String name = e.getName();
         holder.eventName.setText(name);
-        String time = events.get(position).getStartTime() + " - " + events.get(position).getEndTime();
+        String time = e.getStartTime() + " - " + e.getEndTime();
         holder.eventTime.setText(time);
-        String date = events.get(position).getDate();
+        String date = e.getDate();
         holder.eventDate.setText(date);
-        String venue = String.valueOf(events.get(position).getVenueID());
-        holder.eventVenue.setText(venue);
+        holder.eventVenue.setText(String.valueOf(e.getVenueID()));
     }
 
     @Override
