@@ -47,6 +47,7 @@
     <string name="time">Time:</string>
     <string name="date">Date:</string>
     <string name="venue">Venue:</string>
+    <string name="sport">Sport:</string>
 
 
 </resources>
