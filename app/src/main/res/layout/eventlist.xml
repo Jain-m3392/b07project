@@ -23,24 +23,24 @@
         android:text="eventCapacity"/>
 
     <TextView
-        android:id="@+id/eventStartTime"
+        android:id="@+id/eventDate"
         style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/eventCapacity"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:text="eventStartTime" />
+        android:text="eventDate" />
 
     <TextView
-        android:id="@+id/eventEndTime"
+        android:id="@+id/eventStartEndTimes"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/eventStartTime"
+        android:layout_below="@id/eventDate"
         style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-        android:text="eventEndTime"/>
+        android:text="eventStartTime-eventEndTime"/>
 
 
 

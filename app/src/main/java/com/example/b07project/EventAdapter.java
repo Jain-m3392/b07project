@@ -28,12 +28,12 @@ public class EventAdapter extends ArrayAdapter<Event> {
         convertView = layoutInflater.inflate(mResource, parent, false);
 
         TextView EventName = convertView.findViewById(R.id.eventName);
-        TextView EventStartTime = convertView.findViewById(R.id.eventStartTime);
-        TextView EventEndTime = convertView.findViewById(R.id.eventEndTime);
+        TextView EventStartEndTime = convertView.findViewById(R.id.eventStartEndTimes);
+        TextView EventDate = convertView.findViewById(R.id.eventDate);
         TextView EventCapacity = convertView.findViewById(R.id.eventCapacity);
         EventName.setText(getItem(position).getName());
-        EventStartTime.setText(getItem(position).getStartTime());
-        EventEndTime.setText(getItem(position).getEndTime());
+        EventStartEndTime.setText(getItem(position).getStartTime() + " - " + getItem(position).getEndTime());
+        EventDate.setText(getItem(position).getDate());
         EventCapacity.setText(getItem(position).getStringCapacity());
 
         return convertView;

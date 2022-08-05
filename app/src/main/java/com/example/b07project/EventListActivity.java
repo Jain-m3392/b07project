@@ -34,6 +34,10 @@ public class EventListActivity extends AppCompatActivity implements NavigationBa
         allEvents = customer.fetchAllEvents();
         allVenues = customer.fetchAllVenues();
 
+        NavigationBarView nav = findViewById(R.id.navigation_bar);
+        nav.setSelectedItemId(R.id.menuitem_events);
+        nav.setOnItemSelectedListener(this);
+
         EventsRecyclerAdapter adapter = new EventsRecyclerAdapter(allEvents, allVenues, customer);
         eventsRecyclerView.setAdapter(adapter);
         eventsRecyclerView.setLayoutManager(new LinearLayoutManager(this));
