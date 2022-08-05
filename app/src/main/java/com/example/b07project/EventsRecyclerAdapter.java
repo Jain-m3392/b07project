@@ -33,8 +33,7 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         private TextView startTime;
         private TextView endTime;
         private Button join;
-        private DatabaseReference newEventParticipantRef;
-        private DatabaseReference newJoinedEventRef;
+        private Customer customer;
 
         public ViewHolder(final View view){
             super(view);
@@ -49,8 +48,17 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
             join.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    //update UI
                     join.setEnabled(false);
-                    join.setText("Joined!");
+                    join.setText("Joined");
+
+                    //update event
+                    event.customers.add(customer.username);
+                    event.push();
+
+                    //update user
+                    customer.joinedEvents.add(String.valueOf(event.eventID));
+                    customer.push();
                 }
             });
         }
@@ -76,10 +84,19 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         holder.startTime.setText(event.startTime);
         holder.endTime.setText(event.endTime);
         holder.event = event;
+        holder.customer = customer;
 
         //logic for allowing to join events
-        holder.join.setText(event.customers.size() < event.capacity ? "Join" : "Event full");
-        holder.join.setEnabled(event.customers.size() < event.capacity ? true : false);
+        if (event.customers.size() < event.capacity){
+            holder.join.setText("Event full");
+            holder.join.setEnabled(false);
+        } else if (event.customers.contains(customer.username)) {
+            holder.join.setText("Joined");
+            holder.join.setEnabled(false);
+        } else {
+            holder.join.setText("Join");
+            holder.join.setEnabled(true);
+        }
     }
 
     @Override
