@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.TimePicker;
 
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
@@ -21,25 +23,25 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Locale;
 
 //for creating an event as a customer
 public class customerScheduleEvent extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
-    EditText nameInput, capacityInput, sportsTypeInput, startTimeInput, endTimeInput;
-    String name, capacity, startTime, endTime, sportsType, date;
-    Button submit, dateButton;
+    EditText nameInput, capacityInput, sportsTypeInput;
+    String name, capacity, startTime, endTime, sportsType, dateFinal;
+    Button submit, dateButton, startTimeInput, endTimeInput;
     TextView textView;
     DatabaseReference newEventdbRef;
     Customer customer;
     private DatePickerDialog datePickerDialog;
-
+    int hour, minute;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_schedule_event);
-        initDatePicker();
         dateButton.setText(getTodaysDate());
-
+        initDatePicker();
         Intent intent = getIntent();
         customer = intent.getParcelableExtra("Customer");
 
@@ -52,8 +54,8 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         submit = (Button) findViewById(R.id.submitButton);
         nameInput = (EditText) findViewById(R.id.eventNameUpdate);
         capacityInput = (EditText) findViewById(R.id.eventCapacityUpdate);
-        startTimeInput = (EditText) findViewById(R.id.eventStartTimeUpdate);
-        endTimeInput = (EditText) findViewById(R.id.eventEndTimeUpdate);
+        startTimeInput = findViewById(R.id.eventStartTimeUpdate);
+        endTimeInput = findViewById(R.id.eventEndTimeUpdate);
         dateButton = findViewById(R.id.eventDateUpdate);
         sportsTypeInput = (EditText) findViewById(R.id.eventSportsUpdate);
         newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
@@ -72,7 +74,7 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 sportsType = sportsTypeInput.getText().toString();
                 startTime = startTimeInput.getText().toString();
                 endTime = endTimeInput.getText().toString();
-                Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name, sportsType, date);
+                Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name, sportsType, dateFinal);
 //                newEventdbRef.push().setValue(event);
                 event.push();
                 customer.addEvent(String.valueOf(eventID + 1));
@@ -81,7 +83,8 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 Log.d("Event", venue.events.toString());
                 venue.events.add(eventID + 1);
                 venue.push();
-
+                Intent intent = new Intent(customerScheduleEvent.this, customerCreateEvents.class);
+                startActivity(intent);
                 textView.setText("You successfully created an event!");
             }
         });
@@ -104,6 +107,7 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 month = month + 1;
                 String date = makeDateString(month, day, year);
                 dateButton.setText(date);
+                dateFinal = dateButton.getText().toString();
             }
         };
         Calendar calendar = Calendar.getInstance();
@@ -113,7 +117,7 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
 
         int style = AlertDialog.THEME_HOLO_LIGHT;
         datePickerDialog = new DatePickerDialog(this, style, dateSetListener, year, month, day);
-
+        datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis());
     }
 
     private String makeDateString(int month, int day, int year) {
@@ -129,5 +133,35 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
 
     public void openDatePicker(View view) {
         datePickerDialog.show();
+    }
+
+    public void popTimePicker(View view) {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                hour = selectedHour;
+                minute = selectedMinute;
+                startTimeInput.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
+                startTime = startTimeInput.getText().toString();
+            }
+        };
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,style, onTimeSetListener, hour, minute, true);
+        timePickerDialog.show();
+    }
+
+    public void popTimePicker2(View view) {
+        TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
+            @Override
+            public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                hour = selectedHour;
+                minute = selectedMinute;
+                endTimeInput.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
+                endTime = endTimeInput.getText().toString();
+            }
+        };
+        int style = AlertDialog.THEME_HOLO_LIGHT;
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,style, onTimeSetListener, hour, minute, true);
+        timePickerDialog.show();
     }
 }
