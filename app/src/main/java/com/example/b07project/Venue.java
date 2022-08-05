@@ -14,14 +14,16 @@ public class Venue implements Parcelable, Pushable {
     public int venueID;
     public String venueLocation;
     public String venueName;
+    public ArrayList<String> accessibleSports;
 
     public Venue(){} //Empty constructor for Firebase to work
 
-    public Venue(int venueID, String venueName, String venueLocation, ArrayList<Integer> events){
+    public Venue(int venueID, String venueName, String venueLocation, ArrayList<Integer> events, ArrayList<String> accessibleSports){
         this.events = events;
         this.venueID = venueID;
         this.venueLocation = venueLocation;
         this.venueName = venueName;
+        this.accessibleSports = accessibleSports;
     }
 
     protected Venue(Parcel in) {

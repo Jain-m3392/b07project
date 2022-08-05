@@ -20,8 +20,8 @@ import java.util.ArrayList;
 
 //for creating an event as a customer
 public class customerScheduleEvent extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
-    EditText nameInput, capacityInput, startTimeInput, endTimeInput;
-    String name, capacity, startTime, endTime;
+    EditText nameInput, capacityInput, startTimeInput, endTimeInput, sportsTypeInput, dateInput;
+    String name, capacity, startTime, endTime, sportsType, date;
     Button submit;
     TextView textView;
     DatabaseReference newEventdbRef;
@@ -46,6 +46,8 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         capacityInput = (EditText) findViewById(R.id.eventCapacityUpdate);
         startTimeInput = (EditText) findViewById(R.id.eventStartTimeUpdate);
         endTimeInput = (EditText) findViewById(R.id.eventEndTimeUpdate);
+        dateInput = (EditText) findViewById(R.id.eventDateUpdate);
+        sportsTypeInput = (EditText) findViewById(R.id.eventSportsUpdate);
         newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +63,9 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 capacity = capacityInput.getText().toString();
                 startTime = startTimeInput.getText().toString();
                 endTime = endTimeInput.getText().toString();
-                Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name);
+                sportsType = sportsTypeInput.getText().toString();
+                date = dateInput.getText().toString();
+                Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name, sportsType, date);
 //                newEventdbRef.push().setValue(event);
                 event.push();
                 Log.d("Event", venue.events.toString());

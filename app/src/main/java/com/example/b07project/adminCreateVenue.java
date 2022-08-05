@@ -19,9 +19,9 @@ import java.util.ArrayList;
 //for creating a venue as an admin
 public class adminCreateVenue extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener{
     TextView textView;
-    EditText venueName, venueLocation;
-    String name, location;
-    Button submit;
+    EditText venueName, venueLocation, venueSports;
+    String name, location, sports;
+    Button submit, add;
     DatabaseReference newVenuedbRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,8 +29,10 @@ public class adminCreateVenue extends AppCompatActivity implements NavigationBar
         setContentView(R.layout.activity_admin_create_venue);
         textView = findViewById(R.id.venueCreatetext);
         submit = findViewById(R.id.adminCreateVenueButton);
+        add.findViewById(R.id.adminAddButton);
         venueName = (EditText) findViewById(R.id.adminVenueName);
         venueLocation = (EditText) findViewById(R.id.adminVenueLocation);
+        venueSports = (EditText) findViewById(R.id.adminVenueSports);
         name = venueName.getText().toString();
         location = venueLocation.getText().toString();
         newVenuedbRef = User.fetchFirebase().getInstance().getReference().child("venues");
@@ -49,7 +51,15 @@ public class adminCreateVenue extends AppCompatActivity implements NavigationBar
                     if(venueID<v.venueID)
                         venueID = v.venueID;
                 }
-                Venue newVenue = new Venue(venueID+1, name, location, events);
+                ArrayList<String> sportsTypes = new ArrayList<>();
+                add.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        sports = venueSports.getText().toString();
+                        sportsTypes.add(sports);
+                    }
+                });
+                Venue newVenue = new Venue(venueID+1, name, location, events, sportsTypes);
 //                newVenuedbRef.push().setValue(newVenue);
                 newVenue.push();
                 textView.setText("You successfully created a venue!");
