@@ -16,7 +16,7 @@ public class NavBar {
                 context.startActivity(intent);
                 return true;
             case R.id.menuitem_home:
-                intent = new Intent(context, CustomerEventsViewActivity.class);
+                intent = new Intent(context, CustomerEventsView.class);
                 intent.putExtra("Customer", customer);
                 context.startActivity(intent);
                 return true;

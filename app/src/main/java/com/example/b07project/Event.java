@@ -6,6 +6,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Event implements Pushable {
 
@@ -18,13 +19,15 @@ public class Event implements Pushable {
     public int venueID;
     public int capacity;
     public String name;
+    public String sportsType;
+    public String date;
 
 
     public Event(){} //No argument constructor for Firebase to work
 
     //TODO: Check what type we want each field to be and initialize an Event
 
-    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name){
+    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name, String sportsType, String date){
         this.creator = creator;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -33,6 +36,8 @@ public class Event implements Pushable {
         this.capacity = capacity;
         this.customers = customers;
         this.name = name;
+        this.sportsType = sportsType;
+        this.date = date;
     }
 
     public void addCustomer(@NonNull User player){
@@ -97,6 +102,12 @@ public class Event implements Pushable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getDate() { return date; }
+
+    public void setDate(String date) { this.date = date; }
+
+    public int getVenueID() { return venueID; }
 
 
     //

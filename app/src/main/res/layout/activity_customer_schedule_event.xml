@@ -18,7 +18,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Please provide the following information"
-        android:textSize="20dp"
+        android:textSize="10dp"
         android:textStyle="bold"
         android:gravity="center"
         android:layout_margin="20dp"/>
@@ -30,25 +30,48 @@
         android:layout_below="@id/scheduleEventText"
         android:hint="Event name"
         android:layout_margin="10dp"
-        android:padding="20dp" />
+        android:padding="10dp"
+        android:inputType="text"/>
+
+    <EditText
+        android:id="@+id/eventSportsUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventNameUpdate"
+        android:hint="Sports type"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:inputType="text"/>
 
     <EditText
         android:id="@+id/eventCapacityUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/eventNameUpdate"
-        android:hint="Event capacity"
+        android:layout_below="@id/eventSportsUpdate"
+        android:hint="Event capacity (enter a number)"
         android:layout_margin="10dp"
-        android:padding="20dp" />
+        android:padding="10dp"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/eventDateUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventCapacityUpdate"
+        android:hint="Event Date (mm/dd/yyyy)"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        android:inputType="date"/>
 
     <EditText
         android:id="@+id/eventStartTimeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/eventCapacityUpdate"
+        android:layout_below="@id/eventDateUpdate"
         android:hint="Event start time"
         android:layout_margin="10dp"
-        android:padding="20dp" />
+        android:padding="10dp"
+        android:inputType="time"/>
 
     <EditText
         android:id="@+id/eventEndTimeUpdate"
@@ -57,7 +80,8 @@
         android:layout_below="@id/eventStartTimeUpdate"
         android:hint="Event end time"
         android:layout_margin="10dp"
-        android:padding="20dp" />
+        android:padding="10dp"
+        android:inputType="time"/>
 
     <Button
         android:id="@+id/submitButton"
@@ -67,11 +91,12 @@
         android:layout_marginEnd="24dp"
         android:text="Submit"
         android:textAllCaps="true"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:layout_below="@id/eventEndTimeUpdate"
         android:layout_centerHorizontal="true"
         android:backgroundTint="@color/design_default_color_secondary"
-        android:layout_margin="15dp"/>
+        android:layout_margin="10dp"/>
+
 
     <!--        app:layout_constraintTop_toBottomOf="@+id/scheduleEventText" />-->
 

@@ -87,7 +87,7 @@ public class Customer extends User implements Parcelable, Pushable {
     public ArrayList<Event> fetchJoinedEvents(){
         ArrayList<Event> res = new ArrayList<Event>();
         for (Event e: User.fetchAllEvents()){
-            if (joinedEvents.contains(e.eventID)){
+            if (joinedEvents.contains(String.valueOf(e.eventID))){
                 res.add(e);
             }
         }
@@ -98,7 +98,7 @@ public class Customer extends User implements Parcelable, Pushable {
     public ArrayList<Event> fetchScheduledEvents(){
         ArrayList<Event> res = new ArrayList<Event>();
         for (Event e: User.fetchAllEvents()){
-            if (scheduledEvents.contains(e.eventID)){
+            if (scheduledEvents.contains(String.valueOf(e.eventID))){
                 res.add(e);
             }
         }
