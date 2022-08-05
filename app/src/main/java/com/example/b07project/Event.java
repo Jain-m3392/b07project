@@ -20,14 +20,14 @@ public class Event implements Pushable {
     public int capacity;
     public String name;
     public String sportsType;
-    public Date date;
+    public String date;
 
 
     public Event(){} //No argument constructor for Firebase to work
 
     //TODO: Check what type we want each field to be and initialize an Event
 
-    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name, String sportsType, Date date){
+    public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name, String sportsType, String date){
         this.creator = creator;
         this.startTime = startTime;
         this.endTime = endTime;

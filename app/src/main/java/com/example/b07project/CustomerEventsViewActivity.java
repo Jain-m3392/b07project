@@ -30,8 +30,8 @@ public class CustomerEventsViewActivity extends AppCompatActivity implements Nav
 
         //testing
         ArrayList<String> tests = new ArrayList<>();
-        Event test = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball");
-        Event test2 = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball");
+        Event test = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball tournament", "Volleyball", "08/11/2022");
+        Event test2 = new Event("user1", "10am", "11am", 5, 2, 100, tests, "Volleyball residence cup", "Volleyball", "08/15/2022");
 
 //      TODO - set login class to send data to this activity
 
