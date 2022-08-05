@@ -143,6 +143,7 @@ public abstract class User {
                         Admin ac = (Admin)a;
                         ac.venues = admin.venues;
                         ac.password = admin.password;
+                        ac.email = admin.email;
                         break;
                     }
                 }
@@ -183,6 +184,7 @@ public abstract class User {
                 Event event = dataSnapshot.getValue(Event.class);
                 if (event.customers == null)
                     event.customers = new ArrayList<String>();
+
                 for (Event e : User.fetchAllEvents()) {
                     if (e.eventID == event.eventID) {
                         e.startTime = event.startTime;
@@ -191,6 +193,7 @@ public abstract class User {
                         e.capacity = event.capacity;
                         e.creator = event.creator;
                         e.customers = event.customers;
+                        e.date = event.date;
                         break;
                     }
                 }
@@ -209,24 +212,6 @@ public abstract class User {
                 Log.d("test", error.toString());
             }
         });
-//        ref.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for(DataSnapshot child: snapshot.getChildren()){
-//                    Event event = child.getValue(Event.class);
-//                    if (!allEvents.contains(event)){
-//                        allEvents.add(event);
-//                    }
-//                    Log.d("test", event.eventID);
-//                    Log.d("test",event.customers.toString());
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//                Log.d("test",error.toString());
-//            }
-//        });
 
         //Initialise synchronization between allVenues and Firebase
         ref = fire.getReference("venues");
@@ -236,6 +221,8 @@ public abstract class User {
                 Venue venue = dataSnapshot.getValue(Venue.class);
                 if (venue.events == null)
                     venue.events = new ArrayList<Integer>();
+                if (venue.accessibleSports == null)
+                    venue.accessibleSports = new ArrayList<String>();
                 if (!allVenues.contains(venue)){
                     allVenues.add(venue);
                 }
@@ -247,11 +234,15 @@ public abstract class User {
                 Venue venue = dataSnapshot.getValue(Venue.class);
                 if (venue.events == null)
                     venue.events = new ArrayList<Integer>();
+                if (venue.accessibleSports == null)
+                    venue.accessibleSports = new ArrayList<String>();
+
                 for (Venue v : User.fetchAllVenues()) {
                     if (v.venueID == venue.venueID) {
                         v.venueName = venue.venueName;
                         v.venueLocation = venue.venueLocation;
                         v.events = venue.events;
+                        v.accessibleSports = venue.accessibleSports;
                         break;
                     }
                 }

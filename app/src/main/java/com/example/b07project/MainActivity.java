@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.example.b07project.databinding.ActivityMainBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
@@ -17,6 +19,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -40,6 +46,18 @@ public class MainActivity extends AppCompatActivity {
 
         User.initialize();
 
+        //CREATE ADMIN IN AUTHENTICATOR API
+//        FirebaseAuth auth = FirebaseAuth.getInstance();
+//        auth.createUserWithEmailAndPassword("admin@gmail.com", "admin123").addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+//             @Override
+//             public void onComplete(@NonNull Task<AuthResult> task) {
+//                 FirebaseUser fu = auth.getCurrentUser();
+//                 UserProfileChangeRequest req = new UserProfileChangeRequest.Builder().setDisplayName("admin").build();
+//                 fu.updateProfile(req);
+//             }
+//         });
+
+
 //        ArrayList<String[]> users = new ArrayList<String[]>();
 //        users.add(new String[]{"user@gmail.com", "user123", "testUser"});
 //        users.add(new String[]{"peach@gmail.com", "coconut", "apple"});
@@ -62,8 +80,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 
 
-
-        binding = ActivityMainBinding.inflate(getLayoutInflater());
+                binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
 //        setSupportActionBar(binding.toolbar);
@@ -111,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void completeLogin(User user) {
-        Log.d("User", "Customer joinedEvents: " + ((Customer)user).joinedEvents);
+//        Log.d("User", "Customer joinedEvents: " + ((Customer)user).joinedEvents);
         if (user instanceof Customer){
             Customer customer = (Customer)user;
             //go to customereventsviewactivity
@@ -120,12 +137,11 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-        //TODO: Make admin parcelable
         else if (user instanceof Admin){
-//            Admin admin = (Admin)user;
-//            Intent intent = new Intent(this, adminCreateVenue.class);
-//            intent.putExtra("Admin", admin);
-//            startActivity(intent);
+            Admin admin = (Admin)user;
+            Intent intent = new Intent(this, AdminAccountActivity.class);
+            intent.putExtra("Admin", admin);
+            startActivity(intent);
 
         }
     }
@@ -145,10 +161,10 @@ public class MainActivity extends AppCompatActivity {
         ref.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.d("User", "found");
+//                Log.d("User", "found");
 //                user[0] = snapshot.getValue(Customer.class);
                 Customer customer = snapshot.getValue(Customer.class);
-                Log.d("User", "User username: " + customer.username + " " + customer.fullName + " " + customer.email + " " + customer.password);
+//                Log.d("User", "User username: " + customer.username + " " + customer.fullName + " " + customer.email + " " + customer.password);
                 if (customer != null && customer.email != null){
                     if (customer.joinedEvents == null)
                         customer.joinedEvents = new ArrayList<String>();
