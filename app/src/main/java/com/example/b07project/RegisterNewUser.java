@@ -218,6 +218,12 @@ public class RegisterNewUser extends AppCompatActivity implements View.OnClickLi
                             user.push();
                             Toast.makeText(RegisterNewUser.this, "successfully registered user", Toast.LENGTH_LONG).show();
 
+                            Customer customer = (Customer)user;
+                            //go to customereventsviewactivity since user signed in upon creation
+                            Intent intent = new Intent(RegisterNewUser.this, CustomerEventsView.class);
+                            intent.putExtra("Customer", customer);
+                            startActivity(intent);
+
                         } else {
                             Toast.makeText(RegisterNewUser.this, "failed to register user try again", Toast.LENGTH_LONG).show();
                         }
