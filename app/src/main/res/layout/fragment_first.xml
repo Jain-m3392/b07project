@@ -55,6 +55,7 @@
         android:layout_marginStart="84dp"
         android:layout_marginTop="20dp"
         android:text="forgot password"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_button" />
 
