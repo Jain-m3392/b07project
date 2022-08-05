@@ -28,60 +28,87 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/scheduleEventText"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="Event name"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/eventSportsUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/eventNameUpdate"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="Sports type"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:inputType="text"/>
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/eventCapacityUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/eventSportsUpdate"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="Event capacity (enter a number)"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:inputType="number"/>
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
-    <EditText
+    <Button
         android:id="@+id/eventDateUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/eventCapacityUpdate"
-        android:hint="Event Date (mm/dd/yyyy)"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:inputType="date"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Event Date"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:textColor="@color/black"
+        style="?android:spinnerStyle"
+        android:onClick="openDatePicker"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/eventStartTimeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/eventDateUpdate"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="Event start time"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:inputType="time"/>
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <EditText
         android:id="@+id/eventEndTimeUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/eventStartTimeUpdate"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:hint="Event end time"
-        android:layout_margin="10dp"
-        android:padding="10dp"
-        android:inputType="time"/>
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:padding="10dp" />
 
     <Button
         android:id="@+id/submitButton"
