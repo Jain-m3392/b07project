@@ -65,26 +65,6 @@ public abstract class User {
 
         //Create test values
         Log.d("test", "initializing database");
-//        Customer testCustomer = new Customer("test", "test", "Test 1");
-//        ArrayList<String> tempList = new ArrayList<String>();
-//        tempList.add(testCustomer.username);
-//        Event testEvent = new Event("test", "test", "test", "0", "0", 42, tempList);
-//
-//        ref = fire.getReference();
-//        ref.child("customers").child(testCustomer.username).setValue(testCustomer);
-//        ref.child("events").child(testEvent.eventID).setValue(testEvent);
-
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for(DataSnapshot child: snapshot.getChildren()){
-//                    Customer customer = child.getValue(Customer.class);
-//                    if (!allCustomers.contains(customer)){
-//                        allCustomers.add(customer);
-//                    }
-//                    Log.d("test", customer.username);
-//                    Log.d("test", customer.fullName);
-//                }
-//            }
 
         //Initialise synchronization between allCustomers and Firebase
         ref = fire.getReference("customers");
