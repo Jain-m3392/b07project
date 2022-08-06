@@ -22,19 +22,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="Venue:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eventName" />
+        app:layout_constraintTop_toBottomOf="@+id/sportsTypeLabel" />
 
     <TextView
         android:id="@+id/venueName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         app:layout_constraintStart_toEndOf="@+id/vanueLabel"
-        app:layout_constraintTop_toBottomOf="@+id/eventName" />
+        app:layout_constraintTop_toBottomOf="@+id/sportsTypeLabel" />
 
     <TextView
         android:id="@+id/addressLabel"
@@ -113,11 +113,39 @@
         app:layout_constraintStart_toEndOf="@+id/endLabel"
         app:layout_constraintTop_toBottomOf="@+id/capacityLabel" />
 
+    <TextView
+        android:id="@+id/sportsTypeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Sports type:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dateLabel" />
+
+    <TextView
+        android:id="@+id/sportsType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toEndOf="@+id/sportsTypeLabel"
+        app:layout_constraintTop_toBottomOf="@+id/dateLabel" />
+
+    <TextView
+        android:id="@+id/dateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Date:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventName" />
+
     <Button
         android:id="@+id/joinEvent"
         android:layout_width="94dp"
         android:layout_height="48dp"
-        android:layout_marginTop="20dp"
         android:text="Join"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -133,5 +161,14 @@
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toBottomOf="@+id/joinEvent"
         tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/dateLabel"
+        app:layout_constraintTop_toBottomOf="@+id/eventName" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
