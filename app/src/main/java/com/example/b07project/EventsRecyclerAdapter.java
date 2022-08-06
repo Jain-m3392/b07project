@@ -26,6 +26,8 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         private Event event;
+        private TextView date;
+        private TextView sportsType;
         private TextView eventName;
         private TextView venueName;
         private TextView venueAddress;
@@ -38,6 +40,8 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         public ViewHolder(final View view){
             super(view);
             this.eventName = view.findViewById(R.id.eventName);
+            this.date = view.findViewById(R.id.date);
+            this.sportsType = view.findViewById(R.id.sportsType);
             this.venueName = view.findViewById(R.id.venueName);
             this.venueAddress = view.findViewById(R.id.address);
             this.capacity = view.findViewById(R.id.capacity);
@@ -78,6 +82,8 @@ public class EventsRecyclerAdapter extends RecyclerView.Adapter<EventsRecyclerAd
         Venue venue = venueList.get(event.venueID);
         //initialize basic values
         holder.eventName.setText(event.name);
+        holder.date.setText(event.date);
+        holder.sportsType.setText(event.sportsType);
         holder.venueName.setText(venue.venueName);
         holder.venueAddress.setText(venue.venueLocation);
         holder.capacity.setText(String.valueOf(event.capacity));
