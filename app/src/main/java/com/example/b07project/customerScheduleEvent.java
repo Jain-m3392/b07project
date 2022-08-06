@@ -29,7 +29,7 @@ import java.util.Locale;
 public class customerScheduleEvent extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
     EditText nameInput, capacityInput, sportsTypeInput;
     String name, capacity, startTime, endTime, sportsType, dateFinal;
-    Button submit, dateButton, startTimeInput, endTimeInput;
+    Button submit, dateButton, startTimeButton, endTimeButton;
     TextView textView;
     DatabaseReference newEventdbRef;
     Customer customer;
@@ -38,6 +38,7 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_schedule_event);
         dateButton.setText(getTodaysDate());
@@ -54,9 +55,10 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         submit = (Button) findViewById(R.id.submitButton);
         nameInput = (EditText) findViewById(R.id.eventNameUpdate);
         capacityInput = (EditText) findViewById(R.id.eventCapacityUpdate);
-        startTimeInput = findViewById(R.id.eventStartTimeUpdate);
-        endTimeInput = findViewById(R.id.eventEndTimeUpdate);
-        dateButton = findViewById(R.id.eventDateUpdate);
+        startTimeButton = (Button) findViewById(R.id.eventStartTimeUpdate);
+        endTimeButton = (Button) findViewById(R.id.eventEndTimeUpdate);
+        dateButton = (Button) findViewById(R.id.eventDateUpdate);
+        dateButton.setText(getTodaysDate());
         sportsTypeInput = (EditText) findViewById(R.id.eventSportsUpdate);
         newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
         submit.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +74,8 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 name = nameInput.getText().toString();
                 capacity = capacityInput.getText().toString();
                 sportsType = sportsTypeInput.getText().toString();
-                startTime = startTimeInput.getText().toString();
-                endTime = endTimeInput.getText().toString();
+//                startTime = startTimeButton.getText().toString();
+//                endTime = endTimeButton.getText().toString();
                 Event event = new Event(customer.fullName,startTime, endTime, eventID+1, venue.venueID, Integer.parseInt(capacity), customerArray, name, sportsType, dateFinal);
 //                newEventdbRef.push().setValue(event);
                 event.push();
@@ -83,12 +85,17 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 Log.d("Event", venue.events.toString());
                 venue.events.add(eventID + 1);
                 venue.push();
+                //redirecting to the events page after successfully creating an event
                 Intent intent = new Intent(customerScheduleEvent.this, customerCreateEvents.class);
                 startActivity(intent);
-                textView.setText("You successfully created an event!");
+//                textView.setText("You successfully created an event!");
             }
         });
 
+    }
+
+    public void openDatePicker(View view) {
+        datePickerDialog.show();
     }
 
     private String getTodaysDate() {
@@ -107,7 +114,8 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 month = month + 1;
                 String date = makeDateString(month, day, year);
                 dateButton.setText(date);
-                dateFinal = dateButton.getText().toString();
+                dateFinal = date;
+//                dateFinal = dateButton.getText().toString();
             }
         };
         Calendar calendar = Calendar.getInstance();
@@ -131,9 +139,7 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         return bar.navigate(item, this, customer);
     }
 
-    public void openDatePicker(View view) {
-        datePickerDialog.show();
-    }
+
 
     public void popTimePicker(View view) {
         TimePickerDialog.OnTimeSetListener onTimeSetListener = new TimePickerDialog.OnTimeSetListener() {
@@ -141,8 +147,9 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 hour = selectedHour;
                 minute = selectedMinute;
-                startTimeInput.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
-                startTime = startTimeInput.getText().toString();
+                startTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
+//                startTime = startTimeButton.getText().toString();
+                startTime = String.format(Locale.getDefault(), "%02d:%02d", hour, minute);
             }
         };
         int style = AlertDialog.THEME_HOLO_LIGHT;
@@ -156,8 +163,9 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
             public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
                 hour = selectedHour;
                 minute = selectedMinute;
-                endTimeInput.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
-                endTime = endTimeInput.getText().toString();
+                endTimeButton.setText(String.format(Locale.getDefault(), "%02d:%02d", hour, minute));
+//                endTime = endTimeButton.getText().toString();
+                endTime = String.format(Locale.getDefault(), "%02d:%02d", hour, minute);
             }
         };
         int style = AlertDialog.THEME_HOLO_LIGHT;

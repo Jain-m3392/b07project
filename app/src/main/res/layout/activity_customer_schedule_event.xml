@@ -79,7 +79,7 @@
         android:minHeight="48dp"
         android:textColor="@color/black"
         style="?android:spinnerStyle"
-
+        android:onClick="openDatePicker"
         android:padding="10dp" />
 <!--    android:onClick="openDatePicker"-->
 
