@@ -17,6 +17,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
@@ -35,6 +36,7 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
     TextView textView;
     DatabaseReference newEventdbRef;
     Customer customer;
+    Calendar startTC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,78 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         endTimeInput = (EditText) findViewById(R.id.eventEndTimeUpdate);
         dateInput = (EditText) findViewById(R.id.eventDateUpdate);
         sportsTypeInput = (EditText) findViewById(R.id.eventSportsUpdate);
+        dateInput.setInputType(InputType.TYPE_NULL);
+        startTimeInput.setInputType(InputType.TYPE_NULL);
+        endTimeInput.setInputType(InputType.TYPE_NULL);
         newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
+
+        startTimeInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar = Calendar.getInstance();
+                TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        calendar.set(Calendar.HOUR_OF_DAY, selectedHour);
+                        calendar.set(Calendar.MINUTE, selectedMinute);
+                        String time = selectedHour + ":" + selectedMinute;
+                        startTC = calendar;
+                        startTimeInput.setText(time);
+                        startTime = time;
+                    }
+                };
+
+                new TimePickerDialog(customerScheduleEvent.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
+            }
+        });
+
+        endTimeInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                showTimeDialog(endTimeInput);
+                Calendar calendar = Calendar.getInstance();
+                TimePickerDialog.OnTimeSetListener timeSetListener = new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
+                        calendar.set(Calendar.HOUR_OF_DAY, selectedHour);
+                        calendar.set(Calendar.MINUTE, selectedMinute);
+                        String time =null;
+                        if(calendar.getTimeInMillis() >= startTC.getTimeInMillis()){
+                            time = selectedHour + ":" + selectedMinute;
+                        }
+                        else{
+                            Toast.makeText(getApplicationContext(), "Invalid time, please choose again", Toast.LENGTH_LONG).show();
+                        }
+                        endTimeInput.setText(time);
+                        endTime = time;
+                    }
+                };
+                new TimePickerDialog(customerScheduleEvent.this, timeSetListener, calendar.get(Calendar.HOUR_OF_DAY), calendar.get(Calendar.MINUTE), false).show();
+            }
+        });
+
+
+        dateInput.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Calendar calendar = Calendar.getInstance();
+                DatePickerDialog.OnDateSetListener dateSetListener = new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
+                        calendar.set(Calendar.YEAR, year);
+                        calendar.set(Calendar.MONTH, month);
+                        calendar.set(Calendar.DAY_OF_MONTH, day);
+                        String calendarDate = month + "/" + day + "/" + year;
+                        dateInput.setText(calendarDate);
+                        dateFinal = calendarDate;
+                    }
+                };
+
+                DatePickerDialog newDPD = new DatePickerDialog(customerScheduleEvent.this, dateSetListener, calendar.get(Calendar.YEAR), calendar.get(Calendar.MONTH), calendar.get(Calendar.DAY_OF_MONTH));
+                newDPD.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
+                newDPD.show();
+            }
+        });
 
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,15 +145,11 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 name = nameInput.getText().toString();
                 capacity = capacityInput.getText().toString();
                 sportsType = sportsTypeInput.getText().toString();
-                startTime = startTimeInput.getText().toString();
-                endTime = endTimeInput.getText().toString();
-                dateFinal = dateInput.getText().toString();
                 Event event = new Event(customer.fullName, startTime, endTime, eventID + 1, venue.venueID, Integer.parseInt(capacity), customerArray, name, sportsType, dateFinal);
 //                newEventdbRef.push().setValue(event);
                 event.push();
                 customer.addEvent(String.valueOf(eventID + 1));
                 customer.push();
-
                 Log.d("Event", venue.events.toString());
                 venue.events.add(eventID + 1);
                 venue.push();
@@ -100,4 +169,5 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         NavBar bar = new NavBar();
         return bar.navigate(item, this, customer);
     }
+
 }
