@@ -28,6 +28,7 @@
         <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.16847826086956522" />
         <entry key="app/src/main/res/layout/activity_customer_events_view_old.xml" value="0.16847826086956522" />
         <entry key="app/src/main/res/layout/activity_customer_schedule_event.xml" value="0.16847826086956522" />
+        <entry key="app/src/main/res/layout/activity_customer_venues_view.xml" value="0.11296296296296296" />
         <entry key="app/src/main/res/layout/activity_event_detail.xml" value="0.5194583129882813" />
         <entry key="app/src/main/res/layout/activity_event_list.xml" value="0.39021852237252863" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
