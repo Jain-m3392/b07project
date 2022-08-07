@@ -65,6 +65,12 @@ public class Admin extends User implements Parcelable, Pushable {
         return res;
     }
 
+    public void addVenue(Venue v){
+        if (!venues.contains(v.venueID)){
+            venues.add(v.venueID);
+
+        }
+    }
 
 
     @Override

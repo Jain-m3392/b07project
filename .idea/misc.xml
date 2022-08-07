@@ -9,17 +9,21 @@
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/home_icon_foreground.xml" value="0.238" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_account.xml" value="0.264" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_admin_events_view.xml" value="0.24547101449275363" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_admin_events_view_old.xml" value="0.24547101449275363" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_customer_events_view.xml" value="0.18885869565217392" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_event_detail.xml" value="0.18072916666666666" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_event_list.xml" value="0.18072916666666666" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_logout.xml" value="0.2" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_register_new_user.xml" value="0.12360688956433637" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/bottom_admin_navbar.xml" value="0.24547101449275363" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/bottom_navbar.xml" value="0.536" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/content_main.xml" value="0.2" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/fragment_first.xml" value="0.4" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/fragment_second.xml" value="0.264" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bootom_navbar_menu.xml" value="0.23981481481481481" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bottom_admin_navbar_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bottom_navbar_menu.xml" value="0.1796875" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/menu_main.xml" value="0.176" />
         <entry key="..\:/uni/S2022/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.22" />
