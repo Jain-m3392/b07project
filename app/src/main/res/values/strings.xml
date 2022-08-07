@@ -51,6 +51,8 @@
     <string name="admin_event_creator">Created by:</string>
     <string name="edit_event">EDIT</string>
     <string name="delete_event">DELETE</string>
+    <string name="admin_events_header">"Events scheduled at your venues"</string>
+    <string name="filter_venues">FILTER</string>
 
 
 </resources>

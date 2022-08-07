@@ -16,8 +16,6 @@ public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.HeaderView
 
     public HeaderAdapter(String text){
         this.text = text;
-        Log.i("Success", "header created!");
-        Log.i("value", this.text);
     }
 
     public class HeaderViewHolder extends RecyclerView.ViewHolder{
@@ -42,7 +40,6 @@ public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.HeaderView
 
     @Override
     public void onBindViewHolder(@NonNull HeaderAdapter.HeaderViewHolder holder, int position) {
-//        Log.i("hi", "i made it here! " + text);
         holder.title.setText(text);
     }
 
