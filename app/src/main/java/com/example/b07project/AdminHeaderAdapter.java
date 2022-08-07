@@ -1,6 +1,10 @@
 package com.example.b07project;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,12 +14,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 public class AdminHeaderAdapter extends RecyclerView.Adapter<AdminHeaderAdapter.MyViewHolder> {
 
     String text;
+    Admin admin;
 
-    public AdminHeaderAdapter(String text){
+    public AdminHeaderAdapter(String text, Admin admin){
         this.text = text;
+        this.admin = admin;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -27,7 +35,16 @@ public class AdminHeaderAdapter extends RecyclerView.Adapter<AdminHeaderAdapter.
             title = view.findViewById(R.id.adminEventHeader);
             title.setTypeface(null, Typeface.BOLD);
             title.setTextSize(20);
+            Context context = view.getContext();
             filter = view.findViewById(R.id.adminFilterEvents);
+            filter.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v){
+                    Intent intent = new Intent(context, FilterPop.class);
+                    intent.putExtra("Admin", admin);
+                    context.startActivity(intent);
+                }
+            });
         }
 
     }

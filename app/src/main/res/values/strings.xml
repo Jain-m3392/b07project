@@ -53,6 +53,8 @@
     <string name="delete_event">DELETE</string>
     <string name="admin_events_header">"Events scheduled at your venues"</string>
     <string name="filter_venues">FILTER</string>
+    <string name="select_venues">Select desired venues</string>
+    <string name="apply_filter">APPLY</string>
 
 
 </resources>

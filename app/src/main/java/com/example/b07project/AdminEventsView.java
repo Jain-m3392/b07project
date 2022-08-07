@@ -32,8 +32,16 @@ public class AdminEventsView extends AppCompatActivity implements NavigationBarV
 
         recyclerView = findViewById(R.id.AdminEventsRecycler);
 
-        ArrayList<Venue> venues = admin.fetchCreatedVenues();
-        ArrayList<Event> events = new ArrayList<>();
+        ArrayList<Venue> venues = new ArrayList<>();
+
+        if (intent.getParcelableArrayListExtra("Venues") != null){
+            venues = intent.getParcelableArrayListExtra("Venues");
+        }
+        else{
+            venues = admin.fetchCreatedVenues();
+        }
+
+        ArrayList<Event> allEvents = new ArrayList<>();
 
         //Initiate navbar
         NavigationBarView nav = findViewById(R.id.navigation_bar);
@@ -42,16 +50,16 @@ public class AdminEventsView extends AppCompatActivity implements NavigationBarV
 
         //fetch all events at current wanted venues
         for (Venue v: venues){
-            events.addAll(v.fetchEvents());
+            allEvents.addAll(v.fetchEvents());
         }
 
-        setAdapter(events, venues, admin);
+        setAdapter(allEvents, venues, admin);
 
     }
 
     private void setAdapter(ArrayList<Event> events, ArrayList<Venue> venues, Admin admin){
         //initialize set adapter
-        AdminHeaderAdapter header = new AdminHeaderAdapter("Events scheduled at your venues");
+        AdminHeaderAdapter header = new AdminHeaderAdapter("Events scheduled at your venues", admin);
         AdminEventsAdapter adapter = new AdminEventsAdapter(events, venues, admin);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
