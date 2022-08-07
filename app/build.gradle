@@ -52,4 +52,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
     //implementation 'com.google.firebase:firebase-database:20.0.5'
 
+    //testing dependencies
+    testImplementation 'org.mockito:mockito-all:1.10.19'
+
 }
