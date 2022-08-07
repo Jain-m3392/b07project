@@ -31,71 +31,41 @@ import org.junit.runner.RunWith;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
-public class MainActivityTestRegisterUser {
+public class LoginActivityTest {
 
     @Rule
     public ActivityScenarioRule<MainActivity> mActivityScenarioRule =
             new ActivityScenarioRule<>(MainActivity.class);
 
     @Test
-    public void mainActivityTestRegisterUser() {
-        ViewInteraction materialTextView = onView(
-                allOf(withId(R.id.sign_up), withText("sign up"),
+    public void loginActivityTest() {
+        ViewInteraction appCompatEditText = onView(
+                allOf(withId(R.id.email_edit_text),
                         childAtPosition(
                                 childAtPosition(
                                         withId(R.id.nav_host_fragment_content_main),
                                         0),
-                                4),
-                        isDisplayed()));
-        materialTextView.perform(click());
-
-        ViewInteraction appCompatEditText = onView(
-                allOf(withId(R.id.username_signup),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                0),
-                        isDisplayed()));
-        appCompatEditText.perform(replaceText("newUser"), closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText2 = onView(
-                allOf(withId(R.id.full_name),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
                                 1),
                         isDisplayed()));
-        appCompatEditText2.perform(replaceText("new user"), closeSoftKeyboard());
+        appCompatEditText.perform(replaceText("test@gmail.com"), closeSoftKeyboard());
 
-        ViewInteraction appCompatEditText3 = onView(
-                allOf(withId(R.id.email_signup),
+        ViewInteraction appCompatEditText2 = onView(
+                allOf(withId(R.id.password_edit_text),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(android.R.id.content),
-                                        0),
-                                5),
-                        isDisplayed()));
-        appCompatEditText3.perform(replaceText("newuser@gmail.com"), closeSoftKeyboard());
-
-        ViewInteraction appCompatEditText4 = onView(
-                allOf(withId(R.id.password_signup),
-                        childAtPosition(
-                                childAtPosition(
-                                        withId(android.R.id.content),
+                                        withId(R.id.nav_host_fragment_content_main),
                                         0),
                                 2),
                         isDisplayed()));
-        appCompatEditText4.perform(replaceText("123456"), closeSoftKeyboard());
+        appCompatEditText2.perform(replaceText("test123"), closeSoftKeyboard());
 
         ViewInteraction materialButton = onView(
-                allOf(withId(R.id.sign_up_button), withText("SIgn Up"),
+                allOf(withId(R.id.login_button), withText("Login"),
                         childAtPosition(
                                 childAtPosition(
-                                        withId(android.R.id.content),
+                                        withId(R.id.nav_host_fragment_content_main),
                                         0),
-                                3),
+                                0),
                         isDisplayed()));
         materialButton.perform(click());
 
@@ -110,10 +80,10 @@ public class MainActivityTestRegisterUser {
         bottomNavigationItemView.perform(click());
 
         ViewInteraction editText = onView(
-                allOf(withId(R.id.editTextTextPersonName), withText("new user"),
+                allOf(withId(R.id.editTextTextPersonName), withText("test"),
                         withParent(withParent(withId(android.R.id.content))),
                         isDisplayed()));
-        editText.check(matches(withText("new user")));
+        editText.check(matches(withText("test")));
     }
 
     private static Matcher<View> childAtPosition(
