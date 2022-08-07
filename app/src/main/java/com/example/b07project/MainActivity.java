@@ -139,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
 
         else if (user instanceof Admin){
             Admin admin = (Admin)user;
-            Intent intent = new Intent(this, AdminAccountActivity.class);
+            Intent intent = new Intent(this, AdminEventsView.class);
             intent.putExtra("Admin", admin);
             Log.d("login", admin.venues.toString());
             startActivity(intent);
