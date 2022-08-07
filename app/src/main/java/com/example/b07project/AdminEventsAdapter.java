@@ -1,8 +1,11 @@
 package com.example.b07project;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -14,10 +17,12 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
 
     private ArrayList<Event> events;
     private ArrayList<Venue> venues;
+    private Admin admin;
 
-    public AdminEventsAdapter (ArrayList<Event> events, ArrayList<Venue> venues){
+    public AdminEventsAdapter (ArrayList<Event> events, ArrayList<Venue> venues, Admin admin){
         this.events = events;
         this.venues = venues;
+        this.admin = admin;
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
@@ -27,6 +32,7 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
         private TextView eventVenue;
         private TextView eventSport;
         private TextView eventCreator;
+        private Button edit;
 
         //TODO add buttons
 
@@ -38,6 +44,17 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
             eventVenue = view.findViewById(R.id.adminEventListVenue);
             eventSport = view.findViewById(R.id.adminEventListSport);
             eventCreator = view.findViewById(R.id.adminEventListCreator);
+            edit = view.findViewById(R.id.adminEventListEdit);
+            Context context = view.getContext();
+            edit.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v){
+//                    Intent intent = new Intent(context, EditClass.class);
+//                    intent.putExtra("Admin", admin);
+//                    context.startActivity(intent);
+                    return;
+                }
+            });
         }
     }
 

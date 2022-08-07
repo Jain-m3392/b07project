@@ -45,14 +45,14 @@ public class AdminEventsView extends AppCompatActivity implements NavigationBarV
             events.addAll(v.fetchEvents());
         }
 
-        setAdapter(events, venues);
+        setAdapter(events, venues, admin);
 
     }
 
-    private void setAdapter(ArrayList<Event> events, ArrayList<Venue> venues){
+    private void setAdapter(ArrayList<Event> events, ArrayList<Venue> venues, Admin admin){
         //initialize set adapter
         HeaderAdapter header = new HeaderAdapter("Events scheduled at your venues");
-        AdminEventsAdapter adapter = new AdminEventsAdapter(events, venues);
+        AdminEventsAdapter adapter = new AdminEventsAdapter(events, venues, admin);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
