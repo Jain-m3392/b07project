@@ -1,5 +1,6 @@
 package com.example.b07project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -10,10 +11,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
+
+import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 
-public class AdminEventsView extends AppCompatActivity {
+public class AdminEventsView extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
 
     Admin admin;
     private RecyclerView recyclerView;
@@ -30,6 +34,11 @@ public class AdminEventsView extends AppCompatActivity {
 
         ArrayList<Venue> venues = admin.fetchCreatedVenues();
         ArrayList<Event> events = new ArrayList<>();
+
+        //Initiate navbar
+        NavigationBarView nav = findViewById(R.id.navigation_bar);
+        nav.setSelectedItemId(R.id.menuitem_home);
+        nav.setOnItemSelectedListener(this);
 
         //fetch all events at current wanted venues
         for (Venue v: venues){
@@ -53,4 +62,9 @@ public class AdminEventsView extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        AdminNavBar bar = new AdminNavBar();
+        return bar.navigate(item, this, admin);
+    }
 }

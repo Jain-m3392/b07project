@@ -10,10 +10,6 @@
         android:icon="@drawable/add_icon_foreground"
         android:title="@string/menuitem_newvenue" />
     <item
-        android:id="@+id/menuitem_venues"
-        android:icon="@drawable/venue_icon_foreground"
-        android:title="@string/menuitem_venues" />
-    <item
         android:id="@+id/menuitem_account"
         android:icon="@drawable/account_icon_foreground"
         android:title="@string/menuitem_account" />
