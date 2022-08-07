@@ -2,6 +2,7 @@ package com.example.b07project;
 
 import android.os.Parcel;
 import android.os.Parcelable;
+import android.util.Log;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -54,7 +55,9 @@ public class Admin extends User implements Parcelable, Pushable {
 
     public ArrayList<Venue> fetchCreatedVenues(){
         ArrayList<Venue> res = new ArrayList<>();
+        Log.d("admin", venues.toString());
         for (Venue v: User.fetchAllVenues()){
+            Log.d("admin", String.valueOf(v.venueID));
             if (venues.contains(v.venueID)){
                 res.add(v);
             }
@@ -79,6 +82,6 @@ public class Admin extends User implements Parcelable, Pushable {
     @Override
     public void push() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("admins");
-        ref.child(String.valueOf(this.email.hashCode())).setValue(this);
+        ref.child(username).setValue(this);
     }
 }

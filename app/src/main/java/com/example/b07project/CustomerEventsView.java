@@ -38,7 +38,6 @@ public class CustomerEventsView extends AppCompatActivity implements NavigationB
 
         recyclerView = findViewById(R.id.CustomerEventsRecycler);
 
-        //TODO only display upcoming!
 //        ArrayList<String> tests = new ArrayList<>();
 //        Event test = new Event("user1", "10am", "11am", 5, 0, 100, tests, "Volleyball tournament", "Volleyball", "08/11/2022");
 //        Event test2 = new Event("user1", "10am", "11am", 5, 0, 100, tests, "Volleyball residence cup", "Volleyball", "08/15/2022");

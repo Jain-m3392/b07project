@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
             Admin admin = (Admin)user;
             Intent intent = new Intent(this, AdminAccountActivity.class);
             intent.putExtra("Admin", admin);
+            Log.d("login", admin.venues.toString());
             startActivity(intent);
 
         }
@@ -188,7 +189,10 @@ public class MainActivity extends AppCompatActivity {
                 Admin admin = snapshot.getValue(Admin.class);
                 if (admin != null){
                     if (admin != null && admin.email != null){
-                        admin.venues = new ArrayList<Integer>();
+                        if (admin.venues == null){
+                            admin.venues = new ArrayList<Integer>();
+                        }
+
                         activity.completeLogin(admin);
                     }
                 }

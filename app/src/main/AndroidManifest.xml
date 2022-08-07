@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.b07project">
+    package="com.example.b07project" >
 
     <application
         android:allowBackup="true"
@@ -12,14 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.B07project"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".AdminEventsView"
+            android:exported="false" />
         <activity
             android:name=".CustomerEventsView"
             android:exported="false" />
         <activity
-            android:name=".AdminEventsView"
+            android:name=".AdminEventsViewOld"
             android:exported="false" />
-        <activity android:name=".AdminAccountActivity"
+        <activity
+            android:name=".AdminAccountActivity"
             android:exported="false" />
         <activity
             android:name=".EventListActivity"
@@ -54,7 +58,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.B07project.NoActionBar">
+            android:theme="@style/Theme.B07project.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
