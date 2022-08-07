@@ -55,6 +55,10 @@
             android:name=".RegisterNewUser"
             android:exported="false" />
         <activity
+            android:name=".FilterPop"
+            android:exported="false"
+            android:theme="@style/AppTheme.Pop"/>
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
