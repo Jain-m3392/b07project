@@ -127,6 +127,7 @@ public class FirstFragment extends Fragment implements View.OnClickListener{
                 if(task.isSuccessful()){
                     MainActivity activity = (MainActivity)getActivity();
 //                    activity.findUserandLogIn(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                    assert activity != null;
                     activity.findUserandLogIn(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
                 }
                 else{
