@@ -48,6 +48,9 @@
     <string name="date">Date:</string>
     <string name="venue">Venue:</string>
     <string name="sport">Sport:</string>
+    <string name="admin_event_creator">Created by:</string>
+    <string name="edit_event">EDIT</string>
+    <string name="delete_event">DELETE</string>
 
 
 </resources>

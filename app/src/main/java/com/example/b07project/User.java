@@ -129,7 +129,7 @@ public abstract class User {
                 if (!allAdmins.contains(admin)){
                     allAdmins.add(admin);
                 }
-                Log.d("test", "Found admin: " + admin.username);
+                Log.d("test", "Found admin: " + admin.venues);
 //                Log.d("test", customer.fullName);
             }
             @Override
@@ -139,7 +139,7 @@ public abstract class User {
                     admin.venues  = new ArrayList<Integer>();
 
                 for (User a : User.fetchAllAdmins()) {
-                    if (a.username == admin.username) {
+                    if (a.username.equals(admin.username)) {
                         Admin ac = (Admin)a;
                         ac.venues = admin.venues;
                         ac.password = admin.password;

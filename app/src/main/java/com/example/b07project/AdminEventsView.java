@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 
 import java.util.ArrayList;
 
@@ -42,12 +43,12 @@ public class AdminEventsView extends AppCompatActivity {
     private void setAdapter(ArrayList<Event> events, ArrayList<Venue> venues){
         //initialize set adapter
         HeaderAdapter header = new HeaderAdapter("Events scheduled at your venues");
-        //TODO: add other adapters
+        AdminEventsAdapter adapter = new AdminEventsAdapter(events, venues);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-        ConcatAdapter cat = new ConcatAdapter(header);
+        ConcatAdapter cat = new ConcatAdapter(header, adapter);
         recyclerView.setAdapter(cat);
 
     }
