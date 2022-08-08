@@ -27,6 +27,7 @@ public class CustomerEventsAdapter extends RecyclerView.Adapter<CustomerEventsAd
         private TextView eventDate;
         private TextView eventVenue;
         private TextView eventSport;
+        private TextView eventID;
 
         public MyViewHolder(final View view){
             super(view);
@@ -35,6 +36,7 @@ public class CustomerEventsAdapter extends RecyclerView.Adapter<CustomerEventsAd
             eventDate = view.findViewById(R.id.eventListDate);
             eventVenue = view.findViewById(R.id.eventListVenue);
             eventSport = view.findViewById(R.id.eventListSport);
+            eventID = view.findViewById(R.id.eventListID);
         }
     }
 
@@ -58,6 +60,7 @@ public class CustomerEventsAdapter extends RecyclerView.Adapter<CustomerEventsAd
         holder.eventDate.setText(date);
         holder.eventVenue.setText(v.venueName);
         holder.eventSport.setText(e.sportsType);
+        holder.eventID.setText(String.valueOf(e.eventID));
     }
 
     @Override

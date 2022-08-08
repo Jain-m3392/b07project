@@ -55,6 +55,7 @@
     <string name="filter_venues">FILTER BY VENUE</string>
     <string name="select_venues">Select desired venues</string>
     <string name="apply_filter">APPLY</string>
+    <string name="event_id">Event ID:</string>
 
 
 </resources>

@@ -9,11 +9,9 @@
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/home_icon_foreground.xml" value="0.238" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1615" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_account.xml" value="0.264" />
-        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_admin_create_venue.xml" value="0.2" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_admin_events_view.xml" value="0.24547101449275363" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_admin_events_view_old.xml" value="0.24547101449275363" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_customer_events_view.xml" value="0.18885869565217392" />
-        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_customer_schedule_event.xml" value="0.264" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_event_detail.xml" value="0.18072916666666666" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_event_list.xml" value="0.18072916666666666" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/activity_logout.xml" value="0.2" />
@@ -22,7 +20,7 @@
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/bottom_admin_navbar.xml" value="0.24547101449275363" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/bottom_navbar.xml" value="0.536" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/content_main.xml" value="0.2" />
-        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/fragment_first.xml" value="0.2" />
+        <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/fragment_first.xml" value="0.4" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/layout/fragment_second.xml" value="0.264" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bootom_navbar_menu.xml" value="0.23981481481481481" />
         <entry key="..\:/Storage/uni/CSCB07/b07project/app/src/main/res/menu/bottom_admin_navbar_menu.xml" value="0.25416666666666665" />
@@ -31,18 +29,22 @@
         <entry key="..\:/uni/S2022/CSCB07/b07project/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout-sw600dp/fragment_event_list.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_admin_events_view.xml" value="0.16163584391276042" />
-        <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.10659637451171876" />
+        <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_event_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_event_list.xml" value="0.39021852237252863" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2462962962962963" />
         <entry key="app/src/main/res/layout/activity_register_new_user.xml" value="0.30529937744140623" />
         <entry key="app/src/main/res/layout/activity_updatedcustomer_events_view.xml" value="0.25591278076171875" />
-        <entry key="app/src/main/res/layout/admin_event_list_item.xml" value="0.2005048447760982" />
+        <entry key="app/src/main/res/layout/admin_event_list_header.xml" value="0.296649169921875" />
+        <entry key="app/src/main/res/layout/admin_event_list_item.xml" value="0.5756757432135983" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.25675811767578116" />
         <entry key="app/src/main/res/layout/event_information.xml" value="0.33" />
         <entry key="app/src/main/res/layout/event_list_content.xml" value="0.33" />
         <entry key="app/src/main/res/layout/event_list_item.xml" value="0.44792832084324063" />
-        <entry key="app/src/main/res/layout/event_view_header.xml" value="0.22714385986328128" />
+        <entry key="app/src/main/res/layout/event_view_header.xml" value="0.34018859863281253" />
+        <entry key="app/src/main/res/layout/filter_pop.xml" value="0.1614990234375" />
+        <entry key="app/src/main/res/layout/filter_pop_header.xml" value="0.42449798583984377" />
+        <entry key="app/src/main/res/layout/filter_pop_item.xml" value="0.3726669311523438" />
         <entry key="app/src/main/res/layout/fragment_event_detail.xml" value="0.5" />
         <entry key="app/src/main/res/layout/fragment_event_list.xml" value="0.33013427734375" />
         <entry key="app/src/main/res/layout/fragment_first.xml" value="0.45021820068359375" />

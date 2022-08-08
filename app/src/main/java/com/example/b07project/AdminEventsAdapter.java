@@ -35,6 +35,7 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
         private TextView eventVenue;
         private TextView eventSport;
         private TextView eventCreator;
+        private TextView eventID;
         private Button edit;
 
         //TODO add buttons
@@ -47,6 +48,7 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
             eventVenue = view.findViewById(R.id.adminEventListVenue);
             eventSport = view.findViewById(R.id.adminEventListSport);
             eventCreator = view.findViewById(R.id.adminEventListCreator);
+            eventID = view.findViewById(R.id.adminEventID);
             edit = view.findViewById(R.id.adminEventListEdit);
             Context context = view.getContext();
             edit.setOnClickListener(new View.OnClickListener(){
@@ -81,6 +83,7 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
         holder.eventVenue.setText(v.venueName);
         holder.eventSport.setText(e.sportsType);
         holder.eventCreator.setText(e.creator);
+        holder.eventID.setText(String.valueOf(e.eventID));
     }
 
     @Override
