@@ -1,5 +1,8 @@
 package com.example.b07project;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.annotation.NonNull;
 
 import com.google.firebase.database.DatabaseReference;
@@ -8,7 +11,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class Event implements Pushable {
+public class Event implements Pushable, Parcelable {
 
     public String creator;
     public String endTime;
@@ -115,5 +118,49 @@ public class Event implements Pushable {
     public void push() {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("events");
         ref.child(String.valueOf(this.eventID)).setValue(this);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public Event (Parcel in) {
+        this.creator = in.readString();
+        this.name = in.readString();
+        this.startTime = in.readString();
+        this.endTime = in.readString();
+        this.capacity = in.readInt();
+        this.eventID = in.readInt();
+        this.customers = in.readArrayList(null);
+        this.date = in.readString();
+        this.sportsType = in.readString();
+        this.venueID = in.readInt();
+    }
+
+    public static Creator<Event> CREATOR = new Creator<Event>() {
+        @Override
+        public Event createFromParcel(Parcel parcel) {
+            return new Event(parcel);
+        }
+
+        @Override
+        public Event[] newArray(int i) {
+            return new Event[i];
+        }
+    };
+
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(creator);
+        parcel.writeString(name);
+        parcel.writeString(startTime);
+        parcel.writeString(endTime);
+        parcel.writeInt(capacity);
+        parcel.writeInt(eventID);
+        parcel.writeList(customers);
+        parcel.writeString(date);
+        parcel.writeInt(venueID);
+        parcel.writeString(sportsType);
     }
 }
