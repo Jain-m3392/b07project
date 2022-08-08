@@ -20,9 +20,6 @@
             android:name=".CustomerEventsView"
             android:exported="false" />
         <activity
-            android:name=".AdminEventsViewOld"
-            android:exported="false" />
-        <activity
             android:name=".AdminAccountActivity"
             android:exported="false" />
         <activity
@@ -44,9 +41,6 @@
             android:exported="false" />
         <activity
             android:name=".customerCreateEvents"
-            android:exported="false" />
-        <activity
-            android:name=".CustomerEventsViewActivityOld"
             android:exported="false" />
         <activity
             android:name=".CustomerVenuesView"
