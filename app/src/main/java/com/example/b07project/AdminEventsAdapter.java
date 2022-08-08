@@ -54,6 +54,7 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
                 public void onClick(View v){
                     Intent intent = new Intent(context, AdminEditEvent.class);
                     intent.putExtra("event", event);
+                    intent.putExtra("admin", admin);
                     context.startActivity(intent);
                     return;
                 }
