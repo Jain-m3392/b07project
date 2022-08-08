@@ -39,8 +39,7 @@ public class FilterPop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-//        getWindow().setLayout((int) (width*0.8), (int) (height*0.6));
-        getWindow().setLayout((int) (width), (int) (height));
+        getWindow().setLayout(width, height);
 
         recyclerView = findViewById(R.id.filterRecyclerView);
         apply = findViewById(R.id.applyButton);
@@ -53,9 +52,12 @@ public class FilterPop extends Activity {
                 Context context = view.getContext();
                 Intent intent = new Intent(context, AdminEventsView.class);
                 intent.putExtra("Admin", admin);
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("Venues", selectedVenues);
-                intent.putExtras(bundle);
+                //TODO check with TA if no filter selected == all
+                if (selectedVenues.size() != 0){
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelableArrayList("Venues", selectedVenues);
+                    intent.putExtras(bundle);
+                }
                 context.startActivity(intent);
             }
         });
