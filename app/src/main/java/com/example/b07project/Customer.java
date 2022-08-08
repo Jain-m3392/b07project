@@ -8,7 +8,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class Customer extends User implements Parcelable, Pushable {
     public String fullName; //Nice display name shown to other users (e.g. John Doe). Maybe optional?
@@ -99,6 +104,23 @@ public class Customer extends User implements Parcelable, Pushable {
         ArrayList<Event> res = new ArrayList<Event>();
         for (Event e: User.fetchAllEvents()){
             if (scheduledEvents.contains(String.valueOf(e.eventID))){
+                res.add(e);
+            }
+        }
+        return res;
+    }
+    //get upcoming events
+    public ArrayList<Event> fetchUpcomingEvents() throws ParseException {
+        ArrayList<Event> res = new ArrayList<Event>();
+        DateFormat fbDate = new SimpleDateFormat("MM/dd/yyyy");
+        for (Event e: User.fetchAllEvents()){
+            Date eventDate = fbDate.parse(e.date);
+            //get current date
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.HOUR_OF_DAY, 0); calendar.set(Calendar.MINUTE, 0);
+            calendar.set(Calendar.SECOND, 0); calendar.set(Calendar.MILLISECOND, 0);
+            Date currentDate = calendar.getTime();
+            if (eventDate.compareTo(currentDate) >= 0) {
                 res.add(e);
             }
         }
