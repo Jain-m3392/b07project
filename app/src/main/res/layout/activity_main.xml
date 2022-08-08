@@ -20,6 +20,8 @@
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
-        app:popupTheme="@style/Theme.B07project.PopupOverlay" />
+        app:popupTheme="@style/Theme.B07project.PopupOverlay"
+        app:title="b07 Project"
+        app:titleTextColor="@color/white"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
