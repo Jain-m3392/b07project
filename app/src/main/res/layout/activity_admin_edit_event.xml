@@ -6,4 +6,132 @@
     android:layout_height="match_parent"
     tools:context=".AdminEditEvent">
 
+    <include
+        android:id="@+id/include5"
+        layout="@layout/bottom_admin_navbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--    android:onClick="openDatePicker"-->
+    <!--    style="?android:spinnerStyle"-->
+    <!--    android:inputType="date"-->
+
+    <!--    android:onClick="popTimePicker"-->
+    <!--    android:backgroundTint="@color/design_default_color_surface"-->
+    <!--    android:textColor="@color/black"-->
+    <!--    android:textAlignment="textStart"-->
+    <!--    android:inputType="time"-->
+
+    <EditText
+        android:id="@+id/eventNameUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventSportsUpdate"
+        android:layout_marginTop="10dp"
+        android:hint="Event name"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEventLabel" />
+
+    <EditText
+        android:id="@+id/eventSportsUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventNameUpdate"
+        android:layout_marginTop="10dp"
+        android:hint="Sports type"
+        android:inputType="text"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventNameUpdate" />
+
+    <EditText
+        android:id="@+id/eventCapacityUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventSportsUpdate"
+        android:layout_marginTop="10dp"
+        android:hint="Event capacity (enter a number)"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventSportsUpdate" />
+
+    <EditText
+        android:id="@+id/eventDateUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventCapacityUpdate"
+        android:layout_marginTop="10dp"
+        android:hint="Event Date"
+        android:inputType="date"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventCapacityUpdate" />
+
+    <EditText
+        android:id="@+id/eventStartTimeUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventDateUpdate"
+        android:layout_marginTop="10dp"
+        android:hint="Event start time"
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventDateUpdate" />
+
+    <EditText
+        android:id="@+id/eventEndTimeUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/eventStartTimeUpdate"
+        android:layout_marginTop="10dp"
+        android:hint="Event end time"
+        android:inputType="time"
+        android:minHeight="48dp"
+        android:padding="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventStartTimeUpdate" />
+
+    <Button
+        android:id="@+id/editEvent"
+        android:layout_width="94dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="10dp"
+        android:text="Edit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/eventEndTimeUpdate" />
+
+    <TextView
+        android:id="@+id/editEventLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Edit the following fields:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
