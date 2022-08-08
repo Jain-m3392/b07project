@@ -13,6 +13,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 
@@ -31,7 +32,11 @@ public class EventListActivity extends AppCompatActivity implements NavigationBa
         //get event info
         Intent intent = getIntent();
         customer = intent.getParcelableExtra("Customer");
-        allEvents = customer.fetchAllEvents();
+        try {
+            allEvents = customer.fetchUpcomingEvents();
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         allVenues = customer.fetchAllVenues();
 
         NavigationBarView nav = findViewById(R.id.navigation_bar);
