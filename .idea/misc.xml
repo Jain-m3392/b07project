@@ -30,6 +30,7 @@
         <entry key="app/src/main/res/layout-sw600dp/fragment_event_list.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_admin_events_view.xml" value="0.16163584391276042" />
         <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.10659637451171876" />
+        <entry key="app/src/main/res/layout/activity_customer_schedule_event.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_event_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_event_list.xml" value="0.39021852237252863" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.5" />

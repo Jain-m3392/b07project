@@ -12,13 +12,17 @@ import android.text.InputType;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -30,13 +34,16 @@ import java.util.Locale;
 
 //for creating an event as a customer
 public class customerScheduleEvent extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
-    EditText nameInput, capacityInput, sportsTypeInput, dateInput, startTimeInput, endTimeInput;
+    EditText nameInput, capacityInput, dateInput, startTimeInput, endTimeInput;
     String name, capacity, startTime, endTime, sportsType, dateFinal;
     Button submit;
     TextView textView;
     DatabaseReference newEventdbRef;
     Customer customer;
     Calendar startTC;
+    Spinner dropdown;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +52,11 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         setContentView(R.layout.activity_customer_schedule_event);
         Intent intent = getIntent();
         customer = intent.getParcelableExtra("Customer");
+        Venue venue = intent.getParcelableExtra("Venue");
+        String[] accessibleSports = new String [venue.accessibleSports.size()];
+        for(int i=0; i<venue.accessibleSports.size(); i++){
+            accessibleSports[i] = venue.accessibleSports.get(i);
+        }
 
         //set up navbar
         NavigationBarView nav = findViewById(R.id.navigation_bar);
@@ -58,10 +70,14 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         startTimeInput = (EditText) findViewById(R.id.eventStartTimeUpdate);
         endTimeInput = (EditText) findViewById(R.id.eventEndTimeUpdate);
         dateInput = (EditText) findViewById(R.id.eventDateUpdate);
-        sportsTypeInput = (EditText) findViewById(R.id.eventSportsUpdate);
+        dropdown = (Spinner) findViewById(R.id.dropdownSports);
         dateInput.setInputType(InputType.TYPE_NULL);
         startTimeInput.setInputType(InputType.TYPE_NULL);
         endTimeInput.setInputType(InputType.TYPE_NULL);
+//        adapter = new ArrayAdapter<String>(customerScheduleEvent.this, R.layout.dropdown_item, accessibleSports);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(customerScheduleEvent.this, android.R.layout.simple_spinner_item, accessibleSports);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dropdown.setAdapter(adapter);
         newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
 
         startTimeInput.setOnClickListener(new View.OnClickListener() {
@@ -132,10 +148,21 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
             }
         });
 
+        dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                sportsType = adapterView.getItemAtPosition(i).toString();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                Toast.makeText(customerScheduleEvent.this, "Please select sports type", Toast.LENGTH_LONG).show();
+            }
+        });
+
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Venue venue = intent.getParcelableExtra("Venue");
                 ArrayList<String> customerArray = new ArrayList<String>();
                 int eventID = -1;
                 for (Event e : User.fetchAllEvents()) {
@@ -144,7 +171,6 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                 }
                 name = nameInput.getText().toString();
                 capacity = capacityInput.getText().toString();
-                sportsType = sportsTypeInput.getText().toString();
                 Event event = new Event(customer.fullName, startTime, endTime, eventID + 1, venue.venueID, Integer.parseInt(capacity), customerArray, name, sportsType, dateFinal);
 //                newEventdbRef.push().setValue(event);
                 event.push();
