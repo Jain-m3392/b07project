@@ -13,21 +13,10 @@
         android:layout_alignParentBottom="true"
         android:elevation="10dp" />
 
-    <TextView
-        android:id="@+id/scheduleEventText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Please provide the following information"
-        android:textSize="10dp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_margin="20dp"/>
-
     <EditText
         android:id="@+id/eventNameUpdate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/scheduleEventText"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -139,17 +128,16 @@
 
     <Button
         android:id="@+id/submitButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:text="Submit"
-        android:textAllCaps="true"
-        android:textSize="20dp"
         android:layout_below="@id/eventEndTimeUpdate"
         android:layout_centerHorizontal="true"
-        android:backgroundTint="@color/design_default_color_secondary"
-        android:layout_margin="10dp"/>
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="Submit"
+        android:textAllCaps="true" />
 
 
     <!--        app:layout_constraintTop_toBottomOf="@+id/scheduleEventText" />-->

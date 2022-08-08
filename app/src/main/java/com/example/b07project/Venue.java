@@ -32,6 +32,7 @@ public class Venue implements Parcelable, Pushable {
         venueID = in.readInt();
         venueLocation = in.readString();
         venueName = in.readString();
+        accessibleSports = in.readArrayList(null);
     }
 
     public static final Creator<Venue> CREATOR = new Creator<Venue>() {
@@ -95,6 +96,7 @@ public class Venue implements Parcelable, Pushable {
         parcel.writeInt(venueID);
         parcel.writeString(venueLocation);
         parcel.writeString(venueName);
+        parcel.writeList(accessibleSports);
     }
 
     @Override

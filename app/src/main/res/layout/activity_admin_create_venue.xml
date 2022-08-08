@@ -53,12 +53,11 @@ tools:context=".adminCreateVenue">
         android:padding="20dp" />
 
     <Button
+        android:id="@+id/adminAddButton"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:id="@+id/adminAddButton"
         android:layout_below="@id/adminVenueLocation"
         android:layout_marginStart="30dp"
-        android:backgroundTint="@color/design_default_color_secondary"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
@@ -67,17 +66,17 @@ tools:context=".adminCreateVenue">
         android:text="Add" />
 
 
-
-<Button
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/adminCreateVenueButton"
-    android:text="Create a venue"
-    android:textSize="25dp"
-    android:layout_below="@id/adminVenueSports"
-    android:layout_centerHorizontal="true"
-    android:backgroundTint="@color/design_default_color_secondary"
-    android:layout_margin="15dp"/>
+    <Button
+        android:id="@+id/adminCreateVenueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adminVenueSports"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Create a venue" />
 
     <include
         layout="@layout/bottom_admin_navbar"

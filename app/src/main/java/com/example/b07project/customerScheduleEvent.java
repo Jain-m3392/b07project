@@ -37,8 +37,8 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
     EditText nameInput, capacityInput, dateInput, startTimeInput, endTimeInput;
     String name, capacity, startTime, endTime, sportsType, dateFinal;
     Button submit;
-    TextView textView;
-    DatabaseReference newEventdbRef;
+//    TextView textView;
+//    DatabaseReference newEventdbRef;
     Customer customer;
     Calendar startTC;
     Spinner dropdown;
@@ -53,17 +53,17 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         Intent intent = getIntent();
         customer = intent.getParcelableExtra("Customer");
         Venue venue = intent.getParcelableExtra("Venue");
-        String[] accessibleSports = new String [venue.accessibleSports.size()];
-        for(int i=0; i<venue.accessibleSports.size(); i++){
-            accessibleSports[i] = venue.accessibleSports.get(i);
-        }
+//        String[] accessibleSports = new String [venue.accessibleSports.size()];
+//        for(int i=0; i<venue.accessibleSports.size(); i++){
+//            accessibleSports[i] = venue.accessibleSports.get(i);
+//        }
 
         //set up navbar
         NavigationBarView nav = findViewById(R.id.navigation_bar);
         nav.setSelectedItemId(R.id.menuitem_venues);
         nav.setOnItemSelectedListener(this);
 
-        textView = findViewById(R.id.scheduleEventText);
+//        textView = findViewById(R.id.scheduleEventText);
         submit = (Button) findViewById(R.id.submitButton);
         nameInput = (EditText) findViewById(R.id.eventNameUpdate);
         capacityInput = (EditText) findViewById(R.id.eventCapacityUpdate);
@@ -75,10 +75,12 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
         startTimeInput.setInputType(InputType.TYPE_NULL);
         endTimeInput.setInputType(InputType.TYPE_NULL);
 //        adapter = new ArrayAdapter<String>(customerScheduleEvent.this, R.layout.dropdown_item, accessibleSports);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(customerScheduleEvent.this, android.R.layout.simple_spinner_item, accessibleSports);
+//        ArrayAdapter<String> adapter = new ArrayAdapter<>(customerScheduleEvent.this, android.R.layout.simple_spinner_item, accessibleSports);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(customerScheduleEvent.this, android.R.layout.simple_spinner_item, venue.accessibleSports);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         dropdown.setAdapter(adapter);
-        newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
+        Log.d("Schedule", venue.accessibleSports.toString());
+//        newEventdbRef = FirebaseDatabase.getInstance().getReference().child("events");
 
         startTimeInput.setOnClickListener(new View.OnClickListener() {
             @Override
