@@ -2,6 +2,8 @@ package com.example.b07project;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,6 +28,7 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
+        private Event event;
         private TextView eventName;
         private TextView eventTime;
         private TextView eventDate;
@@ -49,9 +52,9 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
             edit.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
-//                    Intent intent = new Intent(context, EditClass.class);
-//                    intent.putExtra("Admin", admin);
-//                    context.startActivity(intent);
+                    Intent intent = new Intent(context, AdminEditEvent.class);
+                    intent.putExtra("event", event);
+                    context.startActivity(intent);
                     return;
                 }
             });
@@ -71,6 +74,7 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
         Venue v = venues.get(e.venueID);
         holder.eventName.setText(e.getName());
         String time = e.getStartTime() + " - " + e.getEndTime();
+        holder.event = e;
         holder.eventTime.setText(time);
         holder.eventDate.setText(e.getDate());
         holder.eventVenue.setText(v.venueName);
