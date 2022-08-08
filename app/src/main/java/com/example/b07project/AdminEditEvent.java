@@ -22,6 +22,10 @@ public class AdminEditEvent extends AppCompatActivity implements NavigationBarVi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_edit_event);
 
+        NavigationBarView nav = findViewById(R.id.navigation_bar);
+        nav.setSelectedItemId(R.id.menuitem_home);
+        nav.setOnItemSelectedListener(this);
+
         Intent intent = getIntent();
         this.event = intent.getParcelableExtra("event");
         //identify & set elements
