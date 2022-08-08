@@ -160,7 +160,7 @@ public class Event implements Pushable, Parcelable {
         parcel.writeInt(eventID);
         parcel.writeList(customers);
         parcel.writeString(date);
-        parcel.writeInt(venueID);
         parcel.writeString(sportsType);
+        parcel.writeInt(venueID);
     }
 }

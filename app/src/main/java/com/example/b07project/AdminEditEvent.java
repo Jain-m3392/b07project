@@ -24,7 +24,7 @@ import java.util.Calendar;
 public class AdminEditEvent extends AppCompatActivity implements NavigationBarView.OnItemSelectedListener {
     private Admin admin;
     private Event event;
-    Calendar startTC;
+    private Calendar startTC;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +51,6 @@ public class AdminEditEvent extends AppCompatActivity implements NavigationBarVi
         endTime.setInputType(InputType.TYPE_NULL);
 
         Button edit = findViewById(R.id.editEvent);
-
-        //set event values
-        event.name = eventName.getText().toString();
-        event.sportsType = sportsType.getText().toString();
-        event.capacity = Integer.valueOf(eventCapacity.getText().toString());
 
         startTime.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -128,7 +123,12 @@ public class AdminEditEvent extends AppCompatActivity implements NavigationBarVi
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //update event
+                //update event fields
+                event.name = eventName.getText().toString();
+                event.sportsType = sportsType.getText().toString();
+                event.capacity = Integer.valueOf(eventCapacity.getText().toString());
+
+                //update Firebase
                 event.push();
                 Toast.makeText(getApplicationContext(), "Event updated", Toast.LENGTH_LONG).show();
             }
