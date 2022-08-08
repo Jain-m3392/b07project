@@ -24,9 +24,6 @@
             android:name=".CustomerEventsView"
             android:exported="false" />
         <activity
-            android:name=".AdminEventsViewOld"
-            android:exported="false" />
-        <activity
             android:name=".AdminAccountActivity"
             android:exported="false" />
         <activity
@@ -50,14 +47,15 @@
             android:name=".customerCreateEvents"
             android:exported="false" />
         <activity
-            android:name=".CustomerEventsViewActivityOld"
-            android:exported="false" />
-        <activity
             android:name=".CustomerVenuesView"
             android:exported="false" />
         <activity
             android:name=".RegisterNewUser"
             android:exported="false" />
+        <activity
+            android:name=".FilterPop"
+            android:exported="false"
+            android:theme="@style/AppTheme.Pop"/>
         <activity
             android:name=".MainActivity"
             android:exported="true"

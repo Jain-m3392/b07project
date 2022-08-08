@@ -70,7 +70,8 @@ public class adminCreateVenue extends AppCompatActivity implements NavigationBar
                 location = venueLocation.getText().toString();
 
                 Venue newVenue = new Venue(venueID+1, name, location, events, sportsTypes);
-
+                admin.addVenue(newVenue);
+                admin.push();
                 newVenue.push();
                 textView.setText("You successfully created a venue!");
 //                Toast.makeText(adminCreateVenue.this, "You successfully created a venue!", Toast.LENGTH_SHORT).show();
