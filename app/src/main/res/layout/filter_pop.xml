@@ -8,11 +8,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/filterRecyclerView"
-        android:layout_width="420dp"
-        android:layout_height="662dp"
+        android:layout_width="320dp"
+        android:layout_height="398dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        tools:layout_editor_absoluteY="144dp" />
 
     <Button
         android:id="@+id/applyButton"
@@ -23,6 +23,8 @@
         android:text="@string/apply_filter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/filterRecyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/filterRecyclerView"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

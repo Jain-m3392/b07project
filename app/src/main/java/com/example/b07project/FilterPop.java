@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 
 import androidx.recyclerview.widget.ConcatAdapter;
@@ -39,7 +40,12 @@ public class FilterPop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout(width, height);
+        getWindow().setLayout((int)(.8*width), (int)(.6*height));
+
+        WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
+        layoutParams.dimAmount = 0.75f;
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+        getWindow().setAttributes(layoutParams);
 
         recyclerView = findViewById(R.id.filterRecyclerView);
         apply = findViewById(R.id.applyButton);
@@ -52,12 +58,9 @@ public class FilterPop extends Activity {
                 Context context = view.getContext();
                 Intent intent = new Intent(context, AdminEventsView.class);
                 intent.putExtra("Admin", admin);
-                //TODO check with TA if no filter selected == all
-                if (selectedVenues.size() != 0){
-                    Bundle bundle = new Bundle();
-                    bundle.putParcelableArrayList("Venues", selectedVenues);
-                    intent.putExtras(bundle);
-                }
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("Venues", selectedVenues);
+                intent.putExtras(bundle);
                 context.startActivity(intent);
             }
         });
