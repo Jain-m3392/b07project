@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
 
     @Override
+    protected void onRestart() {
+        super.onRestart();
+        if (FirebaseAuth.getInstance().getCurrentUser() != null){
+            findUserandLogIn(FirebaseAuth.getInstance().getCurrentUser().getDisplayName());
+        }
+
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -58,44 +67,10 @@ public class MainActivity extends AppCompatActivity {
 //         });
 
 
-//        ArrayList<String[]> users = new ArrayList<String[]>();
-//        users.add(new String[]{"user@gmail.com", "user123", "testUser"});
-//        users.add(new String[]{"peach@gmail.com", "coconut", "apple"});
-//        users.add(new String[]{"test@gmail.com", "test123", "test"});
-//        users.add(new String[]{"s@gmail.com", "signup", "s"});
-//        for (String[] U: users){
-//            FirebaseAuth.getInstance().signInWithEmailAndPassword(U[0], U[1]).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                @Override
-//                public void onComplete(@NonNull Task<AuthResult> task) {
-//                    if (task.isSuccessful()){
-//                        Log.d("User", "Fixing: " + U[0].toString());
-//                        FirebaseUser fu = FirebaseAuth.getInstance().getCurrentUser();
-//                        Log.d("User", "email: " + fu.getEmail());
-//                        UserProfileChangeRequest req = new UserProfileChangeRequest.Builder().setDisplayName(U[2]).build();
-//                        fu.updateProfile(req);
-//                        FirebaseAuth.getInstance().signOut();
-//                    }
-//                }
-//            });
-//        }
-
-
-                binding = ActivityMainBinding.inflate(getLayoutInflater());
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-//        setSupportActionBar(binding.toolbar);
 
-//        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
-//        appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
-//        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-//        binding.fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
     }
 
     @Override

@@ -53,7 +53,7 @@ public class AdminEventsView extends AppCompatActivity implements NavigationBarV
             allEvents.addAll(v.fetchEvents());
         }
 
-        setAdapter(allEvents, venues, admin);
+        setAdapter(allEvents, User.fetchAllVenues(), admin);
 
     }
 
