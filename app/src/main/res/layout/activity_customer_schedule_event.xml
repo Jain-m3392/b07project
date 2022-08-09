@@ -38,7 +38,7 @@
         android:hint="@string/select_sport"
         android:minHeight="48dp"
         android:padding="10dp"
-        android:textSize="18dp" />
+        android:textSize="18sp" />
 
     <Spinner
         android:id="@+id/dropdownSports"
@@ -49,7 +49,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/eventSportsUpdate"
+        android:layout_toEndOf="@id/eventSportsUpdate"
         android:backgroundTint="@color/design_default_color_primary"
         android:minHeight="48dp"
         android:padding="10dp"

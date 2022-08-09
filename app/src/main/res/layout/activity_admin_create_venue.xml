@@ -16,7 +16,7 @@ tools:context=".adminCreateVenue">
         android:layout_marginBottom="20dp"
         android:gravity="center"
         android:text="@string/please_provide_the_following_information"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
@@ -29,6 +29,7 @@ tools:context=".adminCreateVenue">
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:hint="@string/venue_name"
+        android:inputType="text"
         android:padding="20dp" />
 
     <EditText
@@ -41,6 +42,7 @@ tools:context=".adminCreateVenue">
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:hint="@string/venue_location"
+        android:inputType="text"
         android:padding="20dp" />
 
     <EditText
@@ -53,6 +55,7 @@ tools:context=".adminCreateVenue">
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:hint="@string/accessible_sports"
+        android:inputType="text"
         android:padding="20dp" />
 
     <Button
@@ -64,7 +67,7 @@ tools:context=".adminCreateVenue">
         android:layout_marginTop="20dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/adminVenueSports"
+        android:layout_toEndOf="@id/adminVenueSports"
         android:padding="10dp"
         android:text="@string/add" />
 
