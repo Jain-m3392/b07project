@@ -36,8 +36,6 @@ public class AccountActivity extends AppCompatActivity implements NavigationBarV
             FirebaseDatabase fire = User.fetchFirebase();
 
             customer.push();
-//            DatabaseReference ref = fire.getReference("customers");
-//            ref.child(FirebaseAuth.getInstance().getUid()).setValue(customer);
         }
     };
 
@@ -64,13 +62,6 @@ public class AccountActivity extends AppCompatActivity implements NavigationBarV
         NavigationBarView nav = findViewById(R.id.navigation_bar);
         nav.setSelectedItemId(R.id.menuitem_account);
         nav.setOnItemSelectedListener(this);
-
-        //TEMPORARY
-//        User.initialize();
-        //ArrayList<User> customers = User.fetchAllCustomers();
-        //Log.d("debug", customers.toString());
-        //this.customer = (Customer)customers.get(0);
-//        this.customer = new Customer("test", "test1!", "Test Customer");
 
         String prevName = customer.fullName;
 

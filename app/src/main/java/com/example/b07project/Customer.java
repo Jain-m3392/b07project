@@ -156,36 +156,3 @@ public class Customer extends User implements Parcelable, Pushable {
     }
 
 }
-
-
-
-
-//    protected Customer(Parcel in) {
-//        fullName = in.readString();
-//        joinedEvents = in.createStringArrayList();
-//        scheduledEvents = in.createStringArrayList();
-//    }
-
-//    @Override
-//    public void writeToParcel(Parcel dest, int flags) {
-//        dest.writeString(fullName);
-//        dest.writeStringList(joinedEvents);
-//        dest.writeStringList(scheduledEvents);
-//    }
-//
-//    @Override
-//    public int describeContents() {
-//        return 0;
-//    }
-//
-//    public static final Creator<Customer> CREATOR = new Creator<Customer>() {
-//        @Override
-//        public Customer createFromParcel(Parcel in) {
-//            return new Customer(in);
-//        }
-//
-//        @Override
-//        public Customer[] newArray(int size) {
-//            return new Customer[size];
-//        }
-//    };
