@@ -20,12 +20,6 @@ public class AdminNavBar {
                 intent.putExtra("Admin", admin);
                 context.startActivity(intent);
                 return true;
-//            case R.id.menuitem_venues:
-//                //TODO
-////                intent = new Intent(context, CustomerVenuesView.class);
-////                intent.putExtra("Customer", admin);
-////                context.startActivity(intent);
-//                return true;
             case R.id.menuitem_new_venue:
                 intent = new Intent(context, adminCreateVenue.class);
                 intent.putExtra("Admin", admin);

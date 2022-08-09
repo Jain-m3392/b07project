@@ -28,7 +28,6 @@ public class Event implements Pushable, Parcelable {
 
     public Event(){} //No argument constructor for Firebase to work
 
-    //TODO: Check what type we want each field to be and initialize an Event
 
     public Event(String creator, String startTime, String endTime, int eventID, int venueID, int capacity, ArrayList<String> customers, String name, String sportsType, String date){
         this.creator = creator;
@@ -46,7 +45,6 @@ public class Event implements Pushable, Parcelable {
     public void addCustomer(@NonNull User player){
 
         customers.add(player.username);
-        //TODO: sync changes to database
     }
 
 

@@ -33,7 +33,6 @@ public class Customer extends User implements Parcelable, Pushable {
         this.fullName = fullName;
         this.email = email;
         this.password = password;
-        //TODO: Load customer-specific event data
         this.joinedEvents = new ArrayList<String>();
         this.scheduledEvents = new ArrayList<String>();
         Log.d("User", "ME!");
