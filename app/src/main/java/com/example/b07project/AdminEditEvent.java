@@ -108,6 +108,7 @@ public class AdminEditEvent extends AppCompatActivity implements NavigationBarVi
                         calendar.set(Calendar.YEAR, year);
                         calendar.set(Calendar.MONTH, month);
                         calendar.set(Calendar.DAY_OF_MONTH, day);
+                        month += 1; //In Java months are indexed starting at 0
                         String calendarDate = month + "/" + day + "/" + year;
                         eventDate.setText(calendarDate);
                         event.date = calendarDate;
