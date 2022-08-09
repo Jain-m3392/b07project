@@ -48,6 +48,7 @@ public class AccountActivity extends AppCompatActivity implements NavigationBarV
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
             mAuth.signOut();
             Intent intent = new Intent(view.getContext(), MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }};
 

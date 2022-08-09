@@ -57,7 +57,7 @@
     <string name="apply_filter">APPLY</string>
     <string name="event_id">Event ID:</string>
 
-    <string name="please_provide_the_following_information">Please provide the following information</string>
+    <string name="please_provide_the_following_information">Enter venue information</string>
     <string name="venue_name">Venue name</string>
     <string name="venue_location">Venue location</string>
     <string name="accessible_sports">Accessible sports</string>

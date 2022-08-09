@@ -25,6 +25,7 @@ public class AdminAccountActivity extends AppCompatActivity implements Navigatio
             FirebaseAuth mAuth = FirebaseAuth.getInstance();
             mAuth.signOut();
             Intent intent = new Intent(view.getContext(), MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }};
 
