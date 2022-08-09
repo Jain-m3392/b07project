@@ -50,7 +50,7 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:layout_toRightOf="@id/eventSportsUpdate"
-        android:backgroundTint="@color/design_default_color_secondary"
+        android:backgroundTint="@color/design_default_color_primary"
         android:minHeight="48dp"
         android:padding="10dp"
         android:spinnerMode="dropdown"

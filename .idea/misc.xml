@@ -35,6 +35,7 @@
         <entry key="app/src/main/res/layout/activity_admin_events_view.xml" value="0.16163584391276042" />
         <entry key="app/src/main/res/layout/activity_customer_create_events.xml" value="0.14166666666666666" />
         <entry key="app/src/main/res/layout/activity_customer_events_view.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_customer_schedule_event.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_customer_venues_view.xml" value="0.28804347826086957" />
         <entry key="app/src/main/res/layout/activity_event_detail.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_event_list.xml" value="0.39021852237252863" />
