@@ -12,7 +12,7 @@
         android:layout_marginLeft="20dp"
         android:padding="10dp"
         android:layout_marginTop="10dp"
-        android:text="Venue Name" />
+        android:text="@string/venue_name_venuelist" />
 
     <TextView
         android:id="@+id/venueLocation"
@@ -23,6 +23,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
         android:padding="10dp"
-        android:text="Venue Location" />
+        android:text="@string/venue_location_venuelist" />
 
 </RelativeLayout>

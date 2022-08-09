@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DatabaseReference;
@@ -53,6 +54,8 @@ public class adminCreateVenue extends AppCompatActivity implements NavigationBar
             public void onClick(View view) {
                 sports = venueSports.getText().toString();
                 sportsTypes.add(sports);
+                Toast.makeText(adminCreateVenue.this, "Added", Toast.LENGTH_LONG).show();
+                venueSports.setText("");
             }
         });
 
@@ -74,7 +77,10 @@ public class adminCreateVenue extends AppCompatActivity implements NavigationBar
                 admin.push();
                 newVenue.push();
                 textView.setText("You successfully created a venue!");
-//                Toast.makeText(adminCreateVenue.this, "You successfully created a venue!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(adminCreateVenue.this, AdminEventsView.class);
+                intent.putExtra("Admin", admin);
+                startActivity(intent);
+                Toast.makeText(adminCreateVenue.this, "You successfully created a venue!", Toast.LENGTH_LONG).show();
             }
         });
 

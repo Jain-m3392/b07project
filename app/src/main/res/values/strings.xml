@@ -57,5 +57,26 @@
     <string name="apply_filter">APPLY</string>
     <string name="event_id">Event ID:</string>
 
+    <string name="please_provide_the_following_information">Please provide the following information</string>
+    <string name="venue_name">Venue name</string>
+    <string name="venue_location">Venue location</string>
+    <string name="accessible_sports">Accessible sports</string>
+    <string name="add">Add</string>
+
+    <string name="create_a_venue">Create a venue</string>
+    <string name="event_name">Event name</string>
+    <string name="select_sport">Select sport</string>
+    <string name="event_capacity_enter_a_number">Event capacity (enter a number)</string>
+    <string name="event_date">Event Date</string>
+    <string name="event_start_time">Event start time</string>
+    <string name="event_end_time">Event end time</string>
+    <string name="submit">Submit</string>
+    <string name="venue_name_venuelist">Venue Name</string>
+    <string name="venue_location_venuelist">Venue Location</string>
+    <string name="eventname">eventName</string>
+    <string name="eventcapacity">eventCapacity</string>
+    <string name="eventdate">eventDate</string>
+    <string name="eventstarttime_eventendtime">eventStartTime-eventEndTime</string>
+
 
 </resources>

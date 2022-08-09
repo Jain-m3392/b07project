@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         style="@style/TextAppearance.AppCompat.Title"
-        android:text="eventName"/>
+        android:text="@string/eventname"/>
 
     <TextView
         android:id="@+id/eventCapacity"
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/eventName"
         style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-        android:text="eventCapacity"/>
+        android:text="@string/eventcapacity"/>
 
     <TextView
         android:id="@+id/eventDate"
@@ -30,7 +30,7 @@
         android:layout_below="@id/eventCapacity"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="20dp"
-        android:text="eventDate" />
+        android:text="@string/eventdate" />
 
     <TextView
         android:id="@+id/eventStartEndTimes"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/eventDate"
         style="@style/TextAppearance.AppCompat.SearchResult.Subtitle"
-        android:text="eventStartTime-eventEndTime"/>
+        android:text="@string/eventstarttime_eventendtime"/>
 
 
 
