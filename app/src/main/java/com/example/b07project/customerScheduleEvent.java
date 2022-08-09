@@ -132,6 +132,7 @@ public class customerScheduleEvent extends AppCompatActivity implements Navigati
                         calendar.set(Calendar.YEAR, year);
                         calendar.set(Calendar.MONTH, month);
                         calendar.set(Calendar.DAY_OF_MONTH, day);
+                        month += 1; //In Java months are indexed starting at 0
                         String calendarDate = month + "/" + day + "/" + year;
                         dateInput.setText(calendarDate);
                         dateFinal = calendarDate;
