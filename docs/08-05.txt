@@ -1,0 +1,51 @@
+05.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Adding arraylist of sports when creating a venue as an admin 
+What are you planning on doing today?
+Improving the UI
+Any impediments or stumbling blocks?
+None
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Made Admin parcelable + started working on the admin events view activity
+What are you planning on doing today?
+Reformat events view to improve UI
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Made events joinable
+
+What are you planning on doing today?
+Taking a break
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Minor bug fix in my code
+
+What are you planning on doing today?
+Present project and watch testing lecture
+
+Any impediments or stumbling blocks?
+no
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Created a Pushable Interface so that Pushable objects can be easily uploaded into Firebase
+
+What are you planning on doing today?
+Work on the Admin navbar and admin login and logout backend.
+
+Any impediments or stumbling blocks?
+no

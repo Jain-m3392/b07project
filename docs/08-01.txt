@@ -1,0 +1,51 @@
+01.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Implemented “schedule a new event” button
+What are you planning on doing today?
+Implement datepicker and timepicker 
+Any impediments or stumbling blocks?
+None
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Fixed the text formatting in CustomerEventsView
+What are you planning on doing today?
+Same as yesterday
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Implemented recyclerview adapter
+
+What are you planning on doing today?
+Hook up recyclerview to database
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Finished registration page it now adds a user to the database
+
+What are you planning on doing today?
+Login page registered customer gets logged in to customer home page
+
+Any impediments or stumbling blocks?
+Admin authentication difficult since firebase doesnt store as an object asked group for help
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+n/a
+
+What are you planning on doing today?
+n/a
+
+Any impediments or stumbling blocks?
+n/a

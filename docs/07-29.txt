@@ -1,0 +1,51 @@
+29.07.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Created a customer venue view activity 
+What are you planning on doing today?
+Improve the UI
+Any impediments or stumbling blocks?
+None
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Created an xml file for displaying events
+What are you planning on doing today?
+Implement parcelable interface to the Customer class to transfer customer data between activities
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Bug fixes for upcoming events screen.
+
+What are you planning on doing today?
+Hook up lists of events to database.
+
+Any impediments or stumbling blocks?
+The activity type I chose for the event list (primary/detail flow) is more complicated than expected & is giving me trouble.
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Login page UI
+
+What are you planning on doing today?
+Create navigation buttons for sign up and going back to login page
+
+Any impediments or stumbling blocks?
+Navigation between fragment and activity and vice versa required different code 
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Created a data-fetching system from Firebase
+
+What are you planning on doing today?
+Create NavBar UI
+
+Any impediments or stumbling blocks?
+n/a

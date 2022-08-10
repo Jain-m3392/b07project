@@ -1,0 +1,48 @@
+03.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Took a break
+What are you planning on doing today?
+Test the activities and plan what needs to be improved
+Any impediments or stumbling blocks?
+none
+Name: Katarina Sotic
+
+What have you done since yesterday?
+nothing
+What are you planning on doing today?
+Set up intents in the events view class
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Bug fixes for event list activity
+
+What are you planning on doing today?
+Make event list scrollable
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+nothing
+What are you planning on doing today?
+Bug fixes removing testing code breaking firebase user structure
+
+Any impediments or stumbling blocks?
+no
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Fixed most transition bugs for Customer UI, navbar bugs
+
+What are you planning on doing today?
+Improve login backend design to support both Customers and Admins
+
+Any impediments or stumbling blocks?

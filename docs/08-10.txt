@@ -1,0 +1,50 @@
+10.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Final testing
+What are you planning on doing today?
+done
+Any impediments or stumbling blocks?
+none
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Made some bug fixes and committed
+What are you planning on doing today?
+Test how my views work with others
+Any impediments or stumbling blocks?
+None
+Name: Mudit Jain
+
+What have you done since yesterday?
+Polished UI, removed unused imports
+
+What are you planning on doing today?
+I’m done!
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Fix espressos
+
+What are you planning on doing today?
+done
+
+Any impediments or stumbling blocks?
+no
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Final polish. Removed some unnecessary code
+
+What are you planning on doing today?
+Submit
+
+Any impediments or stumbling blocks?
+n/a
+

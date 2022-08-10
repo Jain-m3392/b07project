@@ -1,0 +1,51 @@
+28.07.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Learned how to create UI for different activities
+What are you planning on doing today?
+Practice creating UI 
+Any impediments or stumbling blocks?
+None
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Deciding on using Parcelable interface for transferring data between activities
+What are you planning on doing today?
+Create a layout file for viewing events (for customers)
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Created basic UI layout for event list activity.
+
+What are you planning on doing today?
+Hook up list of events to the database.
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Create new activity for registering users and UI for register user activity
+
+What are you planning on doing today?
+UI for login page 
+
+Any impediments or stumbling blocks?
+none 
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Created class structure for project
+
+What are you planning on doing today?
+Implement all database fetching and data syncing through centralised static methods
+
+Any impediments or stumbling blocks?
+n/a

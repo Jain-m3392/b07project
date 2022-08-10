@@ -1,0 +1,49 @@
+08.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Reviewing the activities 
+What are you planning on doing today?
+Testing with different data
+Any impediments or stumbling blocks?
+none
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Almost fully completed admin events view and committed changes
+What are you planning on doing today?
+Implement the filter functionality + perform final bug checks
+Any impediments or stumbling blocks?
+None
+Name: Mudit Jain
+
+What have you done since yesterday?
+Hooked up event editing to database, filtered upcoming events so that past events do not appear
+
+What are you planning on doing today?
+Fix major bugs for editing events
+
+Any impediments or stumbling blocks?
+Events were not parcelable, so I had to implement that.
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Check if up to date app works
+
+What are you planning on doing today?
+Delete registration espresso test since unable to recreate user once in firebase
+
+Any impediments or stumbling blocks?
+no
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Fixed navigational bugs in whole app, fixed venue creation backend bugs
+
+What are you planning on doing today?
+Bug fixes and polish
+
+Any impediments or stumbling blocks?
+n/a

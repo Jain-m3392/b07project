@@ -1,0 +1,51 @@
+07.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Finalizing the activities I have worked on
+What are you planning on doing today?
+Changing button colors to follow the same style throughout the app
+Any impediments or stumbling blocks?
+none
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Commited changes + made progress on admin events view activity
+What are you planning on doing today?
+Finalize the activity
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Created UI for editing events
+
+
+What are you planning on doing today?
+Hook up editing event functionality to database, filter upcoming events so past events do not appear
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Created espresso tests
+
+What are you planning on doing today?
+Pull code and check overall functionality
+
+Any impediments or stumbling blocks?
+Some code duplicated during merge causing error
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Linked admin navbar to all activities and finalised admin login backend. Fixed visual bugs on login screen, and fixed a backend bug where newly scheduled events were updating incorrectly
+
+What are you planning on doing today?
+Bug fixing and polish
+
+Any impediments or stumbling blocks?
+n/a

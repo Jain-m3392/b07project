@@ -1,4 +1,5 @@
 Names: Arailym Mussilim, Katarina Sotic, Dmitriy Prokopchuk, Mudit Jain, Angel Chen
-Instagram
-Scheduled Time: 9:30pm
-Github
+Scrum Master: Dmitriy Prokopchuk
+Primary Communication Method: Instagram, Zoom
+Scheduled Time: 9:30pm (Updated to 5:30pm daily)
+Version Control: Github

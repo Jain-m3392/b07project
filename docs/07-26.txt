@@ -1,0 +1,45 @@
+26.07.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Created a jira account
+What are you planning on doing today?
+Look up android studio basics
+Any impediments or stumbling blocks?
+none
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Created a Jira Account
+What are you planning on doing today?
+Look up ways to implement viewing objects in a list
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Set up Jira
+What are you planning on doing today?
+Add event list activity to project in a new branch
+Any impediments or stumbling blocks?
+No
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Create jira account + meet group members and join git project
+What are you planning on doing today?
+Look up password hashing
+Any impediments or stumbling blocks?
+no
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Set up Jira
+What are you planning on doing today?
+Set up Firebase
+Any impediments or stumbling blocks?
+-

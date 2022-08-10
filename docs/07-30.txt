@@ -1,0 +1,52 @@
+30.07.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Improved the customer venue view UI
+What are you planning on doing today?
+Create a customer event list activity
+Any impediments or stumbling blocks?
+None
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Implemented Parcelable interface
+What are you planning on doing today?
+Create Java class which generates linear layout for displaying events
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Refactored event list activity to be recyclerview, not primary-detail flow
+
+What are you planning on doing today?
+Re-implement UI for event list 
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Navigation between pages
+
+What are you planning on doing today?
+Have fields in signup check for valid input
+
+Any impediments or stumbling blocks?
+Deciding whether to use email or user authentication
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Created NavBar UI
+
+What are you planning on doing today?
+Create logout page
+
+Any impediments or stumbling blocks?
+Had some issues with Gradle settings for importing Firebase, but I found a workaround.
+

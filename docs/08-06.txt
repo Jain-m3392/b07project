@@ -1,0 +1,50 @@
+06.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Testing the admin venue adding activity
+What are you planning on doing today?
+Fixing bugs and improving UIs  
+Any impediments or stumbling blocks?
+none
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Changed both event views to RecyclerViews and linked them to the navbar + committed recent changes
+What are you planning on doing today?
+Improve ui 
+Any impediments or stumbling blocks?
+None
+Name: Mudit Jain
+
+What have you done since yesterday?
+Took a break
+
+What are you planning on doing today?
+Design UI for editing events
+
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Watched testing lecture
+
+What are you planning on doing today?
+Create espresso tests for login and registration
+
+Any impediments or stumbling blocks?
+How to unit test navigation and user creation methods
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Created updated Admin navbar, logout screen, and logout backend.
+
+What are you planning on doing today?
+Link admin navbar to admin activities
+
+Any impediments or stumbling blocks?
+n/a

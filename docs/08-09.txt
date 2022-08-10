@@ -1,0 +1,49 @@
+09.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Final review of all the acitivites
+What are you planning on doing today?
+Polishing UI
+Any impediments or stumbling blocks?
+none
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Fully implemented filter functionality using a popup window
+What are you planning on doing today?
+Final check for bugs
+Any impediments or stumbling blocks?
+none
+Name: Mudit Jain
+
+What have you done since yesterday?
+Fixed bugs for editing events
+
+What are you planning on doing today?
+Squashing any final bugs & polishing UI
+
+Any impediments or stumbling blocks?
+Implemented event parcelling wrong which caused some major bugs so I had to reimplement that.
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Got rid of register user espresso test
+
+What are you planning on doing today?
+Fix login espresso test, after new users were added the location of user switched so test didn’t run
+
+Any impediments or stumbling blocks?
+no
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Fixed more event and venue creation bugs. Polished UI. Cleaned code
+
+What are you planning on doing today?
+Polish app. Fix back button behaviour.
+
+Any impediments or stumbling blocks?
+n/a

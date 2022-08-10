@@ -1,0 +1,49 @@
+02.08.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Implemented datepicker and timepicker
+What are you planning on doing today?
+Implement dropdown menu for choosing sport when scheduling a new event
+Any impediments or stumbling blocks?
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Still working on the same part
+What are you planning on doing today?
+Check code for errors
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Hooked up recyclerview adapter to database so it displays upcoming events
+
+What are you planning on doing today?
+Fix bugs
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Login page details and takes user to home page, password is hidden
+
+What are you planning on doing today?
+Take a break
+
+Any impediments or stumbling blocks?
+no
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Integrated Navbar with all activities currently pushed to the main branch. 
+
+What are you planning on doing today?
+Bug fixes for UI elements, page transitions
+
+Any impediments or stumbling blocks?

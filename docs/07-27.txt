@@ -1,0 +1,51 @@
+27.07.22
+Name: Arailym Mussilim
+
+What have you done since yesterday?
+Learn how firebase works 
+What are you planning on doing today?
+Learn more about how firebase works 
+Any impediments or stumbling blocks?
+none
+
+Name: Katarina Sotic
+
+What have you done since yesterday?
+Decided on implementing event viewing using linear layouts
+What are you planning on doing today?
+Find a way to transfer data between activities
+Any impediments or stumbling blocks?
+None
+
+Name: Mudit Jain
+
+What have you done since yesterday?
+Created event list activity in Android studio & committed to local branch.
+
+What are you planning on doing today?
+Create the UI for the event list activity.
+
+Any impediments or stumbling blocks?
+None
+
+Name: Angel Chen
+
+What have you done since yesterday?
+Learned to use git
+
+What are you planning on doing today?
+Fork and clone assignment to understand existing code
+
+Any impediments or stumbling blocks?
+Git ssh key required set up since https required user and passcode but stopped using a while back 
+
+Name: Dmitriy Prokopchuk
+
+What have you done since yesterday?
+Implemented Firebase into the project. Created an example set of data in Firebase
+
+What are you planning on doing today?
+Plan out the class structure for Users/Customers/Admins
+
+Any impediments or stumbling blocks?
+Had some issues with Gradle settings for importing Firebase, but I found a workaround.
