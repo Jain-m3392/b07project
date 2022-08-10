@@ -4,9 +4,6 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
-import android.util.Log;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 
@@ -21,24 +18,17 @@ import java.util.ArrayList;
 public class FilterPop extends Activity {
 
     private Admin admin;
-    private ArrayList<Venue> venues;
     private RecyclerView recyclerView;
-    private ArrayList selectedVenues = new ArrayList();
-    private Button apply;
+    private final ArrayList<Venue> selectedVenues = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         Intent intent = getIntent();
         admin = intent.getParcelableExtra("Admin");
-        venues = admin.fetchCreatedVenues();
+        ArrayList<Venue> venues = admin.fetchCreatedVenues();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.filter_pop);
-
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
 
         getWindow().setLayout(880, 1250);
 
@@ -48,22 +38,19 @@ public class FilterPop extends Activity {
         getWindow().setAttributes(layoutParams);
 
         recyclerView = findViewById(R.id.filterRecyclerView);
-        apply = findViewById(R.id.applyButton);
+        Button apply = findViewById(R.id.applyButton);
 
         setAdapter(venues);
 
-        apply.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Context context = view.getContext();
-                Intent intent = new Intent(context, AdminEventsView.class);
-                intent.putExtra("Admin", admin);
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("Venues", selectedVenues);
-                intent.putExtras(bundle);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-                context.startActivity(intent);
-            }
+        apply.setOnClickListener(view -> {
+            Context context = view.getContext();
+            Intent intent1 = new Intent(context, AdminEventsView.class);
+            intent1.putExtra("Admin", admin);
+            Bundle bundle = new Bundle();
+            bundle.putParcelableArrayList("Venues", selectedVenues);
+            intent1.putExtras(bundle);
+            intent1.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+            context.startActivity(intent1);
         });
 
     }

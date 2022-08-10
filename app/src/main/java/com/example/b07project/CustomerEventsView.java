@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationBarView;
@@ -27,7 +26,7 @@ public class CustomerEventsView extends AppCompatActivity implements NavigationB
 
         Intent intent = getIntent();
         customer = intent.getParcelableExtra("Customer");
-        ArrayList<Venue> venues = customer.fetchAllVenues();
+        ArrayList<Venue> venues = User.fetchAllVenues();
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_events_view);

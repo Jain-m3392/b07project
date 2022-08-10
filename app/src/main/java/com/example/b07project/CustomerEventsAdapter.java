@@ -1,6 +1,5 @@
 package com.example.b07project;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,21 +12,21 @@ import java.util.ArrayList;
 
 public class CustomerEventsAdapter extends RecyclerView.Adapter<CustomerEventsAdapter.MyViewHolder> {
 
-    private ArrayList<Event> events;
-    private ArrayList<Venue> venues;
+    private final ArrayList<Event> events;
+    private final ArrayList<Venue> venues;
 
     public CustomerEventsAdapter(ArrayList<Event> events, ArrayList<Venue> venues){
          this.events = events;
          this.venues = venues;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        private TextView eventName;
-        private TextView eventTime;
-        private TextView eventDate;
-        private TextView eventVenue;
-        private TextView eventSport;
-        private TextView eventID;
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+        private final TextView eventName;
+        private final TextView eventTime;
+        private final TextView eventDate;
+        private final TextView eventVenue;
+        private final TextView eventSport;
+        private final TextView eventID;
 
         public MyViewHolder(final View view){
             super(view);

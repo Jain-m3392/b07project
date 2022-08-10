@@ -2,8 +2,6 @@ package com.example.b07project;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.Bundle;
-import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,9 +15,9 @@ import java.util.ArrayList;
 
 public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.MyViewHolder> {
 
-    private ArrayList<Event> events;
-    private ArrayList<Venue> venues;
-    private Admin admin;
+    private final ArrayList<Event> events;
+    private final ArrayList<Venue> venues;
+    private final Admin admin;
 
     public AdminEventsAdapter (ArrayList<Event> events, ArrayList<Venue> venues, Admin admin){
         this.events = events;
@@ -29,14 +27,13 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
         private Event event;
-        private TextView eventName;
-        private TextView eventTime;
-        private TextView eventDate;
-        private TextView eventVenue;
-        private TextView eventSport;
-        private TextView eventCreator;
-        private TextView eventID;
-        private Button edit;
+        private final TextView eventName;
+        private final TextView eventTime;
+        private final TextView eventDate;
+        private final TextView eventVenue;
+        private final TextView eventSport;
+        private final TextView eventCreator;
+        private final TextView eventID;
 
         //TODO add buttons
 
@@ -49,17 +46,13 @@ public class AdminEventsAdapter extends RecyclerView.Adapter<AdminEventsAdapter.
             eventSport = view.findViewById(R.id.adminEventListSport);
             eventCreator = view.findViewById(R.id.adminEventListCreator);
             eventID = view.findViewById(R.id.adminEventID);
-            edit = view.findViewById(R.id.adminEventListEdit);
+            Button edit = view.findViewById(R.id.adminEventListEdit);
             Context context = view.getContext();
-            edit.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    Intent intent = new Intent(context, AdminEditEvent.class);
-                    intent.putExtra("event", event);
-                    intent.putExtra("admin", admin);
-                    context.startActivity(intent);
-                    return;
-                }
+            edit.setOnClickListener(v -> {
+                Intent intent = new Intent(context, AdminEditEvent.class);
+                intent.putExtra("event", event);
+                intent.putExtra("admin", admin);
+                context.startActivity(intent);
             });
         }
     }

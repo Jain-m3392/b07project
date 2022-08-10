@@ -1,7 +1,6 @@
 package com.example.b07project;
 
 import android.graphics.Typeface;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class HeaderAdapter extends RecyclerView.Adapter<HeaderAdapter.HeaderViewHolder> {
 
-    private String text;
+    private final String text;
 
     public HeaderAdapter(String text){
         this.text = text;
     }
 
-    public class HeaderViewHolder extends RecyclerView.ViewHolder{
+    public static class HeaderViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView title;
+        private final TextView title;
 
         public HeaderViewHolder(final View view){
             super(view);

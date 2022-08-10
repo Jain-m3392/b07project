@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationBarView;
@@ -32,7 +31,7 @@ public class AdminEventsView extends AppCompatActivity implements NavigationBarV
 
         recyclerView = findViewById(R.id.AdminEventsRecycler);
 
-        ArrayList<Venue> venues = new ArrayList<>();
+        ArrayList<Venue> venues;
 
         if (intent.getParcelableArrayListExtra("Venues") != null){
             venues = intent.getParcelableArrayListExtra("Venues");

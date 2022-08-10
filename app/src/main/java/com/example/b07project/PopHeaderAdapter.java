@@ -13,13 +13,11 @@ public class PopHeaderAdapter extends RecyclerView.Adapter<PopHeaderAdapter.MyVi
 
     public PopHeaderAdapter(){}
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-
-        private TextView title;
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
 
         public MyViewHolder(final View view){
             super(view);
-            title = view.findViewById(R.id.selectVenuesTitle);
+            TextView title = view.findViewById(R.id.selectVenuesTitle);
             title.setTextSize(20);
             title.setTypeface(null, Typeface.BOLD);
         }
