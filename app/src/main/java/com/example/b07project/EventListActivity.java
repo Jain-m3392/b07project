@@ -10,8 +10,6 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.navigation.NavigationBarView;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -27,7 +25,7 @@ public class EventListActivity extends AppCompatActivity implements NavigationBa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_list);
 
-        RecyclerView eventsRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        RecyclerView eventsRecyclerView = findViewById(R.id.recyclerview);
         
         //get event info
         Intent intent = getIntent();
