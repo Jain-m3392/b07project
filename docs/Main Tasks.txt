@@ -1,0 +1,11 @@
+Main tasks done by each group member:
+
+Angel Chen: User Story 1, User Story 5 (login)
+
+Mudit Jain: User Story 3, User Story 5 (Manage venues (Ability to edit events))
+
+Arailym Mussilim: User Story 2, User Story 6
+
+Katarina Sotic: User Story 4, User Story 7
+
+Dmitriy Prokopchuk: Backend for fetching and uploading to Firebase, App Navigation, Help for login backend. 
