@@ -40,7 +40,7 @@ public class FilterPop extends Activity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int)(.8*width), (int)(.6*height));
+        getWindow().setLayout(880, 1250);
 
         WindowManager.LayoutParams layoutParams = getWindow().getAttributes();
         layoutParams.dimAmount = 0.75f;
@@ -61,6 +61,7 @@ public class FilterPop extends Activity {
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList("Venues", selectedVenues);
                 intent.putExtras(bundle);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
                 context.startActivity(intent);
             }
         });

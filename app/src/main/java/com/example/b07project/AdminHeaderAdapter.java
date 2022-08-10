@@ -5,10 +5,13 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,6 +46,8 @@ public class AdminHeaderAdapter extends RecyclerView.Adapter<AdminHeaderAdapter.
                     Intent intent = new Intent(context, FilterPop.class);
                     intent.putExtra("Admin", admin);
                     context.startActivity(intent);
+//                    PopUpClass popUp = new PopUpClass(admin);
+//                    popUp.showPopUpWindow(v);
                 }
             });
         }
